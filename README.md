@@ -1,4 +1,7 @@
 # BULL FLAG DETECTOR PROJECT by Kránitz Bence
+I am an Applied Mathematics student, so I have never used docker and also did not create this "caliber" of a project (only used jupyter notebook for data science projects). Hope that the code runs well and won't raise an error.
+** Also I used my notebook to train these models so they won't be that complex because I only have a CPU. **
+
 
 
 ## Submission Instructions
@@ -25,6 +28,8 @@
 [Describe the data preparation process here]
 I downloaded the data manually. First I merged all the csv files into one for each asset. Then I also merged the .json files into one big 'ground_truth_labels.csv' which contains each label and all informations that are needed (e.g. the original name of the .json file, original path, new name). I standardised the names of the files (e.g. EURUSD_15MIN_001, ... into basic merged_EURUSD_15min).
 Then I investigated the distribution and number of labels and I observed, that the EURUSD and XAUUSD assets are the most common, so I decided to only use those in the model training.
+For baseline model I used a simple LSTM model. 
+For the final model I choose a CNN transformer model. I also used data augmentation, because of the imbalance in the training set the model simply learned to choose either bullish or bearish normal. With data augmentation the accuracy became better, also the recall for the other labels became nonzero.
 
 
 ### Logging Requirements
@@ -68,9 +73,9 @@ Before submitting your project, ensure you have completed the following steps.
 
 ### Project Information
 
-- **Selected Topic**: [Enter Topic Name Here, options: AnkleAlign, Legal Text Decoder, Bull-flag detector, End-of-trip delay prediction]
-- **Student Name**: [Enter Your Name Here]
-- **Aiming for +1 Mark**: [Yes/No]
+- **Selected Topic**: [Enter Topic Name Here, options: Bull-flag detector
+- **Student Name**: Kránitz Bence
+- **Aiming for +1 Mark**: No
 
 ### Solution Description
 

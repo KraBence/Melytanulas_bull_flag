@@ -14,10 +14,8 @@ import re
 
 logger = setup_logger()
 
-# ==========================================
-# SEGÉDFÜGGVÉNYEK
-# ==========================================
 def robust_parse_ts(value):
+    """Kezeli a Unix ms, Unix s és ISO string formátumokat is."""
     try:
         if pd.isna(value) or value == "": return pd.NaT
         if str(value).isdigit() or isinstance(value, (int, float)):
@@ -43,41 +41,37 @@ def get_uniform_name(filename):
         return f"{asset}_{tf}"
     return base
 
-# --- ÚJ: ÁTFEDÉS SZŰRŐ FÜGGVÉNY ---
+# ==========================================
+# KONFLIKTUSKEZELÉS
+# ==========================================
 def filter_overlaps(df):
     """
     Kiszűri a duplikációkat és a súlyos átfedéseket.
     """
     if df.empty: return df
 
-    logger.info("\n[SZŰRÉS] Átfedések és duplikációk vizsgálata...")
+    logger("\n[SZŰRÉS] Átfedések és duplikációk vizsgálata...")
     original_count = len(df)
 
     # 1. Teljes duplikátumok törlése
-    # Kerekítjük az időbélyegeket percre a zaj ellen
     df['start_round'] = df['flag_start_ts'].dt.round('1min')
     df['end_round'] = df['flag_end_ts'].dt.round('1min')
 
-    df = df.drop_duplicates(subset=['raw_csv_filename', 'start_round', 'end_round', 'label'])
+    # Megtartjuk az elsőt
+    df = df.drop_duplicates(subset=['raw_csv_filename', 'start_round', 'end_round', 'label'], keep='first')
 
-    # 2. Konfliktusok keresése (időbeli átfedés)
-    # Rendezzük fájl és idő szerint
+    # 2. Konfliktusok keresése
     df = df.sort_values(by=['raw_csv_filename', 'flag_start_ts'])
-
     indices_to_drop = []
 
-    # Csoportonként (Asset + Timeframe) vizsgáljuk
     for group_name, group in df.groupby('raw_csv_filename'):
-        group = group.reset_index() # Hogy elérjük az eredeti indexet
-
+        group = group.reset_index()
         for i in range(len(group) - 1):
             curr = group.iloc[i]
             next_row = group.iloc[i+1]
 
-            # Van átfedés? (Jelenlegi Vége > Következő Kezdete)
+            # Átfedés vizsgálata
             if curr['flag_end_ts'] > next_row['flag_start_ts']:
-
-                # Átfedés mértéke (Időben)
                 intersection = min(curr['flag_end_ts'], next_row['flag_end_ts']) - next_row['flag_start_ts']
                 union = max(curr['flag_end_ts'], next_row['flag_end_ts']) - curr['flag_start_ts']
 
@@ -86,30 +80,24 @@ def filter_overlaps(df):
                 else:
                     overlap_ratio = 0
 
-                # Ha jelentős az átfedés (>50%)
                 if overlap_ratio > 0.5:
                     if curr['label'] != next_row['label']:
-                        logger.info(f"    [KONFLIKTUS] {group_name}: {curr['label']} vs {next_row['label']} ({curr['flag_start_ts']})")
-                        # Konfliktus esetén eldobjuk a másodikat
-                        indices_to_drop.append(next_row['index'])
-                    else:
-                        # Redundancia esetén is eldobjuk a másodikat, ha nagyon durva az átfedés (>80%)
-                        if overlap_ratio > 0.8:
-                            indices_to_drop.append(next_row['index'])
+                        logger(f"    [KONFLIKTUS] {group_name}: Megtartva: {curr['label']} | Eldobva: {next_row['label']}")
+                    indices_to_drop.append(next_row['index'])
 
     if indices_to_drop:
         df = df.drop(indices_to_drop)
-        logger.info(f"    -> Eltávolítva {len(indices_to_drop)} db konfliktusos sor.")
+        logger(f"    -> Eltávolítva {len(indices_to_drop)} db konfliktusos sor.")
 
     df = df.drop(columns=['start_round', 'end_round'])
-    logger.info(f"    -> Maradt: {len(df)} (Eredeti: {original_count})")
+    logger(f"    -> Maradt: {len(df)} (Eredeti: {original_count})")
     return df
 
 # ==========================================
-# 1. FÁZIS: CSV-K ÖSSZEFŰZÉSE
+# 1. FÁZIS: CSV ÖSSZEFŰZÉS
 # ==========================================
 def merge_and_save_csvs(data_dir, output_dir):
-    logger.info("\n[1. FÁZIS] CSV fájlok keresése és összefűzése...")
+    logger("\n[1. FÁZIS] CSV fájlok keresése és összefűzése...")
     all_csvs = glob.glob(os.path.join(data_dir, "**/*.csv"), recursive=True)
     grouped_dfs = {}
 
@@ -131,8 +119,8 @@ def merge_and_save_csvs(data_dir, output_dir):
                 df['dt'] = pd.to_datetime(df[t_col], errors='coerce')
 
             df = df.dropna(subset=['dt']).set_index('dt')
-            cols_to_keep = [c for c in df.columns if c in ['open', 'high', 'low', 'close', 'volume']]
-            df = df[cols_to_keep]
+            cols = [c for c in df.columns if c in ['open', 'high', 'low', 'close', 'volume']]
+            df = df[cols]
 
             if group_name not in grouped_dfs: grouped_dfs[group_name] = []
             grouped_dfs[group_name].append(df)
@@ -147,11 +135,11 @@ def merge_and_save_csvs(data_dir, output_dir):
         save_path = os.path.join(output_dir, f"merged_{group_name}.csv")
         full_df.to_csv(save_path)
         saved_map[group_name] = save_path
-        logger.info(f"    -> Mentve: merged_{group_name}.csv ({len(full_df)} sor)")
+        logger(f"    -> Mentve: merged_{group_name}.csv ({len(full_df)} sor)")
     return saved_map
 
 # ==========================================
-# 2. FÁZIS: POLE SZÁMÍTÁS ÉS FELDOLGOZÁS
+# 2. FÁZIS: CÍMKE FELDOLGOZÁS
 # ==========================================
 def find_best_pole(label_row, ohlcv_df):
     try:
@@ -175,7 +163,7 @@ def find_best_pole(label_row, ohlcv_df):
     return best_ts
 
 def process_labels(data_dir, output_dir, merged_files_map):
-    logger.info("\n[2. FÁZIS] Címkék feldolgozása...")
+    logger("\n[2. FÁZIS] Címkék feldolgozása...")
     json_files = glob.glob(os.path.join(data_dir, "**/*.json"), recursive=True)
     final_dataset = []
     loaded_dfs = {}
@@ -205,7 +193,15 @@ def process_labels(data_dir, output_dir, merged_files_map):
                         val = res.get('value', {})
                         if val.get('timeserieslabels'):
                             lbl = val['timeserieslabels'][0]
+
+                            # Típus meghatározása
                             p_type = "BULL_FLAG" if "Bullish" in lbl else "BEAR_FLAG" if "Bearish" in lbl else "UNKNOWN"
+
+                            # --- ÚJ: TREND CÍMKE (BULL / BEAR) ---
+                            trend = "UNKNOWN"
+                            if p_type == "BULL_FLAG": trend = "BULL"
+                            elif p_type == "BEAR_FLAG": trend = "BEAR"
+
                             start_ts = robust_parse_ts(val['start'])
                             end_ts = robust_parse_ts(val['end'])
                             if pd.isna(start_ts): continue
@@ -218,7 +214,8 @@ def process_labels(data_dir, output_dir, merged_files_map):
                                     "full_filename": ls_filename,
                                     "raw_csv_filename": uniform_name,
                                     "merged_csv_path": f"merged_{uniform_name}.csv",
-                                    "label": lbl,
+                                    "label": lbl,          # Pl: "Bullish Wedge"
+                                    "trend_label": trend,  # Pl: "BULL"
                                     "flag_start_ts": start_ts,
                                     "flag_end_ts": end_ts,
                                     "pole_start_ts": pole_ts,
@@ -226,19 +223,18 @@ def process_labels(data_dir, output_dir, merged_files_map):
                                 })
         except: pass
 
-    # --- ÚJ: Itt hívjuk meg a szűrőt ---
     df_result = pd.DataFrame(final_dataset)
     df_result = filter_overlaps(df_result)
-
     return df_result
 
 if __name__ == "__main__":
-    logger.info("Preprocessing data...")
     merged_map = merge_and_save_csvs(DATA_ROOT, OUTPUT_DIR)
     if merged_map:
         df_final = process_labels(DATA_ROOT, OUTPUT_DIR, merged_map)
         out_file = os.path.join(OUTPUT_DIR, "ground_truth_labels.csv")
         df_final.to_csv(out_file, index=False)
-        logger.info(f"\n[KÉSZ] Sikeresen generálva: {len(df_final)} sor.")
+        logger(f"\n[KÉSZ] Sikeresen generálva: {len(df_final)} sor.")
+        if not df_final.empty:
+            logger(df_final[['label', 'trend_label']].head())
     else:
-        logger.info("HIBA: Nem sikerült CSV-ket feldolgozni.")
+        logger("HIBA: Nem sikerült CSV-ket feldolgozni.")
