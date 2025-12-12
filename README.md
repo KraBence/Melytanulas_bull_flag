@@ -1,6 +1,6 @@
 # BULL FLAG DETECTOR PROJECT by Kránitz Bence
 I am an Applied Mathematics student, so I have never used docker and also did not create this "caliber" of a project (only used jupyter notebook for data science projects). Hope that the code runs well and won't raise an error.
-** Also I used my notebook to train these models so they won't be that complex because I only have a CPU. **
+**Also I used my notebook to train these models so they won't be that complex because I only have a CPU.**
 
 
 

@@ -7,10 +7,12 @@ EPOCHS = 1000
 EARLY_STOPPING_PATIENCE = 10
 
 # Paths
-DATA_ROOT = "../data/bullflagdetector/bullflagdetector"
-OUTPUT_DIR = "./output"
+DATA_ROOT = "app/data/bullflagdetector/bullflagdetector"
+OUTPUT_DIR = "app/output"
 
 MODEL_SAVE_PATH = "/app/model.pth"
+
+LABEL_FILE = 'app/output/ground_truth_label.csv'
 
 # --- HIPERPARAMÉTEREK ---
 BATCH_SIZE = 32

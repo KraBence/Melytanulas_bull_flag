@@ -8,6 +8,7 @@ COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY ./src .
+COPY ./data .
 
 # 6. A futtató script végrehajthatóvá tétele
 RUN chmod +x run.sh
