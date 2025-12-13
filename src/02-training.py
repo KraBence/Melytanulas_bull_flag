@@ -59,8 +59,15 @@ def prepare_data(label_path, data_root, output_dir, batch_size, seq_len):
     class_weights = compute_class_weight('balanced', classes=np.unique(y_train), y=y_train)
 
     # Loaders
-    train_ds = FlagDataset(train, csv_dir=data_root, seq_len=seq_len)
-    val_ds = FlagDataset(val, csv_dir=data_root, seq_len=seq_len)
+    # --- MÓDOSÍTÁS ITT TÖRTÉNT ---
+    # A tanító adatkészletnél bekapcsoljuk az augmentációt (augment=True)
+    # Ez minden epochban véletlenszerű zajt/torzítást ad a mintákhoz, így a modell
+    # nem tudja "bemagolni" a pontos értékeket -> jobban általánosít.
+    train_ds = FlagDataset(train, csv_dir=data_root, seq_len=seq_len, augment=True)
+
+    # A validációs szettnél SOHA ne használj augmentációt, mert ott a valós teljesítményt mérjük!
+    val_ds = FlagDataset(val, csv_dir=data_root, seq_len=seq_len, augment=False)
+    # -----------------------------
 
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False)
@@ -77,6 +84,16 @@ def train_engine(model, data_package, model_name):
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
+
+    # --- ÚJ RÉSZ: MODELL FELÉPÍTÉSÉNEK LOGOLÁSA ---
+    logger.info(f"\n--- {model_name.upper()} STRUKTÚRA ---")
+    logger.info(str(model))  # Ez írja ki a rétegeket részletesen
+
+    # Kiszámoljuk a paraméterek számát (hogy lássuk, mekkora a modell)
+    total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    logger.info(f"ÖSSZES TANÍTHATÓ PARAMÉTER: {total_params:,}")
+    logger.info("-" * 40)
+    # ----------------------------------------------
 
     weights_tensor = torch.tensor(data_package['weights'], dtype=torch.float).to(device)
     # Itt használhatod a FocalLoss-t is, ha akarod, de hagytam az eredetit a kérés szerint
@@ -153,33 +170,25 @@ if __name__ == "__main__":
     if not os.path.exists(config.OUTPUT_DIR):
         os.makedirs(config.OUTPUT_DIR)
 
-    # Biztosítjuk, hogy a log mappa létezzen (config.LOG_DIR vagy fallback 'logs')
-    log_dir = getattr(config, 'LOG_DIR', 'logs')
-    if not os.path.exists(log_dir):
-        os.makedirs(log_dir)
+    # MÓDOSÍTÁS: Nem generálunk egyedi fájlnevet, hanem a közös run.log-ot használjuk
+    # A utils.py-ban lévő setup_logger alapból a config.LOG_FILE-t veszi.
+    logger = setup_logger()
 
-    # Log fájlnév generálása időbélyeggel
-    current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_filename = os.path.join(log_dir, f"training_run_{current_time}.log")
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    # Logger frissítése, hogy fájlba is írjon
-    # Feltételezi, hogy a utils.py-ban a setup_logger már elfogad log_file paramétert
-    logger = setup_logger(log_file=log_filename)
-
-    # Fejléc és Config mentése a logba
-    logger.info("=" * 40)
+    # Fejléc és Config mentése a logba (Hogy lássuk, mikor indult ez a futás a fájlon belül)
+    logger.info("\n" + "=" * 60)
     logger.info(f"TRÉNING INDÍTÁSA: {current_time}")
-    logger.info(f"Log fájl mentve ide: {log_filename}")
-    logger.info("=" * 40)
+    logger.info(f"Log fájl helye: {config.LOG_FILE}")
+    logger.info("=" * 60)
 
-    logger.info("--- AKTULÁLIS KONFIGURÁCIÓ ---")
+    logger.info("--- AKTUÁLIS KONFIGURÁCIÓ ---")
     for key, value in vars(config).items():
         if not key.startswith('__') and not callable(value):
             logger.info(f"{key}: {value}")
     logger.info("-" * 40)
 
     # 1. MODELL: BASELINE LSTM (Fix paraméterekkel)
-
     logger.info("\n=== 1. BASELINE LSTM INDÍTÁSA ===")
     data_baseline = prepare_data(
         config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,
@@ -190,7 +199,6 @@ if __name__ == "__main__":
         train_engine(model_bl, data_baseline, model_name="baseline_lstm")
 
     # 2. MODELL: HYBRID (CNN-Transformer) (Config paraméterekkel)
-
     logger.info("\n=== 2. HYBRID MODELL INDÍTÁSA ===")
     data_hybrid = prepare_data(
         config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,

@@ -242,7 +242,10 @@ def scan_file(file_path, model, class_names, device):
 # MAIN
 # ==========================================
 if __name__ == "__main__":
-    logger.info("=== 04 - INFERENCE (LETÖLTÉS ÉS KERESÉS) ===")
+    # Logolás kezdete (elválasztó vonallal, hogy lássuk, hol kezdődik az új futtatás)
+    logger.info("\n" + "="*50)
+    logger.info(">>> 04 - INFERENCE FOLYAMAT INDÍTÁSA")
+    logger.info("="*50)
 
     # 1. Osztálynevek betöltése
     classes_path = os.path.join(config.OUTPUT_DIR, 'classes.npy')
@@ -268,7 +271,6 @@ if __name__ == "__main__":
     files = glob.glob(os.path.join(prepared_dir, "*.csv"))
 
     if not files:
-        # Ha esetleg almappába csomagolta ki a ZIP
         files = glob.glob(os.path.join(prepared_dir, "**", "*.csv"), recursive=True)
 
     logger.info(f"Feldolgozandó CSV fájlok száma: {len(files)}")
@@ -277,14 +279,13 @@ if __name__ == "__main__":
 
     # 5. Futtatás
     for i, f in enumerate(files):
-        # macOS rejtett fájlok kiszűrése
         if os.path.basename(f).startswith("._"): continue
 
         print(f"[{i + 1}/{len(files)}] Elemzés: {os.path.basename(f)} ...", end="\r")
         patterns = scan_file(f, model, class_names, device)
         if patterns:
             all_results.extend(patterns)
-            logger.info(f"\n  -> Találat: {len(patterns)} db alakzat.")
+            logger.info(f"  [TALÁLAT] {os.path.basename(f)} -> {len(patterns)} db alakzat.")
 
     # 6. Eredmények mentése
     if all_results:
@@ -294,11 +295,8 @@ if __name__ == "__main__":
         save_path = os.path.join(config.OUTPUT_DIR, 'inference_results.csv')
         res_df.to_csv(save_path, index=False)
 
-        logger.info(f"\n=========================================")
-        logger.info(f"KERESÉS BEFEJEZVE!")
-        logger.info(f"Összes talált alakzat: {len(res_df)}")
-        logger.info(f"Eredmények mentve ide: {save_path}")
-        logger.info(f"=========================================")
-        print(res_df.head(10))
+        logger.info(f"KERESÉS BEFEJEZVE. Összes találat: {len(res_df)}")
+        logger.info(f"Eredmények mentve: {save_path}")
+        print("\n" + str(res_df.head(10)))
     else:
-        logger.info("\nNem találtam alakzatot a megadott bizonyossági szint felett.")
+        logger.info("Nem találtam alakzatot a megadott bizonyossági szint felett.")

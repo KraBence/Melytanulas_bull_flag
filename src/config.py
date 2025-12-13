@@ -31,7 +31,7 @@ DIM_FEEDFORWARD = 256
 TRANSFORMER_LAYERS = 3
 
 
-# Some hardcoded parameters
+##### Some hardcoded parameters ####
 
 BASE_DIR = '/home/bence/PycharmProjects/Melytanulas'
 # LOCAL detektalas
@@ -40,18 +40,20 @@ if LOCAL:
     # --- LOKÁLIS ÚTVONALAK ---
     DATA_ROOT = os.path.join(BASE_DIR, "data")
     OUTPUT_DIR = os.path.join(BASE_DIR, "notebook/output")
-    LOG_DIR = os.path.join(BASE_DIR, "logs")
+    LOG_DIR = os.path.join(BASE_DIR, "log")
 else:
     # --- DOCKER ÚTVONALAK ---
     DATA_ROOT = "/app/data"  # A mountolt volume (külső adat)
     OUTPUT_DIR = "/app/output"  # A konténer belső kimeneti mappája
-    LOG_DIR = "/app/logs"
+    LOG_DIR = "/app/log"
 
 # Mappák létrehozása, ha nem léteznének
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+os.makedirs(LOG_DIR, exist_ok=True)
 MODEL_SAVE_PATH = os.path.join(OUTPUT_DIR, "baseline_lstm_best.pth")
 LABEL_FILE = os.path.join(DATA_ROOT, "ground_truth_labels.csv")
-os.makedirs(LOG_DIR, exist_ok=True)
+LOG_FILE = os.path.join(LOG_DIR, "run.log")
+
 
 
 

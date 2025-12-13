@@ -8,8 +8,7 @@ ENV PYTHONUNBUFFERED=1
 # 2. Munkakönyvtár
 WORKDIR /app
 
-# Rendszer szintű függőségek telepítése (OpenCV-hez kötelező!)
-# JAVÍTÁS: libgl1-mesa-glx -> libgl1
+# Rendszer szintű függőségek telepítése
 RUN apt-get update && apt-get install -y \
     build-essential \
     libgl1 \
@@ -21,17 +20,19 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# 4. Kód másolása (Megtartva a mappaszerkezetet!)
-#COPY ./src ./src
+
+COPY ./src ./src
 COPY ./data ./data
 COPY run.sh run.sh
 
 # Kimeneti mappa
 RUN mkdir -p /app/output
+RUN mkdir -p /app/log
 
-# 5. PYTHONPATH beállítása (Hogy a Python lássa a modulokat az src-ben)
-# JAVÍTÁS: A $PYTHONPATH változót nem használjuk a definícióban, csak felülírjuk/beállítjuk
+
+RUN chmod +x run.sh
+
+
 ENV PYTHONPATH="/app/src"
-
 # 6. Indítás
-CMD ["bash"]
+CMD ["bash", "run.sh"]

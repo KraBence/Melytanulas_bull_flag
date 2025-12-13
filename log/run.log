@@ -1,0 +1,322 @@
+2025-12-13 23:27:15,599 - INFO - 
+============================================================
+2025-12-13 23:27:15,599 - INFO - TRÉNING INDÍTÁSA: 2025-12-13 23:27:15
+2025-12-13 23:27:15,599 - INFO - Log fájl helye: /home/bence/PycharmProjects/Melytanulas/log/run.log
+2025-12-13 23:27:15,599 - INFO - ============================================================
+2025-12-13 23:27:15,599 - INFO - --- AKTUÁLIS KONFIGURÁCIÓ ---
+2025-12-13 23:27:15,599 - INFO - os: <module 'os' (frozen)>
+2025-12-13 23:27:15,599 - INFO - ALLOWED_ASSETS: ['EURUSD', 'XAU']
+2025-12-13 23:27:15,599 - INFO - N_BARS_LOOKBACK: 100
+2025-12-13 23:27:15,599 - INFO - DOWNLOAD_LINK: https://bmeedu-my.sharepoint.com/:u:/g/personal/gyires-toth_balint_vik_bme_hu/IQAlEFc87da4SLpRVTCs81KwAS3DG4Ft8JPtUKQe9vV5eng?download=1
+2025-12-13 23:27:15,599 - INFO - INFERENCE_URL: https://bmeedu-my.sharepoint.com/:x:/g/personal/gyires-toth_balint_vik_bme_hu/IQApaBhxGyYpR7opm3FFwereAeGD_3shTFw_0__izNdEy0M?download=1
+2025-12-13 23:27:15,599 - INFO - EPOCHS: 1000
+2025-12-13 23:27:15,599 - INFO - EARLY_STOPPING_PATIENCE: 25
+2025-12-13 23:27:15,599 - INFO - BATCH_SIZE: 64
+2025-12-13 23:27:15,599 - INFO - SEQUENCE_LENGTH: 100
+2025-12-13 23:27:15,599 - INFO - INPUT_SIZE: 4
+2025-12-13 23:27:15,599 - INFO - LEARNING_RATE: 0.001
+2025-12-13 23:27:15,599 - INFO - CLIP_VALUE: 1.0
+2025-12-13 23:27:15,599 - INFO - DROPOUT: 0.22
+2025-12-13 23:27:15,599 - INFO - HIDDEN_SIZE: 64
+2025-12-13 23:27:15,599 - INFO - NUM_LAYERS: 2
+2025-12-13 23:27:15,599 - INFO - CNN_FILTERS: 64
+2025-12-13 23:27:15,599 - INFO - D_MODEL: 128
+2025-12-13 23:27:15,599 - INFO - N_HEADS: 4
+2025-12-13 23:27:15,599 - INFO - DIM_FEEDFORWARD: 256
+2025-12-13 23:27:15,600 - INFO - TRANSFORMER_LAYERS: 3
+2025-12-13 23:27:15,600 - INFO - BASE_DIR: /home/bence/PycharmProjects/Melytanulas
+2025-12-13 23:27:15,600 - INFO - LOCAL: True
+2025-12-13 23:27:15,600 - INFO - DATA_ROOT: /home/bence/PycharmProjects/Melytanulas/data
+2025-12-13 23:27:15,600 - INFO - OUTPUT_DIR: /home/bence/PycharmProjects/Melytanulas/notebook/output
+2025-12-13 23:27:15,600 - INFO - LOG_DIR: /home/bence/PycharmProjects/Melytanulas/log
+2025-12-13 23:27:15,600 - INFO - MODEL_SAVE_PATH: /home/bence/PycharmProjects/Melytanulas/notebook/output/baseline_lstm_best.pth
+2025-12-13 23:27:15,600 - INFO - LABEL_FILE: /home/bence/PycharmProjects/Melytanulas/data/ground_truth_labels.csv
+2025-12-13 23:27:15,600 - INFO - LOG_FILE: /home/bence/PycharmProjects/Melytanulas/log/run.log
+2025-12-13 23:27:15,600 - INFO - ----------------------------------------
+2025-12-13 23:27:15,600 - INFO - 
+=== 1. BASELINE LSTM INDÍTÁSA ===
+2025-12-13 23:27:15,600 - INFO - 
+[1] DATA PREPARATION (BS=32, SEQ=50)...
+2025-12-13 23:27:15,609 - INFO - 
+[2] TRAINING START: BASELINE_LSTM
+2025-12-13 23:27:15,609 - INFO - 
+--- BASELINE_LSTM STRUKTÚRA ---
+2025-12-13 23:27:15,609 - INFO - BaselineLSTM(
+  (lstm): LSTM(4, 64, num_layers=2, batch_first=True, dropout=0.22, bidirectional=True)
+  (fc): Linear(in_features=128, out_features=6, bias=True)
+)
+2025-12-13 23:27:15,609 - INFO - ÖSSZES TANÍTHATÓ PARAMÉTER: 135,942
+2025-12-13 23:27:15,609 - INFO - ----------------------------------------
+2025-12-13 23:27:21,844 - INFO - baseline_lstm | Ep 1/1000 | L: 1.7882/1.7885 | Acc: 9.3%/9.6%
+2025-12-13 23:27:21,847 - INFO -   -> Saved Best baseline_lstm (Acc: 9.6%)
+2025-12-13 23:27:23,148 - INFO - baseline_lstm | Ep 2/1000 | L: 1.7828/1.7840 | Acc: 9.3%/9.6%
+2025-12-13 23:27:24,451 - INFO - baseline_lstm | Ep 3/1000 | L: 1.7570/1.7814 | Acc: 11.9%/15.7%
+2025-12-13 23:27:24,453 - INFO -   -> Saved Best baseline_lstm (Acc: 15.7%)
+2025-12-13 23:27:25,732 - INFO - baseline_lstm | Ep 4/1000 | L: 1.7225/1.7380 | Acc: 17.4%/14.5%
+2025-12-13 23:27:26,978 - INFO - baseline_lstm | Ep 5/1000 | L: 1.6919/1.7392 | Acc: 16.3%/19.3%
+2025-12-13 23:27:26,988 - INFO -   -> Saved Best baseline_lstm (Acc: 19.3%)
+2025-12-13 23:27:28,226 - INFO - baseline_lstm | Ep 6/1000 | L: 1.6787/1.7490 | Acc: 15.8%/8.4%
+2025-12-13 23:27:29,474 - INFO - baseline_lstm | Ep 7/1000 | L: 1.6466/1.7337 | Acc: 18.7%/16.9%
+2025-12-13 23:27:30,736 - INFO - baseline_lstm | Ep 8/1000 | L: 1.6726/1.7586 | Acc: 20.2%/9.6%
+2025-12-13 23:27:32,011 - INFO - baseline_lstm | Ep 9/1000 | L: 1.6619/1.7018 | Acc: 21.5%/15.7%
+2025-12-13 23:27:33,238 - INFO - baseline_lstm | Ep 10/1000 | L: 1.6574/1.7134 | Acc: 22.3%/22.9%
+2025-12-13 23:27:33,240 - INFO -   -> Saved Best baseline_lstm (Acc: 22.9%)
+2025-12-13 23:27:34,505 - INFO - baseline_lstm | Ep 11/1000 | L: 1.7047/1.7362 | Acc: 21.2%/19.3%
+2025-12-13 23:27:35,774 - INFO - baseline_lstm | Ep 12/1000 | L: 1.7025/1.7220 | Acc: 23.1%/20.5%
+2025-12-13 23:27:37,044 - INFO - baseline_lstm | Ep 13/1000 | L: 1.7302/1.7462 | Acc: 23.1%/18.1%
+2025-12-13 23:27:38,279 - INFO - baseline_lstm | Ep 14/1000 | L: 1.6419/1.7084 | Acc: 20.7%/24.1%
+2025-12-13 23:27:38,281 - INFO -   -> Saved Best baseline_lstm (Acc: 24.1%)
+2025-12-13 23:27:39,546 - INFO - baseline_lstm | Ep 15/1000 | L: 1.6354/1.6906 | Acc: 24.9%/24.1%
+2025-12-13 23:27:40,804 - INFO - baseline_lstm | Ep 16/1000 | L: 1.6531/1.7012 | Acc: 25.9%/22.9%
+2025-12-13 23:27:42,054 - INFO - baseline_lstm | Ep 17/1000 | L: 1.6249/1.6976 | Acc: 26.2%/26.5%
+2025-12-13 23:27:42,063 - INFO -   -> Saved Best baseline_lstm (Acc: 26.5%)
+2025-12-13 23:27:43,299 - INFO - baseline_lstm | Ep 18/1000 | L: 1.6374/1.7090 | Acc: 28.5%/25.3%
+2025-12-13 23:27:44,546 - INFO - baseline_lstm | Ep 19/1000 | L: 1.5743/1.6986 | Acc: 27.7%/26.5%
+2025-12-13 23:27:45,816 - INFO - baseline_lstm | Ep 20/1000 | L: 1.5697/1.7298 | Acc: 28.2%/21.7%
+2025-12-13 23:27:47,064 - INFO - baseline_lstm | Ep 21/1000 | L: 1.5742/1.7214 | Acc: 26.9%/21.7%
+2025-12-13 23:27:48,295 - INFO - baseline_lstm | Ep 22/1000 | L: 1.6327/1.6954 | Acc: 28.5%/25.3%
+2025-12-13 23:27:49,557 - INFO - baseline_lstm | Ep 23/1000 | L: 1.5464/1.6902 | Acc: 29.0%/24.1%
+2025-12-13 23:27:50,843 - INFO - baseline_lstm | Ep 24/1000 | L: 1.5968/1.6846 | Acc: 31.1%/28.9%
+2025-12-13 23:27:50,844 - INFO -   -> Saved Best baseline_lstm (Acc: 28.9%)
+2025-12-13 23:27:52,100 - INFO - baseline_lstm | Ep 25/1000 | L: 1.6258/1.6968 | Acc: 31.3%/28.9%
+2025-12-13 23:27:53,343 - INFO - baseline_lstm | Ep 26/1000 | L: 1.5555/1.6535 | Acc: 30.1%/28.9%
+2025-12-13 23:27:54,596 - INFO - baseline_lstm | Ep 27/1000 | L: 1.5490/1.7082 | Acc: 28.5%/24.1%
+2025-12-13 23:27:55,864 - INFO - baseline_lstm | Ep 28/1000 | L: 1.6060/1.6678 | Acc: 30.1%/26.5%
+2025-12-13 23:27:57,167 - INFO - baseline_lstm | Ep 29/1000 | L: 1.6216/1.6708 | Acc: 28.5%/26.5%
+2025-12-13 23:27:58,489 - INFO - baseline_lstm | Ep 30/1000 | L: 1.5617/1.6558 | Acc: 30.3%/27.7%
+2025-12-13 23:27:59,865 - INFO - baseline_lstm | Ep 31/1000 | L: 1.5715/1.6501 | Acc: 27.7%/26.5%
+2025-12-13 23:28:01,201 - INFO - baseline_lstm | Ep 32/1000 | L: 1.5943/1.6642 | Acc: 27.2%/24.1%
+2025-12-13 23:28:02,568 - INFO - baseline_lstm | Ep 33/1000 | L: 1.5618/1.6340 | Acc: 27.7%/31.3%
+2025-12-13 23:28:02,569 - INFO -   -> Saved Best baseline_lstm (Acc: 31.3%)
+2025-12-13 23:28:03,890 - INFO - baseline_lstm | Ep 34/1000 | L: 1.5844/1.6838 | Acc: 27.2%/19.3%
+2025-12-13 23:28:05,218 - INFO - baseline_lstm | Ep 35/1000 | L: 1.5476/1.6416 | Acc: 29.5%/27.7%
+2025-12-13 23:28:06,572 - INFO - baseline_lstm | Ep 36/1000 | L: 1.5234/1.6428 | Acc: 28.5%/25.3%
+2025-12-13 23:28:07,886 - INFO - baseline_lstm | Ep 37/1000 | L: 1.5243/1.6659 | Acc: 31.1%/27.7%
+2025-12-13 23:28:09,207 - INFO - baseline_lstm | Ep 38/1000 | L: 1.5039/1.6184 | Acc: 30.6%/30.1%
+2025-12-13 23:28:10,530 - INFO - baseline_lstm | Ep 39/1000 | L: 1.5378/1.6854 | Acc: 30.1%/18.1%
+2025-12-13 23:28:11,942 - INFO - baseline_lstm | Ep 40/1000 | L: 1.4704/1.6209 | Acc: 32.9%/28.9%
+2025-12-13 23:28:13,258 - INFO - baseline_lstm | Ep 41/1000 | L: 1.5171/1.6576 | Acc: 31.3%/27.7%
+2025-12-13 23:28:14,587 - INFO - baseline_lstm | Ep 42/1000 | L: 1.5659/1.6456 | Acc: 32.4%/28.9%
+2025-12-13 23:28:15,890 - INFO - baseline_lstm | Ep 43/1000 | L: 1.5272/1.6696 | Acc: 30.3%/25.3%
+2025-12-13 23:28:17,206 - INFO - baseline_lstm | Ep 44/1000 | L: 1.4881/1.6393 | Acc: 29.8%/24.1%
+2025-12-13 23:28:18,463 - INFO - baseline_lstm | Ep 45/1000 | L: 1.4420/1.6039 | Acc: 32.4%/26.5%
+2025-12-13 23:28:19,754 - INFO - baseline_lstm | Ep 46/1000 | L: 1.4382/1.6276 | Acc: 31.9%/24.1%
+2025-12-13 23:28:21,010 - INFO - baseline_lstm | Ep 47/1000 | L: 1.5546/1.6120 | Acc: 34.2%/25.3%
+2025-12-13 23:28:22,305 - INFO - baseline_lstm | Ep 48/1000 | L: 1.4222/1.6078 | Acc: 34.5%/26.5%
+2025-12-13 23:28:23,550 - INFO - baseline_lstm | Ep 49/1000 | L: 1.4348/1.5795 | Acc: 35.0%/27.7%
+2025-12-13 23:28:24,808 - INFO - baseline_lstm | Ep 50/1000 | L: 1.4192/1.5872 | Acc: 33.2%/27.7%
+2025-12-13 23:28:26,057 - INFO - baseline_lstm | Ep 51/1000 | L: 1.4108/1.6204 | Acc: 35.0%/27.7%
+2025-12-13 23:28:27,355 - INFO - baseline_lstm | Ep 52/1000 | L: 1.4444/1.6278 | Acc: 34.7%/24.1%
+2025-12-13 23:28:28,632 - INFO - baseline_lstm | Ep 53/1000 | L: 1.4567/1.5919 | Acc: 33.2%/24.1%
+2025-12-13 23:28:29,904 - INFO - baseline_lstm | Ep 54/1000 | L: 1.4179/1.5849 | Acc: 32.1%/26.5%
+2025-12-13 23:28:31,172 - INFO - baseline_lstm | Ep 55/1000 | L: 1.4051/1.5986 | Acc: 32.9%/26.5%
+2025-12-13 23:28:32,485 - INFO - baseline_lstm | Ep 56/1000 | L: 1.3848/1.6013 | Acc: 34.2%/25.3%
+2025-12-13 23:28:33,738 - INFO - baseline_lstm | Ep 57/1000 | L: 1.4097/1.6079 | Acc: 32.1%/22.9%
+2025-12-13 23:28:34,995 - INFO - baseline_lstm | Ep 58/1000 | L: 1.3991/1.5884 | Acc: 34.2%/25.3%
+2025-12-13 23:28:36,240 - INFO - baseline_lstm | Ep 59/1000 | L: 1.3942/1.6167 | Acc: 33.9%/21.7%
+2025-12-13 23:28:37,535 - INFO - baseline_lstm | Ep 60/1000 | L: 1.3547/1.5945 | Acc: 34.2%/25.3%
+2025-12-13 23:28:38,786 - INFO - baseline_lstm | Ep 61/1000 | L: 1.3839/1.5856 | Acc: 34.7%/22.9%
+2025-12-13 23:28:40,060 - INFO - baseline_lstm | Ep 62/1000 | L: 1.3682/1.5827 | Acc: 36.8%/21.7%
+2025-12-13 23:28:41,319 - INFO - baseline_lstm | Ep 63/1000 | L: 1.3571/1.5903 | Acc: 37.0%/21.7%
+2025-12-13 23:28:42,622 - INFO - baseline_lstm | Ep 64/1000 | L: 1.3975/1.5778 | Acc: 35.8%/21.7%
+2025-12-13 23:28:43,881 - INFO - baseline_lstm | Ep 65/1000 | L: 1.3730/1.5756 | Acc: 37.0%/22.9%
+2025-12-13 23:28:45,148 - INFO - baseline_lstm | Ep 66/1000 | L: 1.3415/1.5769 | Acc: 36.5%/22.9%
+2025-12-13 23:28:46,404 - INFO - baseline_lstm | Ep 67/1000 | L: 1.4208/1.5821 | Acc: 36.3%/22.9%
+2025-12-13 23:28:47,689 - INFO - baseline_lstm | Ep 68/1000 | L: 1.4221/1.5821 | Acc: 35.0%/24.1%
+2025-12-13 23:28:48,944 - INFO - baseline_lstm | Ep 69/1000 | L: 1.4525/1.5566 | Acc: 35.2%/22.9%
+2025-12-13 23:28:50,251 - INFO - baseline_lstm | Ep 70/1000 | L: 1.3332/1.5624 | Acc: 36.8%/24.1%
+2025-12-13 23:28:51,515 - INFO - baseline_lstm | Ep 71/1000 | L: 1.3618/1.5678 | Acc: 36.8%/25.3%
+2025-12-13 23:28:52,785 - INFO - baseline_lstm | Ep 72/1000 | L: 1.4078/1.5582 | Acc: 35.8%/22.9%
+2025-12-13 23:28:54,038 - INFO - baseline_lstm | Ep 73/1000 | L: 1.3307/1.5729 | Acc: 36.3%/25.3%
+2025-12-13 23:28:55,291 - INFO - baseline_lstm | Ep 74/1000 | L: 1.3548/1.5688 | Acc: 36.5%/22.9%
+2025-12-13 23:28:56,569 - INFO - baseline_lstm | Ep 75/1000 | L: 1.3623/1.5560 | Acc: 37.6%/25.3%
+2025-12-13 23:28:57,836 - INFO - baseline_lstm | Ep 76/1000 | L: 1.3513/1.5567 | Acc: 35.8%/24.1%
+2025-12-13 23:28:59,110 - INFO - baseline_lstm | Ep 77/1000 | L: 1.4215/1.5782 | Acc: 35.0%/21.7%
+2025-12-13 23:29:00,362 - INFO - baseline_lstm | Ep 78/1000 | L: 1.4257/1.5769 | Acc: 35.5%/22.9%
+2025-12-13 23:29:01,628 - INFO - baseline_lstm | Ep 79/1000 | L: 1.3538/1.5817 | Acc: 35.8%/22.9%
+2025-12-13 23:29:02,901 - INFO - baseline_lstm | Ep 80/1000 | L: 1.3334/1.5903 | Acc: 36.8%/21.7%
+2025-12-13 23:29:04,240 - INFO - baseline_lstm | Ep 81/1000 | L: 1.3273/1.5965 | Acc: 36.0%/22.9%
+2025-12-13 23:29:05,538 - INFO - baseline_lstm | Ep 82/1000 | L: 1.3878/1.5898 | Acc: 37.0%/22.9%
+2025-12-13 23:29:06,836 - INFO - baseline_lstm | Ep 83/1000 | L: 1.3576/1.5755 | Acc: 36.8%/25.3%
+2025-12-13 23:29:08,100 - INFO - baseline_lstm | Ep 84/1000 | L: 1.3435/1.5733 | Acc: 37.0%/25.3%
+2025-12-13 23:29:09,425 - INFO - baseline_lstm | Ep 85/1000 | L: 1.4235/1.5762 | Acc: 38.6%/22.9%
+2025-12-13 23:29:10,757 - INFO - baseline_lstm | Ep 86/1000 | L: 1.3351/1.5660 | Acc: 37.0%/25.3%
+2025-12-13 23:29:12,070 - INFO - baseline_lstm | Ep 87/1000 | L: 1.3500/1.5699 | Acc: 37.8%/24.1%
+2025-12-13 23:29:13,340 - INFO - baseline_lstm | Ep 88/1000 | L: 1.3439/1.5695 | Acc: 38.1%/24.1%
+2025-12-13 23:29:14,640 - INFO - baseline_lstm | Ep 89/1000 | L: 1.3459/1.5742 | Acc: 37.8%/25.3%
+2025-12-13 23:29:15,911 - INFO - baseline_lstm | Ep 90/1000 | L: 1.4011/1.5773 | Acc: 37.0%/24.1%
+2025-12-13 23:29:17,244 - INFO - baseline_lstm | Ep 91/1000 | L: 1.3162/1.5825 | Acc: 37.3%/24.1%
+2025-12-13 23:29:18,568 - INFO - baseline_lstm | Ep 92/1000 | L: 1.3246/1.5876 | Acc: 38.6%/20.5%
+2025-12-13 23:29:19,881 - INFO - baseline_lstm | Ep 93/1000 | L: 1.3627/1.5871 | Acc: 35.5%/20.5%
+2025-12-13 23:29:21,156 - INFO - baseline_lstm | Ep 94/1000 | L: 1.3851/1.5851 | Acc: 37.0%/20.5%
+2025-12-13 23:29:22,501 - INFO - baseline_lstm | Ep 95/1000 | L: 1.3176/1.5836 | Acc: 38.3%/24.1%
+2025-12-13 23:29:23,790 - INFO - baseline_lstm | Ep 96/1000 | L: 1.3297/1.5822 | Acc: 38.3%/24.1%
+2025-12-13 23:29:25,076 - INFO - baseline_lstm | Ep 97/1000 | L: 1.3170/1.5807 | Acc: 37.3%/24.1%
+2025-12-13 23:29:26,336 - INFO - baseline_lstm | Ep 98/1000 | L: 1.3464/1.5804 | Acc: 37.0%/24.1%
+2025-12-13 23:29:27,646 - INFO - baseline_lstm | Ep 99/1000 | L: 1.3699/1.5801 | Acc: 38.1%/24.1%
+2025-12-13 23:29:28,939 - INFO - baseline_lstm | Ep 100/1000 | L: 1.3352/1.5805 | Acc: 38.9%/24.1%
+2025-12-13 23:29:28,939 - INFO - [STOP] Early Stopping: baseline_lstm
+2025-12-13 23:29:28,940 - INFO - 
+=== 2. HYBRID MODELL INDÍTÁSA ===
+2025-12-13 23:29:28,940 - INFO - 
+[1] DATA PREPARATION (BS=64, SEQ=100)...
+2025-12-13 23:29:28,954 - INFO - 
+[2] TRAINING START: HYBRID_MODEL
+2025-12-13 23:29:28,954 - INFO - 
+--- HYBRID_MODEL STRUKTÚRA ---
+2025-12-13 23:29:28,955 - INFO - HybridModel(
+  (cnn): Sequential(
+    (0): Conv1d(4, 64, kernel_size=(3,), stride=(1,), padding=(1,))
+    (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): MaxPool1d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(1,))
+    (5): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+  )
+  (pos_encoder): PositionalEncoding()
+  (transformer_encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0-2): 3 x TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+        )
+        (linear1): Linear(in_features=128, out_features=256, bias=True)
+        (dropout): Dropout(p=0.22, inplace=False)
+        (linear2): Linear(in_features=256, out_features=128, bias=True)
+        (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.22, inplace=False)
+        (dropout2): Dropout(p=0.22, inplace=False)
+      )
+    )
+  )
+  (fc): Sequential(
+    (0): Linear(in_features=128, out_features=64, bias=True)
+    (1): GELU(approximate='none')
+    (2): Dropout(p=0.22, inplace=False)
+    (3): Linear(in_features=64, out_features=6, bias=True)
+  )
+)
+2025-12-13 23:29:28,955 - INFO - ÖSSZES TANÍTHATÓ PARAMÉTER: 432,006
+2025-12-13 23:29:28,955 - INFO - ----------------------------------------
+2025-12-13 23:29:35,512 - INFO - hybrid_model | Ep 1/1000 | L: 1.7959/1.8721 | Acc: 24.9%/14.5%
+2025-12-13 23:29:35,518 - INFO -   -> Saved Best hybrid_model (Acc: 14.5%)
+2025-12-13 23:29:37,728 - INFO - hybrid_model | Ep 2/1000 | L: 1.7902/1.7235 | Acc: 23.6%/12.0%
+2025-12-13 23:29:39,942 - INFO - hybrid_model | Ep 3/1000 | L: 1.5981/1.7366 | Acc: 23.6%/15.7%
+2025-12-13 23:29:39,956 - INFO -   -> Saved Best hybrid_model (Acc: 15.7%)
+2025-12-13 23:29:42,149 - INFO - hybrid_model | Ep 4/1000 | L: 1.4727/1.6200 | Acc: 32.6%/19.3%
+2025-12-13 23:29:42,155 - INFO -   -> Saved Best hybrid_model (Acc: 19.3%)
+2025-12-13 23:29:44,271 - INFO - hybrid_model | Ep 5/1000 | L: 1.3891/1.7046 | Acc: 38.3%/16.9%
+2025-12-13 23:29:46,346 - INFO - hybrid_model | Ep 6/1000 | L: 1.3258/1.6105 | Acc: 35.8%/20.5%
+2025-12-13 23:29:46,361 - INFO -   -> Saved Best hybrid_model (Acc: 20.5%)
+2025-12-13 23:29:48,427 - INFO - hybrid_model | Ep 7/1000 | L: 1.2285/1.5502 | Acc: 36.8%/27.7%
+2025-12-13 23:29:48,441 - INFO -   -> Saved Best hybrid_model (Acc: 27.7%)
+2025-12-13 23:29:50,577 - INFO - hybrid_model | Ep 8/1000 | L: 1.2545/1.6282 | Acc: 38.1%/33.7%
+2025-12-13 23:29:50,591 - INFO -   -> Saved Best hybrid_model (Acc: 33.7%)
+2025-12-13 23:29:52,657 - INFO - hybrid_model | Ep 9/1000 | L: 1.3325/1.5733 | Acc: 41.2%/26.5%
+2025-12-13 23:29:54,769 - INFO - hybrid_model | Ep 10/1000 | L: 1.2662/1.6865 | Acc: 44.3%/37.3%
+2025-12-13 23:29:54,783 - INFO -   -> Saved Best hybrid_model (Acc: 37.3%)
+2025-12-13 23:29:56,749 - INFO - hybrid_model | Ep 11/1000 | L: 1.0227/1.7132 | Acc: 48.7%/26.5%
+2025-12-13 23:29:58,692 - INFO - hybrid_model | Ep 12/1000 | L: 1.1587/1.6506 | Acc: 46.9%/26.5%
+2025-12-13 23:30:00,728 - INFO - hybrid_model | Ep 13/1000 | L: 1.1525/1.9294 | Acc: 47.4%/33.7%
+2025-12-13 23:30:02,689 - INFO - hybrid_model | Ep 14/1000 | L: 0.9263/1.7642 | Acc: 56.2%/31.3%
+2025-12-13 23:30:04,670 - INFO - hybrid_model | Ep 15/1000 | L: 0.9943/1.8657 | Acc: 54.7%/38.6%
+2025-12-13 23:30:04,684 - INFO -   -> Saved Best hybrid_model (Acc: 38.6%)
+2025-12-13 23:30:06,643 - INFO - hybrid_model | Ep 16/1000 | L: 0.8944/2.0043 | Acc: 53.6%/31.3%
+2025-12-13 23:30:08,571 - INFO - hybrid_model | Ep 17/1000 | L: 0.8155/2.1047 | Acc: 59.1%/38.6%
+2025-12-13 23:30:10,553 - INFO - hybrid_model | Ep 18/1000 | L: 0.8547/1.8112 | Acc: 54.7%/34.9%
+2025-12-13 23:30:12,506 - INFO - hybrid_model | Ep 19/1000 | L: 0.7416/2.1780 | Acc: 57.8%/33.7%
+2025-12-13 23:30:14,491 - INFO - hybrid_model | Ep 20/1000 | L: 1.1139/1.9965 | Acc: 63.7%/32.5%
+2025-12-13 23:30:16,505 - INFO - hybrid_model | Ep 21/1000 | L: 0.6840/2.0886 | Acc: 61.9%/37.3%
+2025-12-13 23:30:18,508 - INFO - hybrid_model | Ep 22/1000 | L: 0.8086/1.9632 | Acc: 63.5%/32.5%
+2025-12-13 23:30:20,492 - INFO - hybrid_model | Ep 23/1000 | L: 0.7173/2.0741 | Acc: 64.0%/37.3%
+2025-12-13 23:30:22,525 - INFO - hybrid_model | Ep 24/1000 | L: 0.5822/2.2899 | Acc: 69.9%/36.1%
+2025-12-13 23:30:24,475 - INFO - hybrid_model | Ep 25/1000 | L: 0.7150/2.3420 | Acc: 66.1%/37.3%
+2025-12-13 23:30:26,437 - INFO - hybrid_model | Ep 26/1000 | L: 0.6422/2.3183 | Acc: 67.9%/38.6%
+2025-12-13 23:30:28,384 - INFO - hybrid_model | Ep 27/1000 | L: 0.6586/2.3124 | Acc: 69.7%/38.6%
+2025-12-13 23:30:30,347 - INFO - hybrid_model | Ep 28/1000 | L: 0.6044/2.4225 | Acc: 67.6%/37.3%
+2025-12-13 23:30:32,492 - INFO - hybrid_model | Ep 29/1000 | L: 0.6931/2.4143 | Acc: 72.5%/38.6%
+2025-12-13 23:30:34,710 - INFO - hybrid_model | Ep 30/1000 | L: 0.5561/2.4067 | Acc: 69.2%/37.3%
+2025-12-13 23:30:36,837 - INFO - hybrid_model | Ep 31/1000 | L: 0.8278/2.4488 | Acc: 69.2%/36.1%
+2025-12-13 23:30:38,798 - INFO - hybrid_model | Ep 32/1000 | L: 0.5826/2.4156 | Acc: 68.4%/39.8%
+2025-12-13 23:30:38,812 - INFO -   -> Saved Best hybrid_model (Acc: 39.8%)
+2025-12-13 23:30:38,812 - INFO - [STOP] Early Stopping: hybrid_model
+2025-12-13 23:31:02,586 - INFO - 
+============================================================
+2025-12-13 23:31:02,586 - INFO - KIÉRTÉKELÉS INDÍTÁSA: 2025-12-13 23:31:02
+2025-12-13 23:31:02,586 - INFO - Log fájl helye: /home/bence/PycharmProjects/Melytanulas/log/run.log
+2025-12-13 23:31:02,586 - INFO - ============================================================
+2025-12-13 23:31:02,586 - INFO - 
+--- BASELINE_LSTM KIÉRTÉKELÉSE ---
+2025-12-13 23:31:02,591 - INFO - Test Set: 83 minta
+2025-12-13 23:31:05,332 - INFO - 
+EREDMÉNYEK: baseline_lstm
+2025-12-13 23:31:05,337 - INFO - 
+                 precision    recall  f1-score   support
+
+ Bearish Normal       0.53      0.36      0.43        22
+Bearish Pennant       0.11      0.33      0.17         6
+  Bearish Wedge       0.28      0.56      0.37         9
+ Bullish Normal       0.00      0.00      0.00        26
+Bullish Pennant       0.16      0.50      0.24         8
+  Bullish Wedge       0.00      0.00      0.00        12
+
+       accuracy                           0.23        83
+      macro avg       0.18      0.29      0.20        83
+   weighted avg       0.19      0.23      0.19        83
+
+2025-12-13 23:31:05,343 - INFO - 
+CONFUSION MATRIX:
+                 Bearish Normal  Bearish Pennant  Bearish Wedge  Bullish Normal  Bullish Pennant  Bullish Wedge
+Bearish Normal                8                4              7               0                3              0
+Bearish Pennant               0                2              3               0                0              1
+Bearish Wedge                 0                1              5               0                1              2
+Bullish Normal                4                7              3               0               10              2
+Bullish Pennant               1                1              0               1                4              1
+Bullish Wedge                 2                3              0               0                7              0
+2025-12-13 23:31:05,344 - INFO - 
+--- HYBRID_MODEL KIÉRTÉKELÉSE ---
+2025-12-13 23:31:05,348 - INFO - Test Set: 83 minta
+2025-12-13 23:31:08,038 - INFO - 
+EREDMÉNYEK: hybrid_model
+2025-12-13 23:31:08,043 - INFO - 
+                 precision    recall  f1-score   support
+
+ Bearish Normal       0.50      0.32      0.39        22
+Bearish Pennant       0.18      0.33      0.24         6
+  Bearish Wedge       0.31      0.56      0.40         9
+ Bullish Normal       0.73      0.31      0.43        26
+Bullish Pennant       0.31      0.62      0.42         8
+  Bullish Wedge       0.27      0.33      0.30        12
+
+       accuracy                           0.37        83
+      macro avg       0.38      0.41      0.36        83
+   weighted avg       0.48      0.37      0.38        83
+
+2025-12-13 23:31:08,045 - INFO - 
+CONFUSION MATRIX:
+                 Bearish Normal  Bearish Pennant  Bearish Wedge  Bullish Normal  Bullish Pennant  Bullish Wedge
+Bearish Normal                7                4              8               0                3              0
+Bearish Pennant               1                2              3               0                0              0
+Bearish Wedge                 2                2              5               0                0              0
+Bullish Normal                2                1              0               8                5             10
+Bullish Pennant               1                0              0               1                5              1
+Bullish Wedge                 1                2              0               2                3              4
+2025-12-13 23:31:27,420 - INFO - 
+==================================================
+2025-12-13 23:31:27,421 - INFO - >>> 04 - INFERENCE FOLYAMAT INDÍTÁSA
+2025-12-13 23:31:27,421 - INFO - ==================================================
+2025-12-13 23:31:27,421 - INFO - Osztályok: ['Bearish Normal' 'Bearish Pennant' 'Bearish Wedge' 'Bullish Normal'
+ 'Bullish Pennant' 'Bullish Wedge']
+2025-12-13 23:31:27,421 - INFO - Modell betöltése: HYBRID...
+2025-12-13 23:31:27,436 - INFO - Letöltés indítása innen: https://bmeedu-my.sharepoint.com/:x:/g/personal/gyires-toth_balint_vik_bme_hu/IQApaBhxGyYpR7opm3FFwereAeGD_3shTFw_0__izNdEy0M?download=1
+2025-12-13 23:31:27,914 - INFO - Letöltés kész! Méret: 0.14 MB
+2025-12-13 23:31:27,914 - INFO - Próba: ZIP kicsomagolása...
+2025-12-13 23:31:27,914 - INFO - A fájl nem ZIP. Átnevezés CSV-re...
+2025-12-13 23:31:27,914 - INFO - Fájl mentve: /home/bence/PycharmProjects/Melytanulas/data/inference_downloads/downloaded_inference.csv
+2025-12-13 23:31:27,915 - INFO - Feldolgozandó CSV fájlok száma: 1
+2025-12-13 23:31:27,915 - INFO - Fájl elemzése: downloaded_inference.csv
+2025-12-13 23:31:28,545 - INFO -   [TALÁLAT] downloaded_inference.csv -> 412 db alakzat.
+2025-12-13 23:31:28,548 - INFO - KERESÉS BEFEJEZVE. Összes találat: 412
+2025-12-13 23:31:28,548 - INFO - Eredmények mentve: /home/bence/PycharmProjects/Melytanulas/notebook/output/inference_results.csv

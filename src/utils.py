@@ -15,8 +15,12 @@ import config
 # ==========================================
 def setup_logger(name=__name__, log_file=None):
     """
-    Ha log_file meg van adva, akkor fájlba is ír.
+    Ha log_file NINCS megadva, akkor a config.LOG_FILE-t használja.
     """
+    # Ha nem adtunk meg fájlt, használjuk a közös run.log-ot
+    if log_file is None:
+        log_file = config.LOG_FILE
+
     logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
 
@@ -32,12 +36,13 @@ def setup_logger(name=__name__, log_file=None):
     console_handler.setFormatter(formatter)
     logger.addHandler(console_handler)
 
-    # 2. Fájlba írás (FileHandler) - HA kértük
+    # 2. Fájlba írás (FileHandler)
     if log_file:
         # Biztosítjuk, hogy a mappa létezik
         os.makedirs(os.path.dirname(log_file), exist_ok=True)
 
-        file_handler = logging.FileHandler(log_file, mode='w', encoding='utf-8')
+        # 'a' mód = append (hozzáfűzés), nem törli a régit!
+        file_handler = logging.FileHandler(log_file, mode='a', encoding='utf-8')
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)
 

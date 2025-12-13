@@ -51,9 +51,9 @@ Ensure that `src/utils.py` is used to configure the logger so that output is dir
 Before submitting your project, ensure you have completed the following steps.
 **Please note that the submission can only be accepted if these minimum requirements are met.**
 
-- [ ] **Project Information**: Filled out the "Project Information" section (Topic, Name, Extra Credit).
+- [x] **Project Information**: Filled out the "Project Information" section (Topic, Name, Extra Credit).
 - [ ] **Solution Description**: Provided a clear description of your solution, model, and methodology.
-- [ ] **Extra Credit**: If aiming for +1 mark, filled out the justification section.
+- [x] **Extra Credit**: If aiming for +1 mark, filled out the justification section.
 - [ ] **Data Preparation**: Included a script or precise description for data preparation.
 - [ ] **Dependencies**: Updated `requirements.txt` with all necessary packages and specific versions.
 - [ ] **Configuration**: Used `src/config.py` for hyperparameters and paths, contains at least the number of epochs configuration variable.
@@ -73,7 +73,7 @@ Before submitting your project, ensure you have completed the following steps.
 
 ### Project Information
 
-- **Selected Topic**: [Enter Topic Name Here, options: Bull-flag detector
+- **Selected Topic**: Bull-flag detector
 - **Student Name**: Kránitz Bence
 - **Aiming for +1 Mark**: No
 

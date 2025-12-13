@@ -111,26 +111,18 @@ def evaluate_single_model(model_name, ModelClass, input_size, seq_len, batch_siz
 
 if __name__ == "__main__":
     # --- LOGOLÁS BEÁLLÍTÁSA ---
-    # Biztosítjuk, hogy a log mappa létezzen
-    log_dir = getattr(config, 'LOG_DIR', 'logs')
-    if not os.path.exists(log_dir):
-        os.makedirs(log_dir)
+    # Nem generálunk egyedi fájlnevet, a utils.py megoldja a közös run.log-ot
+    logger = setup_logger()
 
-    # Log fájlnév generálása időbélyeggel
-    current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_filename = os.path.join(log_dir, f"evaluation_run_{current_time}.log")
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    # Logger frissítése, hogy fájlba is írjon
-    logger = setup_logger(log_file=log_filename)
-
-    # Fejléc logolása
-    logger.info("=" * 40)
+    # Fejléc logolása (hogy látszódjon mikor indult ez a futás)
+    logger.info("\n" + "=" * 60)
     logger.info(f"KIÉRTÉKELÉS INDÍTÁSA: {current_time}")
-    logger.info(f"Log fájl mentve ide: {log_filename}")
-    logger.info("=" * 40)
+    logger.info(f"Log fájl helye: {config.LOG_FILE}")
+    logger.info("=" * 60)
 
     # 1. BASELINE LSTM KIÉRTÉKELÉS
-
     evaluate_single_model(
         model_name="baseline_lstm",
         ModelClass=BaselineLSTM,
@@ -140,7 +132,6 @@ if __name__ == "__main__":
     )
 
     # 2. HYBRID MODEL KIÉRTÉKELÉS
-
     evaluate_single_model(
         model_name="hybrid_model",
         ModelClass=HybridModel,
