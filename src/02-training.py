@@ -26,17 +26,14 @@ except ImportError:
 
 logger = setup_logger()
 
-# ==========================================
+
 # FIX BASELINE PARAMÉTEREK
-# ==========================================
 BASELINE_BATCH_SIZE = 32
 BASELINE_SEQ_LEN = 50
 BASELINE_INPUT_SIZE = 4
 
 
-# ==========================================
 # FÜGGVÉNYEK
-# ==========================================
 
 def prepare_data(label_path, data_root, output_dir, batch_size, seq_len):
     """Adatok betöltése és előkészítése."""
@@ -157,17 +154,13 @@ def train_engine(model, data_package, model_name):
                 break
 
 
-# ==========================================
-# MAIN - ITT VÁLASZD KI MIT AKARSZ FUTTATNI
-# ==========================================
+
 if __name__ == "__main__":
     if not os.path.exists(config.OUTPUT_DIR):
         os.makedirs(config.OUTPUT_DIR)
 
-    # ---------------------------------------------------------
     # 1. MODELL: BASELINE LSTM (Fix paraméterekkel)
-    # ---------------------------------------------------------
-    # Ha nem akarod futtatni, kommenteld ki ezt a blokkot:
+
     logger.info("\n=== 1. BASELINE LSTM INDÍTÁSA ===")
     data_baseline = prepare_data(
         config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,
@@ -177,10 +170,9 @@ if __name__ == "__main__":
         model_bl = BaselineLSTM(input_size=BASELINE_INPUT_SIZE, num_classes=data_baseline['num_classes'])
         train_engine(model_bl, data_baseline, model_name="baseline_lstm")
 
-    # ---------------------------------------------------------
+
     # 2. MODELL: HYBRID (CNN-Transformer) (Config paraméterekkel)
-    # ---------------------------------------------------------
-    # Ha nem akarod futtatni, kommenteld ki ezt a blokkot:
+
     logger.info("\n=== 2. HYBRID MODELL INDÍTÁSA ===")
     data_hybrid = prepare_data(
         config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,

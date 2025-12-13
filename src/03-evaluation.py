@@ -98,10 +98,8 @@ def evaluate_single_model(model_name, ModelClass, input_size, seq_len, batch_siz
 
 
 if __name__ == "__main__":
-    # ==========================================
     # 1. BASELINE LSTM KIÉRTÉKELÉS
-    # ==========================================
-    # Fix paraméterekkel (32, 50, 4)
+
     evaluate_single_model(
         model_name="baseline_lstm",
         ModelClass=BaselineLSTM,
@@ -110,10 +108,9 @@ if __name__ == "__main__":
         batch_size=32
     )
 
-    # ==========================================
+
     # 2. HYBRID MODEL KIÉRTÉKELÉS
-    # ==========================================
-    # Config paraméterekkel
+
     evaluate_single_model(
         model_name="hybrid_model",
         ModelClass=HybridModel,

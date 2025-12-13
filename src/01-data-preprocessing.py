@@ -16,12 +16,11 @@ logger = setup_logger()
 # --- CONFIGURATION ---
 N_BARS_LOOKBACK = config.N_BARS_LOOKBACK
 ALLOWED_ASSETS = config.ALLOWED_ASSETS
+DATA_ROOT = config.DATA_ROOT
 
 OUTPUT_DIR = DATA_ROOT
 
-# ==========================================
 # 0. DATA DOWNLOADER
-# ==========================================
 def download_and_setup_data(url=config.DOWNLOAD_LINK, output_dir=DATA_ROOT):
     """
     Downloads the ZIP file from the specified URL and extracts it to the target directory.

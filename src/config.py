@@ -39,7 +39,7 @@ EARLY_STOPPING_PATIENCE = 20
 # --- HIPERPARAMÉTEREK ---
 
 # ==============================
-# 1. KÖZÖS PARAMÉTEREK (Mindig kellenek)
+# 1. KÖZÖS PARAMÉTEREK
 # ==============================
 BATCH_SIZE = 32
 SEQUENCE_LENGTH = 50
