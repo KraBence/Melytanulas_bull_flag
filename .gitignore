@@ -85,7 +85,12 @@ venv.bak/
 *.hdf5
 *.sqlite
 *.db
+
+# Log files - ADDED
 *.log
+logs/
+log/
+
 
 # Model files
 *.pth
