@@ -1,4 +1,4 @@
-# BULL FLAG DETECTOR PROJECT by Kránitz Bence
+# BULL FLAG DETECTOR PROJECT
 As an Applied Mathematics student, my experience has focused on data science projects in Jupyter notebooks. This is my first project at this scale and my initial venture into Docker. **The models were trained on CPU, so they are intentionally designed for efficiency rather than maximum complexity.**
 
 
@@ -123,3 +123,20 @@ The repository is structured as follows:
     - `Dockerfile`: Configuration file for building the Docker image with the necessary environment and dependencies.
     - `requirements.txt`: List of Python dependencies required for the project.
     - `README.md`: Project documentation and instructions.
+
+### 🔮 Inference Input Configuration
+
+The inference pipeline (`src/04-inference.py`) requires a **direct download link** to a CSV file (or a ZIP containing CSVs) specified in `src/config.py` via the `INFERENCE_URL` variable.
+
+**⚠️ Important:** The link must trigger an immediate download. "Preview" or "View" links (HTML pages) will cause errors.
+
+**Supported Link Formats:**
+* **Direct Server Link:** `https://example.com/data/market_data.csv`
+* **Google Drive (Direct):** Must use the export format:
+    * `https://drive.google.com/uc?export=download&id=YOUR_FILE_ID`
+* **SharePoint/OneDrive:** Must append the download query:
+    * `https://.../sharepoint.com/.../file?download=1`
+
+**❌ Do NOT use:**
+* Folder view links (e.g., Google Drive folder view).
+* HTML Preview links (e.g., `drive.google.com/file/d/.../view`).

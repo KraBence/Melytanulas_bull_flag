@@ -7,6 +7,7 @@ N_BARS_LOOKBACK = 100 #for flag poles standardisation
 DOWNLOAD_LINK = "https://bmeedu-my.sharepoint.com/:u:/g/personal/gyires-toth_balint_vik_bme_hu/IQAlEFc87da4SLpRVTCs81KwAS3DG4Ft8JPtUKQe9vV5eng?download=1"
 INFERENCE_URL = "https://bmeedu-my.sharepoint.com/:x:/g/personal/gyires-toth_balint_vik_bme_hu/IQApaBhxGyYpR7opm3FFwereAeGD_3shTFw_0__izNdEy0M?download=1"
 
+
 # --- HIPERPARAMÉTEREK ---
 
 # 1. KÖZÖS PARAMÉTEREK
