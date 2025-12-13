@@ -1,50 +1,8 @@
 # BULL FLAG DETECTOR PROJECT by Kránitz Bence
-I am an Applied Mathematics student, so I have never used docker and also did not create this "caliber" of a project (only used jupyter notebook for data science projects). Hope that the code runs well and won't raise an error.
-**Also I used my notebook to train these models so they won't be that complex because I only have a CPU.**
-
+As an Applied Mathematics student, my experience has focused on data science projects in Jupyter notebooks. This is my first project at this scale and my initial venture into Docker. **The models were trained on CPU, so they are intentionally designed for efficiency rather than maximum complexity.**
 
 
 ## Submission Instructions
-
-[Delete this entire section after reading and following the instructions.]
-
-### Project Levels
-
-**Basic Level (for signature)**
-*   Containerization
-*   Data acquisition and analysis
-*   Data preparation
-*   Baseline (reference) model
-*   Model development
-*   Basic evaluation
-
-
-### Data Preparation
-
-**Important:** You must provide a script (or at least a precise description) of how to convert the raw database into a format that can be processed by the scripts.
-* The scripts should ideally download the data from there or process it directly from the current sharepoint location.
-* Or if you do partly manual preparation, then it is recommended to upload the prepared data format to a shared folder and access from there.
-
-[Describe the data preparation process here]
-I downloaded the data manually. First I merged all the csv files into one for each asset. Then I also merged the .json files into one big 'ground_truth_labels.csv' which contains each label and all informations that are needed (e.g. the original name of the .json file, original path, new name). I standardised the names of the files (e.g. EURUSD_15MIN_001, ... into basic merged_EURUSD_15min).
-Then I investigated the distribution and number of labels and I observed, that the EURUSD and XAUUSD assets are the most common, so I decided to only use those in the model training.
-For baseline model I used a simple LSTM model. 
-For the final model I choose a CNN transformer model. I also used data augmentation, because of the imbalance in the training set the model simply learned to choose either bullish or bearish normal. With data augmentation the accuracy became better, also the recall for the other labels became nonzero.
-
-
-### Logging Requirements
-
-The training process must produce a log file that captures the following essential information for grading:
-
-1.  **Configuration**: Print the hyperparameters used (e.g., number of epochs, batch size, learning rate).
-2.  **Data Processing**: Confirm successful data loading and preprocessing steps.
-3.  **Model Architecture**: A summary of the model structure with the number of parameters (trainable and non-trainable).
-4.  **Training Progress**: Log the loss and accuracy (or other relevant metrics) for each epoch.
-5.  **Validation**: Log validation metrics at the end of each epoch or at specified intervals.
-6.  **Final Evaluation**: Result of the evaluation on the test set (e.g., final accuracy, MAE, F1-score, confusion matrix).
-
-The log file must be uploaded to `log/run.log` to the repository. The logs must be easy to understand and self explanatory. 
-Ensure that `src/utils.py` is used to configure the logger so that output is directed to stdout (which Docker captures).
 
 ### Submission Checklist
 
@@ -52,14 +10,14 @@ Before submitting your project, ensure you have completed the following steps.
 **Please note that the submission can only be accepted if these minimum requirements are met.**
 
 - [x] **Project Information**: Filled out the "Project Information" section (Topic, Name, Extra Credit).
-- [ ] **Solution Description**: Provided a clear description of your solution, model, and methodology.
+- [x] **Solution Description**: Provided a clear description of your solution, model, and methodology.
 - [x] **Extra Credit**: If aiming for +1 mark, filled out the justification section.
-- [ ] **Data Preparation**: Included a script or precise description for data preparation.
-- [ ] **Dependencies**: Updated `requirements.txt` with all necessary packages and specific versions.
-- [ ] **Configuration**: Used `src/config.py` for hyperparameters and paths, contains at least the number of epochs configuration variable.
-- [ ] **Logging**:
-    - [ ] Log uploaded to `log/run.log`
-    - [ ] Log contains: Hyperparameters, Data preparation and loading confirmation, Model architecture, Training metrics (loss/acc per epoch), Validation metrics, Final evaluation results, Inference results.
+- [x] **Data Preparation**: Included a script or precise description for data preparation.
+- [x] **Dependencies**: Updated `requirements.txt` with all necessary packages and specific versions.
+- [x] **Configuration**: Used `src/config.py` for hyperparameters and paths, contains at least the number of epochs configuration variable.
+- [x] **Logging**:
+    - [x] Log uploaded to `log/run.log`
+    - [x] Log contains: Hyperparameters, Data preparation and loading confirmation, Model architecture, Training metrics (loss/acc per epoch), Validation metrics, Final evaluation results, Inference results.
 - [ ] **Docker**:
     - [ ] `Dockerfile` is adapted to your project needs.
     - [ ] Image builds successfully (`docker build -t dl-project .`).
@@ -79,12 +37,38 @@ Before submitting your project, ensure you have completed the following steps.
 
 ### Solution Description
 
-[Provide a short textual description of the solution here. Explain the problem, the model architecture chosen, the training methodology, and the results.]
+This project addresses the challenge of automating technical analysis in financial markets, specifically the detection of complex chart patterns such as Bullish and Bearish Flags, Pennants, and Wedges. Manual identification of these patterns is subjective, time-consuming, and difficult to scale across multiple assets like EURUSD and Gold (XAU).
 
-### Extra Credit Justification
+To solve this, we developed a **Hybrid Deep Learning Model** that integrates **1D Convolutional Neural Networks (CNN)** with **Transformer Encoders**. The CNN layers are designed to extract local geometric features (e.g., sharp price spikes and consolidation shapes), while the Transformer component utilizes Multi-Head Attention to capture long-range temporal dependencies within the time series. We also implemented a Baseline Bidirectional LSTM and an Ensemble model for performance benchmarking.
 
-[If you selected "Yes" for Aiming for +1 Mark, describe here which specific part of your work (e.g., innovative model architecture, extensive experimentation, exceptional performance) you believe deserves an extra mark.]
+#### 1. Data Pipeline & Preprocessing
+The workflow begins with an automated data ingestion process. The system downloads raw historical market data (CSV format) directly from a secure shared drive.
+* **Filtering:** The pipeline strictly filters the dataset to retain only high-priority assets: **EURUSD** (Forex) and **XAU** (Gold).
+* **Labeling:** A "Ground Truth" generation algorithm identifies consolidation zones preceded by strong trends ("poles"), labeling them as specific patterns (e.g., Bullish Flag).
+* **Formatting:** The continuous time series data is transformed into fixed-size sliding window sequences (Length: 100) and normalized via MinMax scaling.
 
+#### 2. Model Architectures
+We developed and evaluated three distinct model architectures to solve this classification task:
+* **Baseline Model (Bidirectional LSTM):** A standard Recurrent Neural Network serving as a benchmark.
+* **Hybrid Model (CNN + Transformer):** The primary solution. This architecture combines CNNs for local feature extraction with Transformer Encoders to capture global context and long-range dependencies.
+* **Ensemble Model:** A fusion architecture combining feature vectors from both LSTM and Hybrid branches.
+
+#### 3. Hyperparameter Optimization
+Extensive experiments were conducted (documented in `notebook/Tests.ipynb` and in deleted notebooks that can be found in history) to tune critical hyperparameters, including learning rate, batch size, CNN filter sizes, and Transformer attention heads. The configuration in `config.py` represents the optimal set derived from these tests.
+
+#### 4. Results & Analysis
+Evaluation was performed on a hold-out test set comprising 83 samples. The results highlight the complexity of the task and the impact of data quality:
+
+* **Quantitative Results:** The **Hybrid Model** achieved an overall accuracy of **37%** with a weighted F1-score of **0.38**. While these numbers appear low, a deeper look at the metrics reveals promising behaviors:
+    * **Directional Stability:** The model shows high precision in identifying the primary trend. For example, **Bullish Normal** patterns achieved a precision of **73%**.
+    * **Trend vs. Shape:** The Confusion Matrix reveals that the model rarely confuses market directions (e.g., it rarely predicts a Bearish class for a Bullish input). The errors are concentrated within the *sub-classes* (e.g., misclassifying a "Bullish Normal" as a "Bullish Wedge"). Specifically, 10 instances of "Bullish Normal" were predicted as "Bullish Wedge," indicating that the model perceives the trend correctly but struggles to distinguish the subtle geometric differences defined in the labels.
+
+* **Challenges & Limitations:**
+    The performance is heavily constrained by data inherent issues rather than model capacity:
+    * **Noisy Ground Truth:** The "Ground Truth" labels are generated algorithmically and are statistically noisy. Financial patterns are subjective; the distinction between a "Normal Flag" and a "Wedge" is often ambiguous even for human experts. This ambiguity prevents the model from learning sharp decision boundaries between shapes.
+    * **Class Imbalance:** The dataset is highly unbalanced. As seen in the support metrics, "Normal" patterns (Support: 22-26) are far more frequent than specific shapes like "Pennants" (Support: 6-8). Although Focal Loss was implemented, the extreme scarcity of minority classes makes it difficult for the model to generalize on types like the *Bearish Pennant*.
+
+* **Inference:** To mitigate the low raw accuracy, the final inference engine utilizes a strict confidence threshold (>80%). This filter suppresses uncertain predictions (where the model confuses the shape) and ensures that the system only alerts the user when it detects a high-probability pattern.
 ### Docker Instructions
 
 This project is containerized using Docker. Follow the instructions below to build and run the solution.
@@ -130,6 +114,7 @@ The repository is structured as follows:
 - **`notebook/`**: Contains Jupyter notebooks for analysis and experimentation.
     - `01-data-exploration.ipynb`: Notebook for initial exploratory data analysis (EDA) and visualization.
     - `02-label-analysis.ipynb`: Notebook for analyzing the distribution and properties of the target labels.
+    - `03-hyperparameter-tuning.ipynb`: Notebook for tuning the hyperparameters and investigating the model architectures
 
 - **`log/`**: Contains log files.
     - `run.log`: Example log file showing the output of a successful training run.

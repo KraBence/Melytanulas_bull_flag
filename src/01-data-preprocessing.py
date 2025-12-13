@@ -5,6 +5,7 @@ import glob
 import re
 import requests
 import zipfile
+from datetime import datetime
 import config
 from utils import setup_logger
 
@@ -378,10 +379,24 @@ def cleanup_data_folder(data_dir, kept_files_map):
 # MAIN EXECUTION
 # ==========================================
 if __name__ == "__main__":
+    # --- LOGOLÁS FEJLÉC ---
+    # Mivel a utils.py-ban a setup_logger() már be van állítva a config.LOG_FILE-ra,
+    # itt csak egy elválasztót írunk, hogy lássuk a logban, mikor indult ez a script.
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    logger.info("\n" + "=" * 60)
+    logger.info(f"ADAT ELŐKÉSZÍTÉS (PREPROCESSING) INDÍTÁSA: {current_time}")
+    logger.info(f"Log fájl helye: {config.LOG_FILE}")
+    logger.info("=" * 60)
+
+    # 1. Letöltés és kicsomagolás
     download_and_setup_data()
+
+    # 2. CSV tisztítás és mentés
     kept_files_map = process_and_save_csvs(DATA_ROOT, OUTPUT_DIR)
 
     if kept_files_map:
+        # 3. Címkék feldolgozása (Ground Truth)
         df_final = process_labels(DATA_ROOT, OUTPUT_DIR, kept_files_map)
 
         out_file = os.path.join(OUTPUT_DIR, "ground_truth_labels.csv")
@@ -389,9 +404,17 @@ if __name__ == "__main__":
 
         logger.info(f"\n[DONE] Ground Truth generated: {len(df_final)} rows.")
         if not df_final.empty:
-            logger.info(str(df_final[['label', 'trend_label']].head()))
+            # Pandas beállítások a szebb logoláshoz
+            pd.set_option('display.max_columns', None)
+            pd.set_option('display.width', 1000)
+            logger.info("\n" + str(df_final[['label', 'trend_label']].head()))
 
+        # 4. Takarítás
         cleanup_data_folder(DATA_ROOT, kept_files_map)
+
+        logger.info("=" * 60)
+        logger.info("ADAT ELŐKÉSZÍTÉS BEFEJEZVE.")
+        logger.info("=" * 60)
 
     else:
         logger.error("ERROR: No relevant files (XAU/EURUSD) could be processed.")
