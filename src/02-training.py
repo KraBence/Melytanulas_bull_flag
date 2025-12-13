@@ -10,19 +10,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.utils.class_weight import compute_class_weight
 
-# Útvonal beállítása
-project_root = os.path.abspath(os.path.join(os.getcwd(), '..'))
-src_path = os.path.join(project_root, 'src')
-if src_path not in sys.path:
-    sys.path.insert(0, src_path)
-
-# Importok
-try:
-    import config
-    from utils import setup_logger, FlagDataset, BaselineLSTM, HybridModel
-except ImportError:
-    import config
-    from utils import setup_logger, FlagDataset, BaselineLSTM, HybridModel
+import config
+from utils import setup_logger, FlagDataset, BaselineLSTM, HybridModel, EnsembleModel, FocalLoss
 
 logger = setup_logger()
 
@@ -161,23 +150,42 @@ if __name__ == "__main__":
 
     # 1. MODELL: BASELINE LSTM (Fix paraméterekkel)
 
-    logger.info("\n=== 1. BASELINE LSTM INDÍTÁSA ===")
-    data_baseline = prepare_data(
-        config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,
-        batch_size=BASELINE_BATCH_SIZE, seq_len=BASELINE_SEQ_LEN
-    )
-    if data_baseline:
-        model_bl = BaselineLSTM(input_size=BASELINE_INPUT_SIZE, num_classes=data_baseline['num_classes'])
-        train_engine(model_bl, data_baseline, model_name="baseline_lstm")
+    # logger.info("\n=== 1. BASELINE LSTM INDÍTÁSA ===")
+    # data_baseline = prepare_data(
+    #     config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,
+    #     batch_size=BASELINE_BATCH_SIZE, seq_len=BASELINE_SEQ_LEN
+    # )
+    # if data_baseline:
+    #     model_bl = BaselineLSTM(input_size=BASELINE_INPUT_SIZE, num_classes=data_baseline['num_classes'])
+    #     train_engine(model_bl, data_baseline, model_name="baseline_lstm")
 
 
     # 2. MODELL: HYBRID (CNN-Transformer) (Config paraméterekkel)
 
-    logger.info("\n=== 2. HYBRID MODELL INDÍTÁSA ===")
-    data_hybrid = prepare_data(
+    # logger.info("\n=== 2. HYBRID MODELL INDÍTÁSA ===")
+    # data_hybrid = prepare_data(
+    #     config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,
+    #     batch_size=config.BATCH_SIZE, seq_len=config.SEQUENCE_LENGTH
+    # )
+    # if data_hybrid:
+    #     model_hybrid = HybridModel(input_size=config.INPUT_SIZE, num_classes=data_hybrid['num_classes'])
+    #     train_engine(model_hybrid, data_hybrid, model_name="hybrid_model")
+
+    # 3. MODELL: ENSEMBLE
+    logger.info("\n=== 3. ENSEMBLE MODEL (LSTM + HYBRID) INDÍTÁSA ===")
+
+    # Adatok betöltése
+    data_ens = prepare_data(
         config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,
         batch_size=config.BATCH_SIZE, seq_len=config.SEQUENCE_LENGTH
     )
-    if data_hybrid:
-        model_hybrid = HybridModel(input_size=config.INPUT_SIZE, num_classes=data_hybrid['num_classes'])
-        train_engine(model_hybrid, data_hybrid, model_name="hybrid_model")
+
+    if data_ens:
+        # Ensemble inicializálás
+        model_ens = EnsembleModel(
+            input_size=config.INPUT_SIZE,
+            num_classes=data_ens['num_classes']
+        )
+
+        # Tanítás indítása
+        train_engine(model_ens, data_ens, model_name="ensemble_model")

@@ -10,6 +10,9 @@ from torch.utils.data import Dataset
 import config
 
 
+# ==========================================
+# 1. LOGGER SETUP
+# ==========================================
 def setup_logger(name=__name__):
     logger = logging.getLogger(name)
     if not logger.handlers:
@@ -21,6 +24,9 @@ def setup_logger(name=__name__):
     return logger
 
 
+# ==========================================
+# 2. DATASET CLASS
+# ==========================================
 class FlagDataset(Dataset):
     def __init__(self, metadata, csv_dir=config.OUTPUT_DIR, seq_len=config.SEQUENCE_LENGTH, augment=False):
         self.metadata = metadata
@@ -35,7 +41,7 @@ class FlagDataset(Dataset):
     def __getitem__(self, idx):
         row = self.metadata.iloc[idx]
 
-        # JAVÍTÁS: A helyes oszlopnév 'clean_csv_filename'
+        # JAVÍTÁS: clean_csv_filename használata
         csv_filename = row['clean_csv_filename']
         csv_path = os.path.join(self.csv_dir, csv_filename)
 
@@ -83,11 +89,15 @@ class FlagDataset(Dataset):
             return self._get_dummy()
 
     def _get_dummy(self):
+        # Ha a seq_len változik (tuning közben), akkor dinamikusan kell kezelni,
+        # de itt alapvetően a configot használjuk fallbacknek.
+        # A __getitem__-ben a resize úgyis megoldja a méretet.
         return torch.zeros((self.seq_len, config.INPUT_SIZE)), torch.tensor(0, dtype=torch.long)
 
 
-# --- MODELLEK ---
-
+# ==========================================
+# 3. BASELINE MODEL (LSTM)
+# ==========================================
 class BaselineLSTM(nn.Module):
     def __init__(self, input_size, num_classes):
         super(BaselineLSTM, self).__init__()
@@ -108,6 +118,9 @@ class BaselineLSTM(nn.Module):
         return logits
 
 
+# ==========================================
+# 4. HYBRID MODELL (CNN + Transformer)
+# ==========================================
 class PositionalEncoding(nn.Module):
     def __init__(self, d_model, max_len=5000):
         super().__init__()
@@ -124,22 +137,40 @@ class PositionalEncoding(nn.Module):
 
 
 class HybridModel(nn.Module):
-    def __init__(self, input_size, num_classes):
+    def __init__(self, input_size, num_classes,
+                 # Opcionális paraméterek (Hyperopt-hoz)
+                 d_model=None, nhead=None, num_layers=None, dim_feedforward=None,
+                 dropout=None, cnn_filters=None):
         super(HybridModel, self).__init__()
+
+        # Ha nincs megadva, használja a configot
+        D_MODEL = d_model if d_model else config.D_MODEL
+        CNN_FILTERS = cnn_filters if cnn_filters else config.CNN_FILTERS
+        N_HEADS = nhead if nhead else config.N_HEADS
+        DIM_FF = dim_feedforward if dim_feedforward else config.DIM_FEEDFORWARD
+        LAYERS = num_layers if num_layers else config.TRANSFORMER_LAYERS
+        DROP = dropout if dropout else config.DROPOUT
+
         self.cnn = nn.Sequential(
-            nn.Conv1d(input_size, config.CNN_FILTERS, kernel_size=3, padding=1),
-            nn.BatchNorm1d(config.CNN_FILTERS), nn.ReLU(), nn.MaxPool1d(2),
-            nn.Conv1d(config.CNN_FILTERS, config.D_MODEL, kernel_size=3, padding=1),
-            nn.BatchNorm1d(config.D_MODEL), nn.ReLU()
+            nn.Conv1d(input_size, CNN_FILTERS, kernel_size=3, padding=1),
+            nn.BatchNorm1d(CNN_FILTERS), nn.ReLU(), nn.MaxPool1d(2),
+            nn.Conv1d(CNN_FILTERS, D_MODEL, kernel_size=3, padding=1),
+            nn.BatchNorm1d(D_MODEL), nn.ReLU()
         )
-        self.pos_encoder = PositionalEncoding(config.D_MODEL, max_len=config.SEQUENCE_LENGTH)
+
+        # Max len 5000 elég nagy tartaléknak
+        self.pos_encoder = PositionalEncoding(D_MODEL, max_len=5000)
+
         encoder_layer = nn.TransformerEncoderLayer(
-            d_model=config.D_MODEL, nhead=config.N_HEADS, dim_feedforward=config.DIM_FEEDFORWARD,
-            dropout=config.DROPOUT, batch_first=True, norm_first=True
+            d_model=D_MODEL, nhead=N_HEADS, dim_feedforward=DIM_FF,
+            dropout=DROP, batch_first=True, norm_first=True
         )
-        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=config.TRANSFORMER_LAYERS)
+        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=LAYERS)
+
         self.fc = nn.Sequential(
-            nn.Linear(config.D_MODEL, 64), nn.ReLU(), nn.Dropout(config.DROPOUT),
+            nn.Linear(D_MODEL, 64),
+            nn.GELU(),
+            nn.Dropout(DROP),
             nn.Linear(64, num_classes)
         )
 
@@ -151,4 +182,108 @@ class HybridModel(nn.Module):
         x = self.transformer_encoder(x)
         x = x.mean(dim=1)
         logits = self.fc(x)
+        return logits
+
+
+# ==========================================
+# 5. FOCAL LOSS (EZ HIÁNYZOTT!)
+# ==========================================
+class FocalLoss(nn.Module):
+    def __init__(self, alpha=None, gamma=2.0, reduction='mean'):
+        super(FocalLoss, self).__init__()
+        self.alpha = alpha
+        self.gamma = gamma
+        self.reduction = reduction
+
+    def forward(self, inputs, targets):
+        ce_loss = F.cross_entropy(inputs, targets, reduction='none', weight=self.alpha)
+        pt = torch.exp(-ce_loss)
+        focal_loss = ((1 - pt) ** self.gamma) * ce_loss
+
+        if self.reduction == 'mean':
+            return focal_loss.mean()
+        elif self.reduction == 'sum':
+            return focal_loss.sum()
+        else:
+            return focal_loss
+
+
+# ... (Előző kódok: Imports, Logger, Dataset, Baseline, Hybrid, FocalLoss ...)
+
+# ==========================================
+# 6. ENSEMBLE MODEL (LSTM + CNN-Transformer)
+# ==========================================
+class EnsembleModel(nn.Module):
+    def __init__(self, input_size, num_classes):
+        super(EnsembleModel, self).__init__()
+
+        # --- ÁG 1: LSTM (Szekvenciális logika) ---
+        # Ugyanaz a struktúra, mint a Baseline-nál, de FC réteg nélkül
+        self.lstm = nn.LSTM(
+            input_size=input_size,
+            hidden_size=config.HIDDEN_SIZE,
+            num_layers=config.NUM_LAYERS,
+            batch_first=True,
+            dropout=config.DROPOUT if config.NUM_LAYERS > 1 else 0,
+            bidirectional=True
+        )
+        # Az LSTM kimeneti mérete: Hidden * 2 (bidirectional)
+        self.lstm_out_dim = config.HIDDEN_SIZE * 2
+
+        # --- ÁG 2: HYBRID (Strukturális logika) ---
+        # Ugyanaz a CNN+Transformer struktúra, mint a Hybridnél, FC réteg nélkül
+        self.cnn = nn.Sequential(
+            nn.Conv1d(input_size, config.CNN_FILTERS, kernel_size=3, padding=1),
+            nn.BatchNorm1d(config.CNN_FILTERS), nn.ReLU(), nn.MaxPool1d(2),
+            nn.Conv1d(config.CNN_FILTERS, config.D_MODEL, kernel_size=3, padding=1),
+            nn.BatchNorm1d(config.D_MODEL), nn.ReLU()
+        )
+        self.pos_encoder = PositionalEncoding(config.D_MODEL, max_len=5000)
+        encoder_layer = nn.TransformerEncoderLayer(
+            d_model=config.D_MODEL, nhead=config.N_HEADS, dim_feedforward=config.DIM_FEEDFORWARD,
+            dropout=config.DROPOUT, batch_first=True, norm_first=True
+        )
+        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=config.TRANSFORMER_LAYERS)
+        # A Hybrid kimeneti mérete: D_MODEL
+        self.hybrid_out_dim = config.D_MODEL
+
+        # --- FUSION (Összefűzés) ---
+        # A bemenet mérete a két ág összege
+        combined_dim = self.lstm_out_dim + self.hybrid_out_dim
+
+        self.fusion_head = nn.Sequential(
+            nn.Linear(combined_dim, 128),
+            nn.BatchNorm1d(128),
+            nn.ReLU(),
+            nn.Dropout(config.DROPOUT),
+            nn.Linear(128, num_classes)
+        )
+
+    def forward(self, x):
+        # --- 1. LSTM ÁG FUTTATÁSA ---
+        # x: [Batch, Seq, Feat]
+        lstm_out, _ = self.lstm(x)
+        # Csak az utolsó lépést vesszük ki: [Batch, Hidden*2]
+        lstm_feat = lstm_out[:, -1, :]
+
+        # --- 2. HYBRID ÁG FUTTATÁSA ---
+        # CNN-nek forgatni kell: [Batch, Feat, Seq]
+        cnn_in = x.permute(0, 2, 1)
+        cnn_out = self.cnn(cnn_in)
+
+        # Transformernek vissza: [Batch, Seq, D_Model]
+        trans_in = cnn_out.permute(0, 2, 1)
+        trans_in = self.pos_encoder(trans_in)
+        trans_out = self.transformer_encoder(trans_in)
+
+        # Átlagolás (GAP): [Batch, D_Model]
+        hybrid_feat = trans_out.mean(dim=1)
+
+        # --- 3. ÖSSZEFŰZÉS (CONCATENATION) ---
+        # [Batch, Hidden*2 + D_Model]
+        combined = torch.cat((lstm_feat, hybrid_feat), dim=1)
+
+        # --- 4. DÖNTÉS ---
+        logits = self.fusion_head(combined)
+
         return logits

@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
 import config
-from utils import setup_logger, FlagDataset, BaselineLSTM, HybridModel
+from utils import setup_logger, FlagDataset, BaselineLSTM, HybridModel, EnsembleModel
 
 logger = setup_logger()
 
@@ -114,6 +114,15 @@ if __name__ == "__main__":
     evaluate_single_model(
         model_name="hybrid_model",
         ModelClass=HybridModel,
+        input_size=config.INPUT_SIZE,
+        seq_len=config.SEQUENCE_LENGTH,
+        batch_size=config.BATCH_SIZE
+    )
+
+    # 3. ENSEMBLE MODEL KIÉRTÉKELÉS
+    evaluate_single_model(
+        model_name="ensemble_model",
+        ModelClass=EnsembleModel,
         input_size=config.INPUT_SIZE,
         seq_len=config.SEQUENCE_LENGTH,
         batch_size=config.BATCH_SIZE

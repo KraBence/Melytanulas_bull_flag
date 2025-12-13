@@ -3,8 +3,6 @@ import json
 import pandas as pd
 import glob
 import re
-import numpy as np
-import shutil
 import requests
 import zipfile
 import config
