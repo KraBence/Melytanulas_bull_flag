@@ -13,14 +13,34 @@ import config
 # ==========================================
 # 1. LOGGER SETUP
 # ==========================================
-def setup_logger(name=__name__):
+def setup_logger(name=__name__, log_file=None):
+    """
+    Ha log_file meg van adva, akkor fájlba is ír.
+    """
     logger = logging.getLogger(name)
-    if not logger.handlers:
-        logger.setLevel(logging.INFO)
-        handler = logging.StreamHandler(sys.stdout)
-        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-        handler.setFormatter(formatter)
-        logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
+
+    # Töröljük a korábbi handlereket, hogy ne duplázódjon az írás
+    if logger.hasHandlers():
+        logger.handlers.clear()
+
+    # Formátum: Idő - Szint - Üzenet
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+
+    # 1. Konzolos kiírás (StreamHandler)
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setFormatter(formatter)
+    logger.addHandler(console_handler)
+
+    # 2. Fájlba írás (FileHandler) - HA kértük
+    if log_file:
+        # Biztosítjuk, hogy a mappa létezik
+        os.makedirs(os.path.dirname(log_file), exist_ok=True)
+
+        file_handler = logging.FileHandler(log_file, mode='w', encoding='utf-8')
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+
     return logger
 
 

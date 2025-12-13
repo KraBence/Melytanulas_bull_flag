@@ -5,11 +5,15 @@ import torch
 from torch.utils.data import DataLoader
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, confusion_matrix
+import warnings
+from datetime import datetime
 
+warnings.filterwarnings("ignore", category=UserWarning)
 import config
 from utils import setup_logger, FlagDataset, BaselineLSTM, HybridModel, EnsembleModel
 
+# Kezdeti logger (később felülírjuk fájlba írással a main-ben)
 logger = setup_logger()
 
 
@@ -91,13 +95,40 @@ def evaluate_single_model(model_name, ModelClass, input_size, seq_len, batch_siz
             all_preds.extend(predicted.cpu().numpy())
             all_targets.extend(y.cpu().numpy())
 
-    # 4. Report
+    # 4. Report & Confusion Matrix
     logger.info(f"\nEREDMÉNYEK: {model_name}")
     report = classification_report(all_targets, all_preds, target_names=class_names, zero_division=0)
     logger.info("\n" + report)
 
+    # --- CONFUSION MATRIX KIÍRÁSA ---
+    cm = confusion_matrix(all_targets, all_preds)
+    # DataFrame-be rakjuk, hogy látszódjanak az osztálynevek a logban
+    cm_df = pd.DataFrame(cm, index=class_names, columns=class_names)
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.width', 1000)
+    logger.info("\nCONFUSION MATRIX:\n" + str(cm_df))
+
 
 if __name__ == "__main__":
+    # --- LOGOLÁS BEÁLLÍTÁSA ---
+    # Biztosítjuk, hogy a log mappa létezzen
+    log_dir = getattr(config, 'LOG_DIR', 'logs')
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+
+    # Log fájlnév generálása időbélyeggel
+    current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
+    log_filename = os.path.join(log_dir, f"evaluation_run_{current_time}.log")
+
+    # Logger frissítése, hogy fájlba is írjon
+    logger = setup_logger(log_file=log_filename)
+
+    # Fejléc logolása
+    logger.info("=" * 40)
+    logger.info(f"KIÉRTÉKELÉS INDÍTÁSA: {current_time}")
+    logger.info(f"Log fájl mentve ide: {log_filename}")
+    logger.info("=" * 40)
+
     # 1. BASELINE LSTM KIÉRTÉKELÉS
 
     evaluate_single_model(
@@ -107,7 +138,6 @@ if __name__ == "__main__":
         seq_len=50,
         batch_size=32
     )
-
 
     # 2. HYBRID MODEL KIÉRTÉKELÉS
 
@@ -120,10 +150,10 @@ if __name__ == "__main__":
     )
 
     # 3. ENSEMBLE MODEL KIÉRTÉKELÉS
-    evaluate_single_model(
-        model_name="ensemble_model",
-        ModelClass=EnsembleModel,
-        input_size=config.INPUT_SIZE,
-        seq_len=config.SEQUENCE_LENGTH,
-        batch_size=config.BATCH_SIZE
-    )
+    # evaluate_single_model(
+    #     model_name="ensemble_model",
+    #     ModelClass=EnsembleModel,
+    #     input_size=config.INPUT_SIZE,
+    #     seq_len=config.SEQUENCE_LENGTH,
+    #     batch_size=config.BATCH_SIZE
+    # )

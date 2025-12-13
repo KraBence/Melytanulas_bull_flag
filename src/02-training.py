@@ -1,4 +1,3 @@
-import sys
 import os
 import pandas as pd
 import numpy as np
@@ -9,12 +8,16 @@ from torch.utils.data import DataLoader
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.utils.class_weight import compute_class_weight
+from datetime import datetime
+import warnings
+
+warnings.filterwarnings("ignore", category=UserWarning)
 
 import config
 from utils import setup_logger, FlagDataset, BaselineLSTM, HybridModel, EnsembleModel, FocalLoss
 
+# Kezdeti logger (később felülírjuk fájlba írással)
 logger = setup_logger()
-
 
 # FIX BASELINE PARAMÉTEREK
 BASELINE_BATCH_SIZE = 32
@@ -76,7 +79,9 @@ def train_engine(model, data_package, model_name):
     model = model.to(device)
 
     weights_tensor = torch.tensor(data_package['weights'], dtype=torch.float).to(device)
+    # Itt használhatod a FocalLoss-t is, ha akarod, de hagytam az eredetit a kérés szerint
     criterion = nn.CrossEntropyLoss(weight=weights_tensor)
+
     optimizer = optim.Adam(model.parameters(), lr=config.LEARNING_RATE)
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=5)
 
@@ -143,49 +148,73 @@ def train_engine(model, data_package, model_name):
                 break
 
 
-
 if __name__ == "__main__":
+    # 1. KÖNYVTÁRAK ÉS LOGOLÁS ELŐKÉSZÍTÉSE
     if not os.path.exists(config.OUTPUT_DIR):
         os.makedirs(config.OUTPUT_DIR)
 
+    # Biztosítjuk, hogy a log mappa létezzen (config.LOG_DIR vagy fallback 'logs')
+    log_dir = getattr(config, 'LOG_DIR', 'logs')
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+
+    # Log fájlnév generálása időbélyeggel
+    current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
+    log_filename = os.path.join(log_dir, f"training_run_{current_time}.log")
+
+    # Logger frissítése, hogy fájlba is írjon
+    # Feltételezi, hogy a utils.py-ban a setup_logger már elfogad log_file paramétert
+    logger = setup_logger(log_file=log_filename)
+
+    # Fejléc és Config mentése a logba
+    logger.info("=" * 40)
+    logger.info(f"TRÉNING INDÍTÁSA: {current_time}")
+    logger.info(f"Log fájl mentve ide: {log_filename}")
+    logger.info("=" * 40)
+
+    logger.info("--- AKTULÁLIS KONFIGURÁCIÓ ---")
+    for key, value in vars(config).items():
+        if not key.startswith('__') and not callable(value):
+            logger.info(f"{key}: {value}")
+    logger.info("-" * 40)
+
     # 1. MODELL: BASELINE LSTM (Fix paraméterekkel)
 
-    # logger.info("\n=== 1. BASELINE LSTM INDÍTÁSA ===")
-    # data_baseline = prepare_data(
-    #     config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,
-    #     batch_size=BASELINE_BATCH_SIZE, seq_len=BASELINE_SEQ_LEN
-    # )
-    # if data_baseline:
-    #     model_bl = BaselineLSTM(input_size=BASELINE_INPUT_SIZE, num_classes=data_baseline['num_classes'])
-    #     train_engine(model_bl, data_baseline, model_name="baseline_lstm")
-
+    logger.info("\n=== 1. BASELINE LSTM INDÍTÁSA ===")
+    data_baseline = prepare_data(
+        config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,
+        batch_size=BASELINE_BATCH_SIZE, seq_len=BASELINE_SEQ_LEN
+    )
+    if data_baseline:
+        model_bl = BaselineLSTM(input_size=BASELINE_INPUT_SIZE, num_classes=data_baseline['num_classes'])
+        train_engine(model_bl, data_baseline, model_name="baseline_lstm")
 
     # 2. MODELL: HYBRID (CNN-Transformer) (Config paraméterekkel)
 
-    # logger.info("\n=== 2. HYBRID MODELL INDÍTÁSA ===")
-    # data_hybrid = prepare_data(
-    #     config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,
-    #     batch_size=config.BATCH_SIZE, seq_len=config.SEQUENCE_LENGTH
-    # )
-    # if data_hybrid:
-    #     model_hybrid = HybridModel(input_size=config.INPUT_SIZE, num_classes=data_hybrid['num_classes'])
-    #     train_engine(model_hybrid, data_hybrid, model_name="hybrid_model")
-
-    # 3. MODELL: ENSEMBLE
-    logger.info("\n=== 3. ENSEMBLE MODEL (LSTM + HYBRID) INDÍTÁSA ===")
-
-    # Adatok betöltése
-    data_ens = prepare_data(
+    logger.info("\n=== 2. HYBRID MODELL INDÍTÁSA ===")
+    data_hybrid = prepare_data(
         config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,
         batch_size=config.BATCH_SIZE, seq_len=config.SEQUENCE_LENGTH
     )
+    if data_hybrid:
+        model_hybrid = HybridModel(input_size=config.INPUT_SIZE, num_classes=data_hybrid['num_classes'])
+        train_engine(model_hybrid, data_hybrid, model_name="hybrid_model")
 
-    if data_ens:
-        # Ensemble inicializálás
-        model_ens = EnsembleModel(
-            input_size=config.INPUT_SIZE,
-            num_classes=data_ens['num_classes']
-        )
-
-        # Tanítás indítása
-        train_engine(model_ens, data_ens, model_name="ensemble_model")
+    # 3. MODELL: ENSEMBLE
+    # logger.info("\n=== 3. ENSEMBLE MODEL (LSTM + HYBRID) INDÍTÁSA ===")
+    #
+    # # Adatok betöltése
+    # data_ens = prepare_data(
+    #     config.LABEL_FILE, config.DATA_ROOT, config.OUTPUT_DIR,
+    #     batch_size=config.BATCH_SIZE, seq_len=config.SEQUENCE_LENGTH
+    # )
+    #
+    # if data_ens:
+    #     # Ensemble inicializálás
+    #     model_ens = EnsembleModel(
+    #         input_size=config.INPUT_SIZE,
+    #         num_classes=data_ens['num_classes']
+    #     )
+    #
+    #     # Tanítás indítása
+    #     train_engine(model_ens, data_ens, model_name="ensemble_model")
