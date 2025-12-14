@@ -16,7 +16,7 @@ This project addresses the challenge of automating technical analysis in financi
 To solve this, we developed a **Hybrid Deep Learning Model** that integrates **1D Convolutional Neural Networks (CNN)** with **Transformer Encoders**. The CNN layers are designed to extract local geometric features (e.g., sharp price spikes and consolidation shapes), while the Transformer component utilizes Multi-Head Attention to capture long-range temporal dependencies within the time series. We also implemented a Baseline Bidirectional LSTM and an Ensemble model for performance benchmarking.
 
 #### 1. Data Pipeline & Preprocessing
-The workflow begins with an automated data ingestion process. The system downloads raw historical market data (CSV format) directly from a secure shared drive.
+The workflow begins with an automated data ingestion process. The system downloads raw historical market data (CSV format) directly from the **shared drive**.
 * **Filtering:** The pipeline strictly filters the dataset to retain only high-priority assets: **EURUSD** (Forex) and **XAU** (Gold).
 * **Labeling:** A "Ground Truth" generation algorithm identifies consolidation zones preceded by strong trends ("poles"), labeling them as specific patterns (e.g., Bullish Flag).
 * **Formatting:** The continuous time series data is transformed into fixed-size sliding window sequences (Length: 100) and normalized via MinMax scaling.
@@ -46,7 +46,6 @@ Evaluation was performed on a hold-out test set comprising 83 samples. The resul
 ### Docker Instructions
 
 This project is containerized using Docker. Follow the instructions below to build and run the solution.
-[Adjust the commands that show how do build your container and run it with log output.]
 
 #### Build
 
@@ -70,23 +69,16 @@ docker run --rm \
   dl-project > log/run.log 2>&1
 ```
 
-*   Replace `/absolute/path/to/your/local/data` with the actual path to your dataset on your host machine that meets the [Data preparation requirements](#data-preparation).
-*   The `> log/run.log 2>&1` part ensures that all output (standard output and errors) is saved to `log/run.log`.
-*   The container is configured to run every step (data preprocessing, training, evaluation, inference).
-
-
 ### File Structure and Functions
-
-[Update according to the final file structure.]
 
 The repository is structured as follows:
 
 - **`src/`**: Contains the source code for the machine learning pipeline.
-    - `01-data-preprocessing.py`: Scripts for loading, cleaning, and preprocessing the raw data.
+    - `01-data-preprocessing.py`: Scripts for downloading, loading, cleaning, and preprocessing the raw data.
     - `02-training.py`: The main script for defining the model and executing the training loop.
     - `03-evaluation.py`: Scripts for evaluating the trained model on test data and generating metrics.
     - `04-inference.py`: Script for running the model on new, unseen data to generate predictions.
-    - `05-cleanup.py`: Script for deleting the data folder content (except for `ground_truth_labels.csv`) after everything finished
+    - ❗`05-cleanup.py`: Script for deleting the **data/** folder content (except for `ground_truth_labels.csv`) after everything finished
     - `config.py`: Configuration file containing hyperparameters (e.g., epochs) and paths.
     - `utils.py`: Helper functions and utilities used across different scripts.
 
@@ -103,7 +95,7 @@ The repository is structured as follows:
     - `requirements.txt`: List of Python dependencies required for the project.
     - `README.md`: Project documentation and instructions.
 
-### 🔮 Inference Input Configuration
+### Inference Input Configuration
 
 The inference pipeline (`src/04-inference.py`) requires a **direct download link** to a CSV file (or a ZIP containing CSVs) specified in `src/config.py` via the `INFERENCE_URL` variable.
 
