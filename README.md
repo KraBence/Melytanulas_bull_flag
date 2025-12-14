@@ -1,32 +1,6 @@
 # BULL FLAG DETECTOR PROJECT
 As an Applied Mathematics student, my experience has focused on data science projects in Jupyter notebooks. This is my first project at this scale and my initial venture into Docker. **The models were trained on CPU, so they are intentionally designed for efficiency rather than maximum complexity.**
 
-
-## Submission Instructions
-
-### Submission Checklist
-
-Before submitting your project, ensure you have completed the following steps.
-**Please note that the submission can only be accepted if these minimum requirements are met.**
-
-- [x] **Project Information**: Filled out the "Project Information" section (Topic, Name, Extra Credit).
-- [x] **Solution Description**: Provided a clear description of your solution, model, and methodology.
-- [x] **Extra Credit**: If aiming for +1 mark, filled out the justification section.
-- [x] **Data Preparation**: Included a script or precise description for data preparation.
-- [x] **Dependencies**: Updated `requirements.txt` with all necessary packages and specific versions.
-- [x] **Configuration**: Used `src/config.py` for hyperparameters and paths, contains at least the number of epochs configuration variable.
-- [x] **Logging**:
-    - [x] Log uploaded to `log/run.log`
-    - [x] Log contains: Hyperparameters, Data preparation and loading confirmation, Model architecture, Training metrics (loss/acc per epoch), Validation metrics, Final evaluation results, Inference results.
-- [ ] **Docker**:
-    - [ ] `Dockerfile` is adapted to your project needs.
-    - [ ] Image builds successfully (`docker build -t dl-project .`).
-    - [ ] Container runs successfully with data mounted (`docker run ...`).
-    - [ ] The container executes the full pipeline (preprocessing, training, evaluation).
-- [ ] **Cleanup**:
-    - [ ] Removed unused files.
-    - [ ] **Deleted this "Submission Instructions" section from the README.**
-
 ## Project Details
 
 ### Project Information
