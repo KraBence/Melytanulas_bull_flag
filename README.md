@@ -89,7 +89,11 @@ To run the solution, use the following command. You must mount your local data d
 **To capture the logs for submission (required), redirect the output to a file:**
 
 ```bash
-docker run -v /absolute/path/to/your/local/data:/app/data dl-project > log/run.log 2>&1
+docker run --rm \
+  -v "$(pwd)/data":/app/data \
+  -v "$(pwd)/output":/app/output \
+  -v "$(pwd)/log":/app/log \
+  dl-project > log/run.log 2>&1
 ```
 
 *   Replace `/absolute/path/to/your/local/data` with the actual path to your dataset on your host machine that meets the [Data preparation requirements](#data-preparation).
@@ -108,6 +112,7 @@ The repository is structured as follows:
     - `02-training.py`: The main script for defining the model and executing the training loop.
     - `03-evaluation.py`: Scripts for evaluating the trained model on test data and generating metrics.
     - `04-inference.py`: Script for running the model on new, unseen data to generate predictions.
+    - `05-cleanup.py`: Script for deleting the data folder content (except for `ground_truth_labels.csv`) after everything finished
     - `config.py`: Configuration file containing hyperparameters (e.g., epochs) and paths.
     - `utils.py`: Helper functions and utilities used across different scripts.
 
