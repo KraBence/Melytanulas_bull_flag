@@ -1,436 +1,439 @@
-[run.sh] Starting full pipeline run at 2025-12-14T00:05:22+00:00
-2025-12-14 00:05:24,606 - INFO - 
+[run.sh] Starting full pipeline run at 2025-12-14T11:06:55+00:00
+2025-12-14 11:06:58,048 - INFO - 
 ============================================================
-2025-12-14 00:05:24,607 - INFO - ADAT ELŐKÉSZÍTÉS (PREPROCESSING) INDÍTÁSA: 2025-12-14 00:05:24
-2025-12-14 00:05:24,607 - INFO - Log fájl helye: /app/log/run.log
-2025-12-14 00:05:24,607 - INFO - ============================================================
-2025-12-14 00:05:24,607 - INFO - Starting download from: https://bmeedu-my.sharepoint.com/:u:/g/personal/gyires-toth_balint_vik_bme_hu/IQAlEFc87da4SLpRVTCs81KwAS3DG4Ft8JPtUKQe9vV5eng?download=1 ...
-2025-12-14 00:05:40,553 - INFO - Download complete! Size: 540.85 MB
-2025-12-14 00:05:40,553 - INFO - Unzipping in progress...
-2025-12-14 00:05:41,059 - INFO - Successfully extracted to: /app/data
-2025-12-14 00:05:41,083 - INFO - Temporary files deleted.
-2025-12-14 00:05:41,084 - INFO - 
+2025-12-14 11:06:58,048 - INFO - ADAT ELŐKÉSZÍTÉS (PREPROCESSING) INDÍTÁSA: 2025-12-14 11:06:58
+2025-12-14 11:06:58,048 - INFO - Log fájl helye: /app/log/run.log
+2025-12-14 11:06:58,048 - INFO - ============================================================
+2025-12-14 11:06:58,048 - INFO - Starting download from: https://bmeedu-my.sharepoint.com/:u:/g/personal/gyires-toth_balint_vik_bme_hu/IQAlEFc87da4SLpRVTCs81KwAS3DG4Ft8JPtUKQe9vV5eng?download=1 ...
+2025-12-14 11:07:12,203 - INFO - Download complete! Size: 540.85 MB
+2025-12-14 11:07:12,203 - INFO - Unzipping in progress...
+2025-12-14 11:07:12,637 - INFO - Successfully extracted to: /app/data
+2025-12-14 11:07:12,688 - INFO - Temporary files deleted.
+2025-12-14 11:07:12,689 - INFO - 
 [PHASE 1] Searching and cleaning CSV files...
-2025-12-14 00:05:41,093 - INFO -     -> Saved: clean_XAUUSD_1H_37.csv (8 rows)
-2025-12-14 00:05:41,096 - INFO -     -> Saved: clean_XAUUSD_1H_4.csv (6 rows)
-2025-12-14 00:05:41,098 - INFO -     -> Saved: clean_XAUUSD_1H_5.csv (13 rows)
-2025-12-14 00:05:41,101 - INFO -     -> Saved: clean_XAUUSD_1H_3.csv (16 rows)
-2025-12-14 00:05:41,103 - INFO -     -> Saved: clean_XAUUSD_1H_18.csv (7 rows)
-2025-12-14 00:05:41,106 - INFO -     -> Saved: clean_XAUUSD_1H_27.csv (13 rows)
-2025-12-14 00:05:41,108 - INFO -     -> Saved: clean_XAUUSD_1H_42.csv (8 rows)
-2025-12-14 00:05:41,110 - INFO -     -> Saved: clean_XAUUSD_1H_12.csv (13 rows)
-2025-12-14 00:05:41,113 - INFO -     -> Saved: clean_XAUUSD_1H_28.csv (18 rows)
-2025-12-14 00:05:41,115 - INFO -     -> Saved: clean_XAUUSD_1H_41.csv (5 rows)
-2025-12-14 00:05:41,117 - INFO -     -> Saved: clean_XAUUSD_1H_30.csv (12 rows)
-2025-12-14 00:05:41,120 - INFO -     -> Saved: clean_XAUUSD_1H_17.csv (6 rows)
-2025-12-14 00:05:41,122 - INFO -     -> Saved: clean_XAUUSD_1H_22.csv (9 rows)
-2025-12-14 00:05:41,124 - INFO -     -> Saved: clean_XAUUSD_1H_50.csv (7 rows)
-2025-12-14 00:05:41,126 - INFO -     -> Saved: clean_XAUUSD_1H_23.csv (11 rows)
-2025-12-14 00:05:41,129 - INFO -     -> Saved: clean_XAUUSD_1H_13.csv (12 rows)
-2025-12-14 00:05:41,131 - INFO -     -> Saved: clean_XAUUSD_1H_20.csv (6 rows)
-2025-12-14 00:05:41,133 - INFO -     -> Saved: clean_XAUUSD_1H_35.csv (11 rows)
-2025-12-14 00:05:41,136 - INFO -     -> Saved: clean_XAUUSD_1H_45.csv (14 rows)
-2025-12-14 00:05:41,138 - INFO -     -> Saved: clean_XAUUSD_1H_8.csv (7 rows)
-2025-12-14 00:05:41,140 - INFO -     -> Saved: clean_XAUUSD_1H_26.csv (10 rows)
-2025-12-14 00:05:41,143 - INFO -     -> Saved: clean_XAUUSD_1H_15.csv (5 rows)
-2025-12-14 00:05:41,145 - INFO -     -> Saved: clean_XAUUSD_1H_29.csv (10 rows)
-2025-12-14 00:05:41,147 - INFO -     -> Saved: clean_XAUUSD_1H_1.csv (1 rows)
-2025-12-14 00:05:41,149 - INFO -     -> Saved: clean_XAUUSD_1H_16.csv (16 rows)
-2025-12-14 00:05:41,152 - INFO -     -> Saved: clean_XAUUSD_1H_49.csv (12 rows)
-2025-12-14 00:05:41,154 - INFO -     -> Saved: clean_XAUUSD_1H_10.csv (18 rows)
-2025-12-14 00:05:41,157 - INFO -     -> Saved: clean_XAUUSD_1H_32.csv (5 rows)
-2025-12-14 00:05:41,159 - INFO -     -> Saved: clean_XAUUSD_1H_34.csv (6 rows)
-2025-12-14 00:05:41,162 - INFO -     -> Saved: clean_XAUUSD_1H_25.csv (8 rows)
-2025-12-14 00:05:41,164 - INFO -     -> Saved: clean_XAUUSD_1H_9.csv (25 rows)
-2025-12-14 00:05:41,166 - INFO -     -> Saved: clean_XAUUSD_1H_2.csv (10 rows)
-2025-12-14 00:05:41,169 - INFO -     -> Saved: clean_XAUUSD_1H_46.csv (9 rows)
-2025-12-14 00:05:41,171 - INFO -     -> Saved: clean_XAUUSD_1H_36.csv (10 rows)
-2025-12-14 00:05:41,173 - INFO -     -> Saved: clean_XAUUSD_1H_31.csv (11 rows)
-2025-12-14 00:05:41,176 - INFO -     -> Saved: clean_XAUUSD_1H_19.csv (7 rows)
-2025-12-14 00:05:41,178 - INFO -     -> Saved: clean_XAUUSD_1H_21.csv (12 rows)
-2025-12-14 00:05:41,180 - INFO -     -> Saved: clean_XAUUSD_1H_48.csv (13 rows)
-2025-12-14 00:05:41,183 - INFO -     -> Saved: clean_XAUUSD_1H_14.csv (7 rows)
-2025-12-14 00:05:41,185 - INFO -     -> Saved: clean_XAUUSD_1H_44.csv (5 rows)
-2025-12-14 00:05:41,187 - INFO -     -> Saved: clean_XAUUSD_1H_47.csv (10 rows)
-2025-12-14 00:05:41,190 - INFO -     -> Saved: clean_XAUUSD_1H_38.csv (10 rows)
-2025-12-14 00:05:41,192 - INFO -     -> Saved: clean_XAUUSD_1H_40.csv (11 rows)
-2025-12-14 00:05:41,194 - INFO -     -> Saved: clean_XAUUSD_1H_43.csv (9 rows)
-2025-12-14 00:05:41,197 - INFO -     -> Saved: clean_XAUUSD_1H_33.csv (7 rows)
-2025-12-14 00:05:41,199 - INFO -     -> Saved: clean_XAUUSD_1H_7.csv (7 rows)
-2025-12-14 00:05:41,202 - INFO -     -> Saved: clean_XAUUSD_1H_6.csv (15 rows)
-2025-12-14 00:05:41,204 - INFO -     -> Saved: clean_XAUUSD_1H_11.csv (6 rows)
-2025-12-14 00:05:41,207 - INFO -     -> Saved: clean_XAUUSD_1H_24.csv (13 rows)
-2025-12-14 00:05:41,209 - INFO -     -> Saved: clean_XAUUSD_1H_39.csv (6 rows)
-2025-12-14 00:05:41,332 - INFO -     -> Saved: clean_XAUUSD_5min_001.csv (27755 rows)
-2025-12-14 00:05:41,355 - INFO -     -> Saved: clean_XAUUSD_30min_001.csv (4635 rows)
-2025-12-14 00:05:41,406 - INFO -     -> Saved: clean_XAUUSD_15min_001.csv (9261 rows)
-2025-12-14 00:05:41,944 - INFO -     -> Saved: clean_EURUSD_1min.csv (100000 rows)
-2025-12-14 00:05:42,965 - INFO -     -> Saved: clean_EURUSD_15min_001.csv (245388 rows)
-2025-12-14 00:05:42,971 - INFO -     -> Saved: clean_XAU_1H_001.csv (298 rows)
-2025-12-14 00:05:42,987 - INFO -     -> Saved (Renamed): clean_EURUSD_15min_001_dup1.csv (3342 rows)
-2025-12-14 00:05:42,997 - INFO -     -> Saved: clean_EURUSD_30min_001.csv (1676 rows)
-2025-12-14 00:05:43,029 - INFO -     -> Saved: clean_EURUSD_1min_001.csv (7197 rows)
-2025-12-14 00:05:43,062 - INFO -     -> Saved: clean_EURUSD_5min_001.csv (7192 rows)
-2025-12-14 00:05:43,069 - INFO -     -> Saved: clean_EURUSD_1H_001.csv (838 rows)
-2025-12-14 00:05:43,145 - INFO -     -> Saved: clean_XAUUSD_5m_002.csv (13710 rows)
-2025-12-14 00:05:43,220 - INFO -     -> Saved: clean_XAUUSD_5m_001.csv (13522 rows)
-2025-12-14 00:05:43,255 - INFO -     -> Saved (Renamed): clean_EURUSD_15min_001_dup2.csv (8201 rows)
-2025-12-14 00:05:43,280 - INFO -     -> Saved: clean_EURUSD_1hour_001.csv (3090 rows)
-2025-12-14 00:05:43,296 - INFO -     -> Saved: clean_EURUSD_1hour_002.csv (3132 rows)
-2025-12-14 00:05:43,460 - INFO -     -> Saved: clean_EURUSD_5min_002.csv (37316 rows)
-2025-12-14 00:05:43,476 - INFO -     -> Saved (Renamed): clean_EURUSD_30min_001_dup1.csv (2697 rows)
-2025-12-14 00:05:43,642 - INFO -     -> Saved (Renamed): clean_EURUSD_5min_001_dup1.csv (36811 rows)
-2025-12-14 00:05:43,652 - INFO -     -> Saved: clean_EURUSD_1hour_003.csv (1333 rows)
-2025-12-14 00:05:44,167 - INFO -     -> Saved (Renamed): clean_EURUSD_15min_001_dup3.csv (121352 rows)
-2025-12-14 00:05:53,910 - INFO -     -> Saved: clean_EURUSD_1min_002.csv (1809479 rows)
-2025-12-14 00:05:54,170 - INFO -     -> Saved (Renamed): clean_EURUSD_30min_001_dup2.csv (60679 rows)
-2025-12-14 00:05:54,792 - WARNING -     [SKIP] Missing OHLC columns: EURUSD_1min_001.csv
-2025-12-14 00:05:56,341 - INFO -     -> Saved (Renamed): clean_EURUSD_5min_001_dup2.csv (363960 rows)
-2025-12-14 00:05:56,470 - INFO -     -> Saved (Renamed): clean_EURUSD_1H_001_dup1.csv (30340 rows)
-2025-12-14 00:05:57,200 - INFO -     -> Saved: clean_EURUSD_15min.csv (143054 rows)
-2025-12-14 00:05:57,586 - INFO -     -> Saved: clean_XAUUSD_30min.csv (69024 rows)
-2025-12-14 00:05:57,955 - INFO -     -> Saved: clean_EURUSD_30min.csv (71664 rows)
-2025-12-14 00:05:59,278 - INFO -     -> Saved: clean_XAUUSD_1min.csv (250000 rows)
-2025-12-14 00:06:00,586 - INFO -     -> Saved (Renamed): clean_EURUSD_1min_dup1.csv (250000 rows)
-2025-12-14 00:06:01,983 - INFO -     -> Saved: clean_XAUUSD_5min.csv (250000 rows)
-2025-12-14 00:06:02,761 - INFO -     -> Saved: clean_XAUUSD_15min.csv (137835 rows)
-2025-12-14 00:06:03,233 - INFO -     -> Saved: clean_EURUSD_5min.csv (91829 rows)
-2025-12-14 00:06:03,428 - INFO -     -> Saved: clean_XAUUSD_1h.csv (34577 rows)
-2025-12-14 00:06:03,611 - INFO -     -> Saved: clean_EURUSD_1h.csv (35908 rows)
-2025-12-14 00:06:03,774 - INFO -     -> Saved: clean_XAUUSD_5minute_001.csv (31352 rows)
-2025-12-14 00:06:04,198 - INFO -     -> Saved: clean_EURUSD_1minute_001.csv (82033 rows)
-2025-12-14 00:06:04,604 - INFO -     -> Saved: clean_XAUUSD_1minute_001.csv (78548 rows)
-2025-12-14 00:06:04,866 - INFO -     -> Saved: clean_EURUSD_1minute_003.csv (50000 rows)
-2025-12-14 00:06:05,121 - INFO -     -> Saved: clean_EURUSD_15minute_001.csv (49488 rows)
-2025-12-14 00:06:05,150 - INFO -     -> Saved (Renamed): clean_EURUSD_1hour_001_dup1.csv (5057 rows)
-2025-12-14 00:06:06,349 - INFO -     -> Saved: clean_EURUSD_1minute_004.csv (233719 rows)
-2025-12-14 00:06:06,602 - INFO -     -> Saved: clean_EURUSD_1minute_002.csv (50000 rows)
-2025-12-14 00:06:06,788 - INFO -     -> Saved: clean_EURUSD_1min_010.csv (44640 rows)
-2025-12-14 00:06:06,973 - INFO -     -> Saved: clean_EURUSD_1min_008.csv (44640 rows)
-2025-12-14 00:06:07,141 - INFO -     -> Saved (Renamed): clean_EURUSD_1min_002_dup1.csv (40320 rows)
-2025-12-14 00:06:07,326 - INFO -     -> Saved: clean_EURUSD_1min_009.csv (43200 rows)
-2025-12-14 00:06:07,504 - INFO -     -> Saved: clean_EURUSD_1min_011.csv (43200 rows)
-2025-12-14 00:06:07,688 - INFO -     -> Saved: clean_EURUSD_1min_005.csv (44640 rows)
-2025-12-14 00:06:07,868 - INFO -     -> Saved: clean_EURUSD_1min_004.csv (43200 rows)
-2025-12-14 00:06:08,053 - INFO -     -> Saved: clean_EURUSD_1min_003.csv (44640 rows)
-2025-12-14 00:06:08,239 - INFO -     -> Saved: clean_EURUSD_1min_012.csv (44640 rows)
-2025-12-14 00:06:08,424 - INFO -     -> Saved (Renamed): clean_EURUSD_1min_001_dup1.csv (44640 rows)
-2025-12-14 00:06:08,605 - INFO -     -> Saved: clean_EURUSD_1min_006.csv (43200 rows)
-2025-12-14 00:06:08,791 - INFO -     -> Saved: clean_EURUSD_1min_007.csv (44640 rows)
-2025-12-14 00:06:08,798 - INFO -     -> Saved (Renamed): clean_EURUSD_15min_001_dup4.csv (452 rows)
-2025-12-14 00:06:08,811 - INFO -     -> Saved (Renamed): clean_EURUSD_5min_002_dup1.csv (1355 rows)
-2025-12-14 00:06:08,818 - INFO -     -> Saved: clean_EURUSD_30m_001.csv (1010 rows)
-2025-12-14 00:06:08,829 - INFO -     -> Saved: clean_EURUSD_15m_001.csv (2016 rows)
-2025-12-14 00:06:08,858 - INFO -     -> Saved: clean_EURUSD_5m_001.csv (6042 rows)
-2025-12-14 00:06:08,991 - INFO -     -> Saved: clean_EURUSD_1m_001.csv (30148 rows)
-2025-12-14 00:06:08,997 - INFO -     -> Saved (Renamed): clean_EURUSD_1H_001_dup2.csv (506 rows)
-2025-12-14 00:06:09,000 - INFO -     -> Saved: clean_EURUSD_5min_031.csv (23 rows)
-2025-12-14 00:06:09,002 - INFO -     -> Saved: clean_EURUSD_5min_052.csv (59 rows)
-2025-12-14 00:06:09,005 - INFO -     -> Saved: clean_EURUSD_5min_029.csv (70 rows)
-2025-12-14 00:06:09,007 - INFO -     -> Saved: clean_EURUSD_5min_050.csv (60 rows)
-2025-12-14 00:06:09,010 - INFO -     -> Saved: clean_EURUSD_5min_020.csv (56 rows)
-2025-12-14 00:06:09,013 - INFO -     -> Saved: clean_EURUSD_5min_008.csv (56 rows)
-2025-12-14 00:06:09,015 - INFO -     -> Saved: clean_EURUSD_5min_022.csv (68 rows)
-2025-12-14 00:06:09,018 - INFO -     -> Saved: clean_EURUSD_5min_037.csv (22 rows)
-2025-12-14 00:06:09,020 - INFO -     -> Saved: clean_EURUSD_5min_035.csv (64 rows)
-2025-12-14 00:06:09,023 - INFO -     -> Saved: clean_EURUSD_5min_045.csv (67 rows)
-2025-12-14 00:06:09,025 - INFO -     -> Saved: clean_EURUSD_5min_019.csv (70 rows)
-2025-12-14 00:06:09,028 - INFO -     -> Saved: clean_EURUSD_5min_043.csv (41 rows)
-2025-12-14 00:06:09,030 - INFO -     -> Saved: clean_EURUSD_5min_048.csv (30 rows)
-2025-12-14 00:06:09,033 - INFO -     -> Saved: clean_EURUSD_5min_049.csv (18 rows)
-2025-12-14 00:06:09,035 - INFO -     -> Saved: clean_EURUSD_5min_003.csv (29 rows)
-2025-12-14 00:06:09,038 - INFO -     -> Saved: clean_EURUSD_5min_040.csv (66 rows)
-2025-12-14 00:06:09,040 - INFO -     -> Saved: clean_EURUSD_5min_046.csv (68 rows)
-2025-12-14 00:06:09,043 - INFO -     -> Saved: clean_EURUSD_5min_015.csv (29 rows)
-2025-12-14 00:06:09,045 - INFO -     -> Saved: clean_EURUSD_5min_017.csv (66 rows)
-2025-12-14 00:06:09,048 - INFO -     -> Saved: clean_EURUSD_5min_051.csv (58 rows)
-2025-12-14 00:06:09,050 - INFO -     -> Saved: clean_EURUSD_5min_023.csv (28 rows)
-2025-12-14 00:06:09,053 - INFO -     -> Saved: clean_EURUSD_5min_053.csv (95 rows)
-2025-12-14 00:06:09,056 - INFO -     -> Saved: clean_EURUSD_5min_032.csv (40 rows)
-2025-12-14 00:06:09,058 - INFO -     -> Saved: clean_EURUSD_5min_030.csv (40 rows)
-2025-12-14 00:06:09,061 - INFO -     -> Saved: clean_EURUSD_5min_026.csv (59 rows)
-2025-12-14 00:06:09,063 - INFO -     -> Saved: clean_EURUSD_5min_036.csv (61 rows)
-2025-12-14 00:06:09,066 - INFO -     -> Saved: clean_EURUSD_5min_033.csv (45 rows)
-2025-12-14 00:06:09,068 - INFO -     -> Saved: clean_EURUSD_5min_007.csv (26 rows)
-2025-12-14 00:06:09,071 - INFO -     -> Saved: clean_EURUSD_5min_027.csv (34 rows)
-2025-12-14 00:06:09,073 - INFO -     -> Saved: clean_EURUSD_5min_005.csv (84 rows)
-2025-12-14 00:06:09,076 - INFO -     -> Saved: clean_EURUSD_5min_039.csv (43 rows)
-2025-12-14 00:06:09,078 - INFO -     -> Saved: clean_EURUSD_5min_024.csv (51 rows)
-2025-12-14 00:06:09,081 - INFO -     -> Saved: clean_EURUSD_5min_028.csv (56 rows)
-2025-12-14 00:06:09,084 - INFO -     -> Saved: clean_EURUSD_5min_034.csv (59 rows)
-2025-12-14 00:06:09,086 - INFO -     -> Saved: clean_EURUSD_5min_014.csv (30 rows)
-2025-12-14 00:06:09,089 - INFO -     -> Saved: clean_EURUSD_5min_047.csv (66 rows)
-2025-12-14 00:06:09,091 - INFO -     -> Saved: clean_EURUSD_5min_038.csv (63 rows)
-2025-12-14 00:06:11,966 - INFO -     -> Saved (Renamed): clean_EURUSD_5min_002_dup2.csv (524287 rows)
-2025-12-14 00:06:11,971 - INFO -     -> Saved: clean_EURUSD_5min_011.csv (49 rows)
-2025-12-14 00:06:11,974 - INFO -     -> Saved: clean_EURUSD_5min_016.csv (42 rows)
-2025-12-14 00:06:11,976 - INFO -     -> Saved: clean_EURUSD_5min_009.csv (36 rows)
-2025-12-14 00:06:15,711 - INFO -     -> Saved (Renamed): clean_EURUSD_5min_001_dup3.csv (524288 rows)
-2025-12-14 00:06:15,723 - INFO -     -> Saved: clean_EURUSD_5min_044.csv (49 rows)
-2025-12-14 00:06:15,726 - INFO -     -> Saved: clean_EURUSD_5min_004.csv (38 rows)
-2025-12-14 00:06:15,729 - INFO -     -> Saved: clean_EURUSD_5min_012.csv (29 rows)
-2025-12-14 00:06:15,731 - INFO -     -> Saved: clean_EURUSD_5min_042.csv (66 rows)
-2025-12-14 00:06:15,734 - INFO -     -> Saved: clean_EURUSD_5min_054.csv (63 rows)
-2025-12-14 00:06:15,737 - INFO -     -> Saved: clean_EURUSD_5min_006.csv (117 rows)
-2025-12-14 00:06:15,740 - INFO -     -> Saved: clean_EURUSD_5min_041.csv (90 rows)
-2025-12-14 00:06:15,743 - INFO -     -> Saved: clean_EURUSD_5min_013.csv (39 rows)
-2025-12-14 00:06:15,746 - INFO -     -> Saved: clean_EURUSD_5min_021.csv (95 rows)
-2025-12-14 00:06:15,749 - INFO -     -> Saved: clean_EURUSD_5min_010.csv (87 rows)
-2025-12-14 00:06:15,752 - INFO -     -> Saved: clean_EURUSD_5min_018.csv (30 rows)
-2025-12-14 00:06:15,755 - INFO -     -> Saved: clean_EURUSD_5min_025.csv (64 rows)
-2025-12-14 00:06:15,758 - INFO -     -> Saved: clean_EURUSD_1H_059.csv (8 rows)
-2025-12-14 00:06:15,761 - INFO -     -> Saved: clean_EURUSD_1H_028.csv (8 rows)
-2025-12-14 00:06:15,763 - INFO -     -> Saved: clean_EURUSD_1H_036.csv (16 rows)
-2025-12-14 00:06:15,766 - INFO -     -> Saved: clean_EURUSD_1H_024.csv (26 rows)
-2025-12-14 00:06:15,769 - INFO -     -> Saved: clean_EURUSD_1H_010.csv (7 rows)
-2025-12-14 00:06:15,771 - INFO -     -> Saved: clean_EURUSD_1H_003.csv (8 rows)
-2025-12-14 00:06:15,774 - INFO -     -> Saved: clean_EURUSD_1H_053.csv (9 rows)
-2025-12-14 00:06:15,777 - INFO -     -> Saved: clean_EURUSD_1H_046.csv (6 rows)
-2025-12-14 00:06:15,780 - INFO -     -> Saved: clean_EURUSD_1H_043.csv (11 rows)
-2025-12-14 00:06:15,783 - INFO -     -> Saved: clean_EURUSD_1H_045.csv (19 rows)
-2025-12-14 00:06:15,785 - INFO -     -> Saved: clean_EURUSD_1H_008.csv (16 rows)
-2025-12-14 00:06:15,788 - INFO -     -> Saved: clean_EURUSD_1H_005.csv (11 rows)
-2025-12-14 00:06:15,791 - INFO -     -> Saved: clean_EURUSD_1H_055.csv (8 rows)
-2025-12-14 00:06:15,794 - INFO -     -> Saved: clean_EURUSD_1H_049.csv (21 rows)
-2025-12-14 00:06:15,797 - INFO -     -> Saved: clean_EURUSD_1H_035.csv (9 rows)
-2025-12-14 00:06:15,800 - INFO -     -> Saved: clean_EURUSD_1H_015.csv (9 rows)
-2025-12-14 00:06:15,803 - INFO -     -> Saved: clean_EURUSD_1H_034.csv (12 rows)
-2025-12-14 00:06:15,806 - INFO -     -> Saved: clean_EURUSD_1H_016.csv (5 rows)
-2025-12-14 00:06:15,809 - INFO -     -> Saved: clean_EURUSD_1H_014.csv (11 rows)
-2025-12-14 00:06:15,812 - INFO -     -> Saved: clean_EURUSD_1H_011.csv (19 rows)
-2025-12-14 00:06:15,815 - INFO -     -> Saved: clean_EURUSD_1H_037.csv (7 rows)
-2025-12-14 00:06:15,817 - INFO -     -> Saved: clean_EURUSD_1H_019.csv (17 rows)
-2025-12-14 00:06:15,821 - INFO -     -> Saved: clean_EURUSD_1H_054.csv (10 rows)
-2025-12-14 00:06:15,823 - INFO -     -> Saved: clean_EURUSD_1H_002.csv (4 rows)
-2025-12-14 00:06:15,826 - INFO -     -> Saved: clean_EURUSD_1H_007.csv (8 rows)
-2025-12-14 00:06:15,830 - INFO -     -> Saved: clean_EURUSD_1H_038.csv (77 rows)
-2025-12-14 00:06:15,833 - INFO -     -> Saved: clean_EURUSD_1H_032.csv (12 rows)
-2025-12-14 00:06:15,836 - INFO -     -> Saved: clean_EURUSD_1H_030.csv (12 rows)
-2025-12-14 00:06:15,839 - INFO -     -> Saved: clean_EURUSD_1H_057.csv (8 rows)
-2025-12-14 00:06:15,842 - INFO -     -> Saved: clean_EURUSD_1H_058.csv (7 rows)
-2025-12-14 00:06:15,845 - INFO -     -> Saved: clean_EURUSD_1H_040.csv (8 rows)
-2025-12-14 00:06:15,849 - INFO -     -> Saved: clean_EURUSD_1H_022.csv (7 rows)
-2025-12-14 00:06:15,852 - INFO -     -> Saved: clean_EURUSD_1H_021.csv (10 rows)
-2025-12-14 00:06:15,855 - INFO -     -> Saved: clean_EURUSD_1H_051.csv (6 rows)
-2025-12-14 00:06:15,859 - INFO -     -> Saved: clean_EURUSD_1H_009.csv (14 rows)
-2025-12-14 00:06:15,862 - INFO -     -> Saved: clean_EURUSD_1H_033.csv (7 rows)
-2025-12-14 00:06:15,865 - INFO -     -> Saved: clean_EURUSD_1H_031.csv (8 rows)
-2025-12-14 00:06:15,868 - INFO -     -> Saved: clean_EURUSD_1H_047.csv (20 rows)
-2025-12-14 00:06:15,871 - INFO -     -> Saved: clean_EURUSD_1H_013.csv (9 rows)
-2025-12-14 00:06:15,876 - INFO -     -> Saved: clean_EURUSD_1H_056.csv (7 rows)
-2025-12-14 00:06:15,881 - INFO -     -> Saved: clean_EURUSD_1H_020.csv (18 rows)
-2025-12-14 00:06:15,886 - INFO -     -> Saved: clean_EURUSD_1H_023.csv (12 rows)
-2025-12-14 00:06:15,892 - INFO -     -> Saved: clean_EURUSD_1H_060.csv (10 rows)
-2025-12-14 00:06:15,897 - INFO -     -> Saved: clean_EURUSD_1H_044.csv (6 rows)
-2025-12-14 00:06:15,903 - INFO -     -> Saved: clean_EURUSD_1H_006.csv (21 rows)
-2025-12-14 00:06:15,908 - INFO -     -> Saved: clean_EURUSD_1H_048.csv (16 rows)
-2025-12-14 00:06:15,914 - INFO -     -> Saved: clean_EURUSD_1H_025.csv (18 rows)
-2025-12-14 00:06:15,919 - INFO -     -> Saved: clean_EURUSD_1H_041.csv (7 rows)
-2025-12-14 00:06:15,923 - INFO -     -> Saved: clean_EURUSD_1H_052.csv (5 rows)
-2025-12-14 00:06:15,926 - INFO -     -> Saved: clean_EURUSD_1H_012.csv (7 rows)
-2025-12-14 00:06:15,929 - INFO -     -> Saved (Renamed): clean_EURUSD_1H_001_dup3.csv (10 rows)
-2025-12-14 00:06:15,932 - INFO -     -> Saved: clean_EURUSD_1H_039.csv (6 rows)
-2025-12-14 00:06:15,935 - INFO -     -> Saved: clean_EURUSD_1H_017.csv (12 rows)
-2025-12-14 00:06:15,938 - INFO -     -> Saved: clean_EURUSD_1H_004.csv (5 rows)
-2025-12-14 00:06:15,941 - INFO -     -> Saved: clean_EURUSD_1H_029.csv (8 rows)
-2025-12-14 00:06:15,943 - INFO -     -> Saved: clean_EURUSD_1H_027.csv (12 rows)
-2025-12-14 00:06:15,946 - INFO -     -> Saved: clean_EURUSD_1H_050.csv (16 rows)
-2025-12-14 00:06:15,949 - INFO -     -> Saved: clean_EURUSD_1H_018.csv (9 rows)
-2025-12-14 00:06:15,952 - INFO -     -> Saved: clean_EURUSD_1H_026.csv (17 rows)
-2025-12-14 00:06:15,954 - INFO -     -> Saved: clean_EURUSD_1H_042.csv (12 rows)
-2025-12-14 00:06:17,321 - INFO -     -> Saved: clean_XAU_30m_data_limited.csv (242152 rows)
-2025-12-14 00:06:20,056 - INFO -     -> Saved: clean_XAU_15m_data_limited.csv (480717 rows)
-2025-12-14 00:06:25,277 - INFO -     -> Saved: clean_XAU_5m_data_limited.csv (999999 rows)
-2025-12-14 00:06:25,925 - INFO -     -> Saved: clean_XAU_1h_data_limited.csv (121823 rows)
-2025-12-14 00:06:30,852 - INFO -     -> Saved: clean_XAU_1m_data_limited.csv (999999 rows)
-2025-12-14 00:06:30,871 - INFO -     -> Saved: clean_EURUSDX_2025-09-10_to_2025-09-14_5m.csv (846 rows)
-2025-12-14 00:06:30,875 - INFO -     -> Saved: clean_EURUSDX_2025-10-30_to_2025-10-30_5m.csv (136 rows)
-2025-12-14 00:06:30,884 - INFO -     -> Saved: clean_EURUSDX_2025-09-25_to_2025-09-29_5m.csv (846 rows)
-2025-12-14 00:06:30,897 - INFO -     -> Saved: clean_EURUSDX_2025-10-20_to_2025-10-24_5m.csv (1422 rows)
-2025-12-14 00:06:30,910 - INFO -     -> Saved: clean_EURUSDX_2025-09-15_to_2025-09-19_5m.csv (1365 rows)
-2025-12-14 00:06:30,921 - INFO -     -> Saved: clean_EURUSDX_2025-09-30_to_2025-10-04_5m.csv (1134 rows)
-2025-12-14 00:06:30,929 - INFO -     -> Saved: clean_EURUSDX_2025-09-05_to_2025-09-09_5m.csv (846 rows)
-2025-12-14 00:06:30,938 - INFO -     -> Saved: clean_EURUSDX_2025-09-20_to_2025-09-24_5m.csv (864 rows)
-2025-12-14 00:06:30,946 - INFO -     -> Saved: clean_EURUSDX_2025-10-25_to_2025-10-29_5m.csv (863 rows)
-2025-12-14 00:06:30,957 - INFO -     -> Saved: clean_EURUSDX_2025-10-05_to_2025-10-09_5m.csv (1147 rows)
-2025-12-14 00:06:30,966 - INFO -     -> Saved: clean_EURUSDX_2025-10-10_to_2025-10-14_5m.csv (846 rows)
-2025-12-14 00:06:30,975 - INFO -     -> Saved: clean_EURUSDX_2025-10-15_to_2025-10-19_5m.csv (846 rows)
-2025-12-14 00:06:30,979 - INFO -     -> Saved (Renamed): clean_EURUSD_15min_001_dup5.csv (24 rows)
-2025-12-14 00:06:30,982 - INFO -     -> Saved: clean_EURUSD_15min_004.csv (37 rows)
-2025-12-14 00:06:32,484 - INFO -     -> Saved: clean_EURUSD_15m_BID_01.01.2010-31.12.2016.csv (245388 rows)
-2025-12-14 00:06:33,987 - INFO -     -> Saved: clean_EURUSD_15m_006.csv (245388 rows)
-2025-12-14 00:06:33,990 - INFO -     -> Saved: clean_EURUSD_15min_003.csv (11 rows)
-2025-12-14 00:06:33,993 - INFO -     -> Saved: clean_EURUSD_15min_002.csv (8 rows)
-2025-12-14 00:06:33,996 - INFO -     -> Saved: clean_EURUSD_15min_005.csv (18 rows)
-2025-12-14 00:06:35,288 - INFO -     -> Saved: clean_EURUSD_15m_007.csv (245388 rows)
-2025-12-14 00:06:35,303 - INFO -     -> Saved (Renamed): clean_EURUSD_1H_005_dup1.csv (840 rows)
-2025-12-14 00:06:35,319 - INFO -     -> Saved (Renamed): clean_EURUSD_15min_003_dup1.csv (3341 rows)
-2025-12-14 00:06:35,365 - INFO -     -> Saved (Renamed): clean_EURUSD_5min_002_dup3.csv (10010 rows)
-2025-12-14 00:06:35,593 - INFO -     -> Saved (Renamed): clean_EURUSD_1min_001_dup2.csv (50000 rows)
-2025-12-14 00:06:35,612 - INFO -     -> Saved: clean_EURUSD_30min_004.csv (1673 rows)
-2025-12-14 00:06:35,612 - INFO - 
+2025-12-14 11:07:12,698 - INFO -     -> Saved: clean_XAUUSD_1H_37.csv (8 rows)
+2025-12-14 11:07:12,701 - INFO -     -> Saved: clean_XAUUSD_1H_4.csv (6 rows)
+2025-12-14 11:07:12,703 - INFO -     -> Saved: clean_XAUUSD_1H_5.csv (13 rows)
+2025-12-14 11:07:12,706 - INFO -     -> Saved: clean_XAUUSD_1H_3.csv (16 rows)
+2025-12-14 11:07:12,708 - INFO -     -> Saved: clean_XAUUSD_1H_18.csv (7 rows)
+2025-12-14 11:07:12,710 - INFO -     -> Saved: clean_XAUUSD_1H_27.csv (13 rows)
+2025-12-14 11:07:12,713 - INFO -     -> Saved: clean_XAUUSD_1H_42.csv (8 rows)
+2025-12-14 11:07:12,715 - INFO -     -> Saved: clean_XAUUSD_1H_12.csv (13 rows)
+2025-12-14 11:07:12,717 - INFO -     -> Saved: clean_XAUUSD_1H_28.csv (18 rows)
+2025-12-14 11:07:12,720 - INFO -     -> Saved: clean_XAUUSD_1H_41.csv (5 rows)
+2025-12-14 11:07:12,722 - INFO -     -> Saved: clean_XAUUSD_1H_30.csv (12 rows)
+2025-12-14 11:07:12,724 - INFO -     -> Saved: clean_XAUUSD_1H_17.csv (6 rows)
+2025-12-14 11:07:12,727 - INFO -     -> Saved: clean_XAUUSD_1H_22.csv (9 rows)
+2025-12-14 11:07:12,729 - INFO -     -> Saved: clean_XAUUSD_1H_50.csv (7 rows)
+2025-12-14 11:07:12,731 - INFO -     -> Saved: clean_XAUUSD_1H_23.csv (11 rows)
+2025-12-14 11:07:12,733 - INFO -     -> Saved: clean_XAUUSD_1H_13.csv (12 rows)
+2025-12-14 11:07:12,736 - INFO -     -> Saved: clean_XAUUSD_1H_20.csv (6 rows)
+2025-12-14 11:07:12,738 - INFO -     -> Saved: clean_XAUUSD_1H_35.csv (11 rows)
+2025-12-14 11:07:12,740 - INFO -     -> Saved: clean_XAUUSD_1H_45.csv (14 rows)
+2025-12-14 11:07:12,743 - INFO -     -> Saved: clean_XAUUSD_1H_8.csv (7 rows)
+2025-12-14 11:07:12,745 - INFO -     -> Saved: clean_XAUUSD_1H_26.csv (10 rows)
+2025-12-14 11:07:12,747 - INFO -     -> Saved: clean_XAUUSD_1H_15.csv (5 rows)
+2025-12-14 11:07:12,750 - INFO -     -> Saved: clean_XAUUSD_1H_29.csv (10 rows)
+2025-12-14 11:07:12,752 - INFO -     -> Saved: clean_XAUUSD_1H_1.csv (1 rows)
+2025-12-14 11:07:12,754 - INFO -     -> Saved: clean_XAUUSD_1H_16.csv (16 rows)
+2025-12-14 11:07:12,757 - INFO -     -> Saved: clean_XAUUSD_1H_49.csv (12 rows)
+2025-12-14 11:07:12,759 - INFO -     -> Saved: clean_XAUUSD_1H_10.csv (18 rows)
+2025-12-14 11:07:12,761 - INFO -     -> Saved: clean_XAUUSD_1H_32.csv (5 rows)
+2025-12-14 11:07:12,764 - INFO -     -> Saved: clean_XAUUSD_1H_34.csv (6 rows)
+2025-12-14 11:07:12,766 - INFO -     -> Saved: clean_XAUUSD_1H_25.csv (8 rows)
+2025-12-14 11:07:12,768 - INFO -     -> Saved: clean_XAUUSD_1H_9.csv (25 rows)
+2025-12-14 11:07:12,770 - INFO -     -> Saved: clean_XAUUSD_1H_2.csv (10 rows)
+2025-12-14 11:07:12,773 - INFO -     -> Saved: clean_XAUUSD_1H_46.csv (9 rows)
+2025-12-14 11:07:12,775 - INFO -     -> Saved: clean_XAUUSD_1H_36.csv (10 rows)
+2025-12-14 11:07:12,777 - INFO -     -> Saved: clean_XAUUSD_1H_31.csv (11 rows)
+2025-12-14 11:07:12,780 - INFO -     -> Saved: clean_XAUUSD_1H_19.csv (7 rows)
+2025-12-14 11:07:12,782 - INFO -     -> Saved: clean_XAUUSD_1H_21.csv (12 rows)
+2025-12-14 11:07:12,784 - INFO -     -> Saved: clean_XAUUSD_1H_48.csv (13 rows)
+2025-12-14 11:07:12,786 - INFO -     -> Saved: clean_XAUUSD_1H_14.csv (7 rows)
+2025-12-14 11:07:12,789 - INFO -     -> Saved: clean_XAUUSD_1H_44.csv (5 rows)
+2025-12-14 11:07:12,791 - INFO -     -> Saved: clean_XAUUSD_1H_47.csv (10 rows)
+2025-12-14 11:07:12,793 - INFO -     -> Saved: clean_XAUUSD_1H_38.csv (10 rows)
+2025-12-14 11:07:12,796 - INFO -     -> Saved: clean_XAUUSD_1H_40.csv (11 rows)
+2025-12-14 11:07:12,798 - INFO -     -> Saved: clean_XAUUSD_1H_43.csv (9 rows)
+2025-12-14 11:07:12,800 - INFO -     -> Saved: clean_XAUUSD_1H_33.csv (7 rows)
+2025-12-14 11:07:12,803 - INFO -     -> Saved: clean_XAUUSD_1H_7.csv (7 rows)
+2025-12-14 11:07:12,806 - INFO -     -> Saved: clean_XAUUSD_1H_6.csv (15 rows)
+2025-12-14 11:07:12,808 - INFO -     -> Saved: clean_XAUUSD_1H_11.csv (6 rows)
+2025-12-14 11:07:12,810 - INFO -     -> Saved: clean_XAUUSD_1H_24.csv (13 rows)
+2025-12-14 11:07:12,813 - INFO -     -> Saved: clean_XAUUSD_1H_39.csv (6 rows)
+2025-12-14 11:07:12,935 - INFO -     -> Saved: clean_XAUUSD_5min_001.csv (27755 rows)
+2025-12-14 11:07:12,959 - INFO -     -> Saved: clean_XAUUSD_30min_001.csv (4635 rows)
+2025-12-14 11:07:13,009 - INFO -     -> Saved: clean_XAUUSD_15min_001.csv (9261 rows)
+2025-12-14 11:07:13,552 - INFO -     -> Saved: clean_EURUSD_1min.csv (100000 rows)
+2025-12-14 11:07:14,573 - INFO -     -> Saved: clean_EURUSD_15min_001.csv (245388 rows)
+2025-12-14 11:07:14,579 - INFO -     -> Saved: clean_XAU_1H_001.csv (298 rows)
+2025-12-14 11:07:14,595 - INFO -     -> Saved (Renamed): clean_EURUSD_15min_001_dup1.csv (3342 rows)
+2025-12-14 11:07:14,604 - INFO -     -> Saved: clean_EURUSD_30min_001.csv (1676 rows)
+2025-12-14 11:07:14,636 - INFO -     -> Saved: clean_EURUSD_1min_001.csv (7197 rows)
+2025-12-14 11:07:14,669 - INFO -     -> Saved: clean_EURUSD_5min_001.csv (7192 rows)
+2025-12-14 11:07:14,675 - INFO -     -> Saved: clean_EURUSD_1H_001.csv (838 rows)
+2025-12-14 11:07:14,750 - INFO -     -> Saved: clean_XAUUSD_5m_002.csv (13710 rows)
+2025-12-14 11:07:14,826 - INFO -     -> Saved: clean_XAUUSD_5m_001.csv (13522 rows)
+2025-12-14 11:07:14,862 - INFO -     -> Saved (Renamed): clean_EURUSD_15min_001_dup2.csv (8201 rows)
+2025-12-14 11:07:14,886 - INFO -     -> Saved: clean_EURUSD_1hour_001.csv (3090 rows)
+2025-12-14 11:07:14,902 - INFO -     -> Saved: clean_EURUSD_1hour_002.csv (3132 rows)
+2025-12-14 11:07:15,066 - INFO -     -> Saved: clean_EURUSD_5min_002.csv (37316 rows)
+2025-12-14 11:07:15,080 - INFO -     -> Saved (Renamed): clean_EURUSD_30min_001_dup1.csv (2697 rows)
+2025-12-14 11:07:15,241 - INFO -     -> Saved (Renamed): clean_EURUSD_5min_001_dup1.csv (36811 rows)
+2025-12-14 11:07:15,250 - INFO -     -> Saved: clean_EURUSD_1hour_003.csv (1333 rows)
+2025-12-14 11:07:15,761 - INFO -     -> Saved (Renamed): clean_EURUSD_15min_001_dup3.csv (121352 rows)
+2025-12-14 11:07:25,239 - INFO -     -> Saved: clean_EURUSD_1min_002.csv (1809479 rows)
+2025-12-14 11:07:25,494 - INFO -     -> Saved (Renamed): clean_EURUSD_30min_001_dup2.csv (60679 rows)
+2025-12-14 11:07:26,080 - WARNING -     [SKIP] Missing OHLC columns: EURUSD_1min_001.csv
+2025-12-14 11:07:27,598 - INFO -     -> Saved (Renamed): clean_EURUSD_5min_001_dup2.csv (363960 rows)
+2025-12-14 11:07:27,729 - INFO -     -> Saved (Renamed): clean_EURUSD_1H_001_dup1.csv (30340 rows)
+2025-12-14 11:07:28,455 - INFO -     -> Saved: clean_EURUSD_15min.csv (143054 rows)
+2025-12-14 11:07:28,842 - INFO -     -> Saved: clean_XAUUSD_30min.csv (69024 rows)
+2025-12-14 11:07:29,203 - INFO -     -> Saved: clean_EURUSD_30min.csv (71664 rows)
+2025-12-14 11:07:30,516 - INFO -     -> Saved: clean_XAUUSD_1min.csv (250000 rows)
+2025-12-14 11:07:31,796 - INFO -     -> Saved (Renamed): clean_EURUSD_1min_dup1.csv (250000 rows)
+2025-12-14 11:07:33,209 - INFO -     -> Saved: clean_XAUUSD_5min.csv (250000 rows)
+2025-12-14 11:07:33,986 - INFO -     -> Saved: clean_XAUUSD_15min.csv (137835 rows)
+2025-12-14 11:07:34,454 - INFO -     -> Saved: clean_EURUSD_5min.csv (91829 rows)
+2025-12-14 11:07:34,649 - INFO -     -> Saved: clean_XAUUSD_1h.csv (34577 rows)
+2025-12-14 11:07:34,830 - INFO -     -> Saved: clean_EURUSD_1h.csv (35908 rows)
+2025-12-14 11:07:35,016 - INFO -     -> Saved: clean_XAUUSD_5minute_001.csv (31352 rows)
+2025-12-14 11:07:35,440 - INFO -     -> Saved: clean_EURUSD_1minute_001.csv (82033 rows)
+2025-12-14 11:07:35,849 - INFO -     -> Saved: clean_XAUUSD_1minute_001.csv (78548 rows)
+2025-12-14 11:07:36,105 - INFO -     -> Saved: clean_EURUSD_1minute_003.csv (50000 rows)
+2025-12-14 11:07:36,359 - INFO -     -> Saved: clean_EURUSD_15minute_001.csv (49488 rows)
+2025-12-14 11:07:36,388 - INFO -     -> Saved (Renamed): clean_EURUSD_1hour_001_dup1.csv (5057 rows)
+2025-12-14 11:07:37,591 - INFO -     -> Saved: clean_EURUSD_1minute_004.csv (233719 rows)
+2025-12-14 11:07:37,846 - INFO -     -> Saved: clean_EURUSD_1minute_002.csv (50000 rows)
+2025-12-14 11:07:38,032 - INFO -     -> Saved: clean_EURUSD_1min_010.csv (44640 rows)
+2025-12-14 11:07:38,218 - INFO -     -> Saved: clean_EURUSD_1min_008.csv (44640 rows)
+2025-12-14 11:07:38,388 - INFO -     -> Saved (Renamed): clean_EURUSD_1min_002_dup1.csv (40320 rows)
+2025-12-14 11:07:38,571 - INFO -     -> Saved: clean_EURUSD_1min_009.csv (43200 rows)
+2025-12-14 11:07:38,750 - INFO -     -> Saved: clean_EURUSD_1min_011.csv (43200 rows)
+2025-12-14 11:07:38,936 - INFO -     -> Saved: clean_EURUSD_1min_005.csv (44640 rows)
+2025-12-14 11:07:39,116 - INFO -     -> Saved: clean_EURUSD_1min_004.csv (43200 rows)
+2025-12-14 11:07:39,301 - INFO -     -> Saved: clean_EURUSD_1min_003.csv (44640 rows)
+2025-12-14 11:07:39,493 - INFO -     -> Saved: clean_EURUSD_1min_012.csv (44640 rows)
+2025-12-14 11:07:39,687 - INFO -     -> Saved (Renamed): clean_EURUSD_1min_001_dup1.csv (44640 rows)
+2025-12-14 11:07:39,887 - INFO -     -> Saved: clean_EURUSD_1min_006.csv (43200 rows)
+2025-12-14 11:07:40,089 - INFO -     -> Saved: clean_EURUSD_1min_007.csv (44640 rows)
+2025-12-14 11:07:40,097 - INFO -     -> Saved (Renamed): clean_EURUSD_15min_001_dup4.csv (452 rows)
+2025-12-14 11:07:40,112 - INFO -     -> Saved (Renamed): clean_EURUSD_5min_002_dup1.csv (1355 rows)
+2025-12-14 11:07:40,121 - INFO -     -> Saved: clean_EURUSD_30m_001.csv (1010 rows)
+2025-12-14 11:07:40,135 - INFO -     -> Saved: clean_EURUSD_15m_001.csv (2016 rows)
+2025-12-14 11:07:40,172 - INFO -     -> Saved: clean_EURUSD_5m_001.csv (6042 rows)
+2025-12-14 11:07:40,352 - INFO -     -> Saved: clean_EURUSD_1m_001.csv (30148 rows)
+2025-12-14 11:07:40,359 - INFO -     -> Saved (Renamed): clean_EURUSD_1H_001_dup2.csv (506 rows)
+2025-12-14 11:07:40,362 - INFO -     -> Saved: clean_EURUSD_5min_031.csv (23 rows)
+2025-12-14 11:07:40,365 - INFO -     -> Saved: clean_EURUSD_5min_052.csv (59 rows)
+2025-12-14 11:07:40,368 - INFO -     -> Saved: clean_EURUSD_5min_029.csv (70 rows)
+2025-12-14 11:07:40,372 - INFO -     -> Saved: clean_EURUSD_5min_050.csv (60 rows)
+2025-12-14 11:07:40,374 - INFO -     -> Saved: clean_EURUSD_5min_020.csv (56 rows)
+2025-12-14 11:07:40,377 - INFO -     -> Saved: clean_EURUSD_5min_008.csv (56 rows)
+2025-12-14 11:07:40,381 - INFO -     -> Saved: clean_EURUSD_5min_022.csv (68 rows)
+2025-12-14 11:07:40,384 - INFO -     -> Saved: clean_EURUSD_5min_037.csv (22 rows)
+2025-12-14 11:07:40,387 - INFO -     -> Saved: clean_EURUSD_5min_035.csv (64 rows)
+2025-12-14 11:07:40,389 - INFO -     -> Saved: clean_EURUSD_5min_045.csv (67 rows)
+2025-12-14 11:07:40,392 - INFO -     -> Saved: clean_EURUSD_5min_019.csv (70 rows)
+2025-12-14 11:07:40,396 - INFO -     -> Saved: clean_EURUSD_5min_043.csv (41 rows)
+2025-12-14 11:07:40,399 - INFO -     -> Saved: clean_EURUSD_5min_048.csv (30 rows)
+2025-12-14 11:07:40,401 - INFO -     -> Saved: clean_EURUSD_5min_049.csv (18 rows)
+2025-12-14 11:07:40,404 - INFO -     -> Saved: clean_EURUSD_5min_003.csv (29 rows)
+2025-12-14 11:07:40,408 - INFO -     -> Saved: clean_EURUSD_5min_040.csv (66 rows)
+2025-12-14 11:07:40,411 - INFO -     -> Saved: clean_EURUSD_5min_046.csv (68 rows)
+2025-12-14 11:07:40,414 - INFO -     -> Saved: clean_EURUSD_5min_015.csv (29 rows)
+2025-12-14 11:07:40,417 - INFO -     -> Saved: clean_EURUSD_5min_017.csv (66 rows)
+2025-12-14 11:07:40,420 - INFO -     -> Saved: clean_EURUSD_5min_051.csv (58 rows)
+2025-12-14 11:07:40,423 - INFO -     -> Saved: clean_EURUSD_5min_023.csv (28 rows)
+2025-12-14 11:07:40,427 - INFO -     -> Saved: clean_EURUSD_5min_053.csv (95 rows)
+2025-12-14 11:07:40,430 - INFO -     -> Saved: clean_EURUSD_5min_032.csv (40 rows)
+2025-12-14 11:07:40,432 - INFO -     -> Saved: clean_EURUSD_5min_030.csv (40 rows)
+2025-12-14 11:07:40,436 - INFO -     -> Saved: clean_EURUSD_5min_026.csv (59 rows)
+2025-12-14 11:07:40,448 - INFO -     -> Saved: clean_EURUSD_5min_036.csv (61 rows)
+2025-12-14 11:07:40,453 - INFO -     -> Saved: clean_EURUSD_5min_033.csv (45 rows)
+2025-12-14 11:07:40,457 - INFO -     -> Saved: clean_EURUSD_5min_007.csv (26 rows)
+2025-12-14 11:07:40,462 - INFO -     -> Saved: clean_EURUSD_5min_027.csv (34 rows)
+2025-12-14 11:07:40,465 - INFO -     -> Saved: clean_EURUSD_5min_005.csv (84 rows)
+2025-12-14 11:07:40,467 - INFO -     -> Saved: clean_EURUSD_5min_039.csv (43 rows)
+2025-12-14 11:07:40,470 - INFO -     -> Saved: clean_EURUSD_5min_024.csv (51 rows)
+2025-12-14 11:07:40,473 - INFO -     -> Saved: clean_EURUSD_5min_028.csv (56 rows)
+2025-12-14 11:07:40,476 - INFO -     -> Saved: clean_EURUSD_5min_034.csv (59 rows)
+2025-12-14 11:07:40,479 - INFO -     -> Saved: clean_EURUSD_5min_014.csv (30 rows)
+2025-12-14 11:07:40,482 - INFO -     -> Saved: clean_EURUSD_5min_047.csv (66 rows)
+2025-12-14 11:07:40,484 - INFO -     -> Saved: clean_EURUSD_5min_038.csv (63 rows)
+2025-12-14 11:07:44,618 - INFO -     -> Saved (Renamed): clean_EURUSD_5min_002_dup2.csv (524287 rows)
+2025-12-14 11:07:44,626 - INFO -     -> Saved: clean_EURUSD_5min_011.csv (49 rows)
+2025-12-14 11:07:44,631 - INFO -     -> Saved: clean_EURUSD_5min_016.csv (42 rows)
+2025-12-14 11:07:44,636 - INFO -     -> Saved: clean_EURUSD_5min_009.csv (36 rows)
+2025-12-14 11:07:47,932 - INFO -     -> Saved (Renamed): clean_EURUSD_5min_001_dup3.csv (524288 rows)
+2025-12-14 11:07:47,938 - INFO -     -> Saved: clean_EURUSD_5min_044.csv (49 rows)
+2025-12-14 11:07:47,941 - INFO -     -> Saved: clean_EURUSD_5min_004.csv (38 rows)
+2025-12-14 11:07:47,944 - INFO -     -> Saved: clean_EURUSD_5min_012.csv (29 rows)
+2025-12-14 11:07:47,949 - INFO -     -> Saved: clean_EURUSD_5min_042.csv (66 rows)
+2025-12-14 11:07:47,953 - INFO -     -> Saved: clean_EURUSD_5min_054.csv (63 rows)
+2025-12-14 11:07:47,958 - INFO -     -> Saved: clean_EURUSD_5min_006.csv (117 rows)
+2025-12-14 11:07:47,962 - INFO -     -> Saved: clean_EURUSD_5min_041.csv (90 rows)
+2025-12-14 11:07:47,965 - INFO -     -> Saved: clean_EURUSD_5min_013.csv (39 rows)
+2025-12-14 11:07:47,968 - INFO -     -> Saved: clean_EURUSD_5min_021.csv (95 rows)
+2025-12-14 11:07:47,971 - INFO -     -> Saved: clean_EURUSD_5min_010.csv (87 rows)
+2025-12-14 11:07:47,974 - INFO -     -> Saved: clean_EURUSD_5min_018.csv (30 rows)
+2025-12-14 11:07:47,977 - INFO -     -> Saved: clean_EURUSD_5min_025.csv (64 rows)
+2025-12-14 11:07:47,980 - INFO -     -> Saved: clean_EURUSD_1H_059.csv (8 rows)
+2025-12-14 11:07:47,984 - INFO -     -> Saved: clean_EURUSD_1H_028.csv (8 rows)
+2025-12-14 11:07:47,987 - INFO -     -> Saved: clean_EURUSD_1H_036.csv (16 rows)
+2025-12-14 11:07:47,990 - INFO -     -> Saved: clean_EURUSD_1H_024.csv (26 rows)
+2025-12-14 11:07:47,993 - INFO -     -> Saved: clean_EURUSD_1H_010.csv (7 rows)
+2025-12-14 11:07:47,996 - INFO -     -> Saved: clean_EURUSD_1H_003.csv (8 rows)
+2025-12-14 11:07:48,000 - INFO -     -> Saved: clean_EURUSD_1H_053.csv (9 rows)
+2025-12-14 11:07:48,003 - INFO -     -> Saved: clean_EURUSD_1H_046.csv (6 rows)
+2025-12-14 11:07:48,006 - INFO -     -> Saved: clean_EURUSD_1H_043.csv (11 rows)
+2025-12-14 11:07:48,011 - INFO -     -> Saved: clean_EURUSD_1H_045.csv (19 rows)
+2025-12-14 11:07:48,016 - INFO -     -> Saved: clean_EURUSD_1H_008.csv (16 rows)
+2025-12-14 11:07:48,021 - INFO -     -> Saved: clean_EURUSD_1H_005.csv (11 rows)
+2025-12-14 11:07:48,025 - INFO -     -> Saved: clean_EURUSD_1H_055.csv (8 rows)
+2025-12-14 11:07:48,029 - INFO -     -> Saved: clean_EURUSD_1H_049.csv (21 rows)
+2025-12-14 11:07:48,031 - INFO -     -> Saved: clean_EURUSD_1H_035.csv (9 rows)
+2025-12-14 11:07:48,043 - INFO -     -> Saved: clean_EURUSD_1H_015.csv (9 rows)
+2025-12-14 11:07:48,046 - INFO -     -> Saved: clean_EURUSD_1H_034.csv (12 rows)
+2025-12-14 11:07:48,048 - INFO -     -> Saved: clean_EURUSD_1H_016.csv (5 rows)
+2025-12-14 11:07:48,051 - INFO -     -> Saved: clean_EURUSD_1H_014.csv (11 rows)
+2025-12-14 11:07:48,053 - INFO -     -> Saved: clean_EURUSD_1H_011.csv (19 rows)
+2025-12-14 11:07:48,055 - INFO -     -> Saved: clean_EURUSD_1H_037.csv (7 rows)
+2025-12-14 11:07:48,058 - INFO -     -> Saved: clean_EURUSD_1H_019.csv (17 rows)
+2025-12-14 11:07:48,061 - INFO -     -> Saved: clean_EURUSD_1H_054.csv (10 rows)
+2025-12-14 11:07:48,064 - INFO -     -> Saved: clean_EURUSD_1H_002.csv (4 rows)
+2025-12-14 11:07:48,066 - INFO -     -> Saved: clean_EURUSD_1H_007.csv (8 rows)
+2025-12-14 11:07:48,069 - INFO -     -> Saved: clean_EURUSD_1H_038.csv (77 rows)
+2025-12-14 11:07:48,072 - INFO -     -> Saved: clean_EURUSD_1H_032.csv (12 rows)
+2025-12-14 11:07:48,074 - INFO -     -> Saved: clean_EURUSD_1H_030.csv (12 rows)
+2025-12-14 11:07:48,077 - INFO -     -> Saved: clean_EURUSD_1H_057.csv (8 rows)
+2025-12-14 11:07:48,079 - INFO -     -> Saved: clean_EURUSD_1H_058.csv (7 rows)
+2025-12-14 11:07:48,082 - INFO -     -> Saved: clean_EURUSD_1H_040.csv (8 rows)
+2025-12-14 11:07:48,084 - INFO -     -> Saved: clean_EURUSD_1H_022.csv (7 rows)
+2025-12-14 11:07:48,087 - INFO -     -> Saved: clean_EURUSD_1H_021.csv (10 rows)
+2025-12-14 11:07:48,090 - INFO -     -> Saved: clean_EURUSD_1H_051.csv (6 rows)
+2025-12-14 11:07:48,092 - INFO -     -> Saved: clean_EURUSD_1H_009.csv (14 rows)
+2025-12-14 11:07:48,095 - INFO -     -> Saved: clean_EURUSD_1H_033.csv (7 rows)
+2025-12-14 11:07:48,097 - INFO -     -> Saved: clean_EURUSD_1H_031.csv (8 rows)
+2025-12-14 11:07:48,100 - INFO -     -> Saved: clean_EURUSD_1H_047.csv (20 rows)
+2025-12-14 11:07:48,103 - INFO -     -> Saved: clean_EURUSD_1H_013.csv (9 rows)
+2025-12-14 11:07:48,106 - INFO -     -> Saved: clean_EURUSD_1H_056.csv (7 rows)
+2025-12-14 11:07:48,108 - INFO -     -> Saved: clean_EURUSD_1H_020.csv (18 rows)
+2025-12-14 11:07:48,111 - INFO -     -> Saved: clean_EURUSD_1H_023.csv (12 rows)
+2025-12-14 11:07:48,114 - INFO -     -> Saved: clean_EURUSD_1H_060.csv (10 rows)
+2025-12-14 11:07:48,117 - INFO -     -> Saved: clean_EURUSD_1H_044.csv (6 rows)
+2025-12-14 11:07:48,119 - INFO -     -> Saved: clean_EURUSD_1H_006.csv (21 rows)
+2025-12-14 11:07:48,122 - INFO -     -> Saved: clean_EURUSD_1H_048.csv (16 rows)
+2025-12-14 11:07:48,124 - INFO -     -> Saved: clean_EURUSD_1H_025.csv (18 rows)
+2025-12-14 11:07:48,127 - INFO -     -> Saved: clean_EURUSD_1H_041.csv (7 rows)
+2025-12-14 11:07:48,129 - INFO -     -> Saved: clean_EURUSD_1H_052.csv (5 rows)
+2025-12-14 11:07:48,132 - INFO -     -> Saved: clean_EURUSD_1H_012.csv (7 rows)
+2025-12-14 11:07:48,134 - INFO -     -> Saved (Renamed): clean_EURUSD_1H_001_dup3.csv (10 rows)
+2025-12-14 11:07:48,137 - INFO -     -> Saved: clean_EURUSD_1H_039.csv (6 rows)
+2025-12-14 11:07:48,139 - INFO -     -> Saved: clean_EURUSD_1H_017.csv (12 rows)
+2025-12-14 11:07:48,142 - INFO -     -> Saved: clean_EURUSD_1H_004.csv (5 rows)
+2025-12-14 11:07:48,144 - INFO -     -> Saved: clean_EURUSD_1H_029.csv (8 rows)
+2025-12-14 11:07:48,147 - INFO -     -> Saved: clean_EURUSD_1H_027.csv (12 rows)
+2025-12-14 11:07:48,149 - INFO -     -> Saved: clean_EURUSD_1H_050.csv (16 rows)
+2025-12-14 11:07:48,152 - INFO -     -> Saved: clean_EURUSD_1H_018.csv (9 rows)
+2025-12-14 11:07:48,156 - INFO -     -> Saved: clean_EURUSD_1H_026.csv (17 rows)
+2025-12-14 11:07:48,158 - INFO -     -> Saved: clean_EURUSD_1H_042.csv (12 rows)
+2025-12-14 11:07:49,531 - INFO -     -> Saved: clean_XAU_30m_data_limited.csv (242152 rows)
+2025-12-14 11:07:52,327 - INFO -     -> Saved: clean_XAU_15m_data_limited.csv (480717 rows)
+2025-12-14 11:07:58,189 - INFO -     -> Saved: clean_XAU_5m_data_limited.csv (999999 rows)
+2025-12-14 11:07:58,882 - INFO -     -> Saved: clean_XAU_1h_data_limited.csv (121823 rows)
+2025-12-14 11:08:04,809 - INFO -     -> Saved: clean_XAU_1m_data_limited.csv (999999 rows)
+2025-12-14 11:08:04,821 - INFO -     -> Saved: clean_EURUSDX_2025-09-10_to_2025-09-14_5m.csv (846 rows)
+2025-12-14 11:08:04,825 - INFO -     -> Saved: clean_EURUSDX_2025-10-30_to_2025-10-30_5m.csv (136 rows)
+2025-12-14 11:08:04,834 - INFO -     -> Saved: clean_EURUSDX_2025-09-25_to_2025-09-29_5m.csv (846 rows)
+2025-12-14 11:08:04,847 - INFO -     -> Saved: clean_EURUSDX_2025-10-20_to_2025-10-24_5m.csv (1422 rows)
+2025-12-14 11:08:04,860 - INFO -     -> Saved: clean_EURUSDX_2025-09-15_to_2025-09-19_5m.csv (1365 rows)
+2025-12-14 11:08:04,872 - INFO -     -> Saved: clean_EURUSDX_2025-09-30_to_2025-10-04_5m.csv (1134 rows)
+2025-12-14 11:08:04,881 - INFO -     -> Saved: clean_EURUSDX_2025-09-05_to_2025-09-09_5m.csv (846 rows)
+2025-12-14 11:08:04,890 - INFO -     -> Saved: clean_EURUSDX_2025-09-20_to_2025-09-24_5m.csv (864 rows)
+2025-12-14 11:08:04,899 - INFO -     -> Saved: clean_EURUSDX_2025-10-25_to_2025-10-29_5m.csv (863 rows)
+2025-12-14 11:08:04,911 - INFO -     -> Saved: clean_EURUSDX_2025-10-05_to_2025-10-09_5m.csv (1147 rows)
+2025-12-14 11:08:04,920 - INFO -     -> Saved: clean_EURUSDX_2025-10-10_to_2025-10-14_5m.csv (846 rows)
+2025-12-14 11:08:04,929 - INFO -     -> Saved: clean_EURUSDX_2025-10-15_to_2025-10-19_5m.csv (846 rows)
+2025-12-14 11:08:04,932 - INFO -     -> Saved (Renamed): clean_EURUSD_15min_001_dup5.csv (24 rows)
+2025-12-14 11:08:04,935 - INFO -     -> Saved: clean_EURUSD_15min_004.csv (37 rows)
+2025-12-14 11:08:06,544 - INFO -     -> Saved: clean_EURUSD_15m_BID_01.01.2010-31.12.2016.csv (245388 rows)
+2025-12-14 11:08:08,194 - INFO -     -> Saved: clean_EURUSD_15m_006.csv (245388 rows)
+2025-12-14 11:08:08,200 - INFO -     -> Saved: clean_EURUSD_15min_003.csv (11 rows)
+2025-12-14 11:08:08,204 - INFO -     -> Saved: clean_EURUSD_15min_002.csv (8 rows)
+2025-12-14 11:08:08,208 - INFO -     -> Saved: clean_EURUSD_15min_005.csv (18 rows)
+2025-12-14 11:08:09,608 - INFO -     -> Saved: clean_EURUSD_15m_007.csv (245388 rows)
+2025-12-14 11:08:09,623 - INFO -     -> Saved (Renamed): clean_EURUSD_1H_005_dup1.csv (840 rows)
+2025-12-14 11:08:09,641 - INFO -     -> Saved (Renamed): clean_EURUSD_15min_003_dup1.csv (3341 rows)
+2025-12-14 11:08:09,689 - INFO -     -> Saved (Renamed): clean_EURUSD_5min_002_dup3.csv (10010 rows)
+2025-12-14 11:08:09,910 - INFO -     -> Saved (Renamed): clean_EURUSD_1min_001_dup2.csv (50000 rows)
+2025-12-14 11:08:09,922 - INFO -     -> Saved: clean_EURUSD_30min_004.csv (1673 rows)
+2025-12-14 11:08:09,922 - INFO - 
 [PHASE 2] Processing labels...
-2025-12-14 00:06:40,861 - INFO - 
+2025-12-14 11:08:15,683 - INFO - 
 [FILTERING] Cleaning overlaps...
-2025-12-14 00:06:40,934 - INFO -     -> Remaining labels: 552 (Original: 606)
-2025-12-14 00:06:40,946 - INFO - 
+2025-12-14 11:08:15,757 - INFO -     -> Remaining labels: 552 (Original: 606)
+2025-12-14 11:08:15,766 - INFO - 
 [DONE] Ground Truth generated: 552 rows.
-2025-12-14 00:06:40,948 - INFO - 
+2025-12-14 11:08:15,768 - INFO - 
                label trend_label
 499   Bullish Normal        BULL
 497    Bullish Wedge        BULL
 498    Bullish Wedge        BULL
 496  Bearish Pennant        BEAR
 503   Bearish Normal        BEAR
-2025-12-14 00:06:40,948 - INFO - 
+2025-12-14 11:08:15,768 - INFO - 
 [PHASE 3] Cleanup...
-2025-12-14 00:06:40,973 - INFO -     -> Deleted 383 files.
-2025-12-14 00:06:40,974 - INFO -     -> Kept files: 233 data files + labels.
-2025-12-14 00:06:40,974 - INFO - ============================================================
-2025-12-14 00:06:40,974 - INFO - ADAT ELŐKÉSZÍTÉS BEFEJEZVE.
-2025-12-14 00:06:40,974 - INFO - ============================================================
-2025-12-14 00:06:43,896 - INFO - 
+2025-12-14 11:08:15,833 - INFO -     -> Deleted 383 files.
+2025-12-14 11:08:15,833 - INFO -     -> Kept files: 233 data files + labels.
+2025-12-14 11:08:15,833 - INFO - ============================================================
+2025-12-14 11:08:15,833 - INFO - ADAT ELŐKÉSZÍTÉS BEFEJEZVE.
+2025-12-14 11:08:15,833 - INFO - ============================================================
+2025-12-14 11:08:18,879 - INFO - 
 ============================================================
-2025-12-14 00:06:43,896 - INFO - TRÉNING INDÍTÁSA: 2025-12-14 00:06:43
-2025-12-14 00:06:43,896 - INFO - Log fájl helye: /app/log/run.log
-2025-12-14 00:06:43,896 - INFO - ============================================================
-2025-12-14 00:06:43,896 - INFO - --- AKTUÁLIS KONFIGURÁCIÓ ---
-2025-12-14 00:06:43,896 - INFO - os: <module 'os' (frozen)>
-2025-12-14 00:06:43,896 - INFO - ALLOWED_ASSETS: ['EURUSD', 'XAU']
-2025-12-14 00:06:43,896 - INFO - N_BARS_LOOKBACK: 100
-2025-12-14 00:06:43,896 - INFO - DOWNLOAD_LINK: https://bmeedu-my.sharepoint.com/:u:/g/personal/gyires-toth_balint_vik_bme_hu/IQAlEFc87da4SLpRVTCs81KwAS3DG4Ft8JPtUKQe9vV5eng?download=1
-2025-12-14 00:06:43,896 - INFO - INFERENCE_URL: https://bmeedu-my.sharepoint.com/:x:/g/personal/gyires-toth_balint_vik_bme_hu/IQApaBhxGyYpR7opm3FFwereAeGD_3shTFw_0__izNdEy0M?download=1
-2025-12-14 00:06:43,896 - INFO - EPOCHS: 1000
-2025-12-14 00:06:43,896 - INFO - EARLY_STOPPING_PATIENCE: 25
-2025-12-14 00:06:43,896 - INFO - BATCH_SIZE: 64
-2025-12-14 00:06:43,896 - INFO - SEQUENCE_LENGTH: 100
-2025-12-14 00:06:43,896 - INFO - INPUT_SIZE: 4
-2025-12-14 00:06:43,896 - INFO - LEARNING_RATE: 0.001
-2025-12-14 00:06:43,896 - INFO - CLIP_VALUE: 1.0
-2025-12-14 00:06:43,896 - INFO - DROPOUT: 0.22
-2025-12-14 00:06:43,896 - INFO - HIDDEN_SIZE: 64
-2025-12-14 00:06:43,897 - INFO - NUM_LAYERS: 2
-2025-12-14 00:06:43,897 - INFO - CNN_FILTERS: 64
-2025-12-14 00:06:43,897 - INFO - D_MODEL: 128
-2025-12-14 00:06:43,897 - INFO - N_HEADS: 4
-2025-12-14 00:06:43,897 - INFO - DIM_FEEDFORWARD: 256
-2025-12-14 00:06:43,897 - INFO - TRANSFORMER_LAYERS: 3
-2025-12-14 00:06:43,897 - INFO - BASE_DIR: /home/bence/PycharmProjects/Melytanulas
-2025-12-14 00:06:43,897 - INFO - LOCAL: False
-2025-12-14 00:06:43,897 - INFO - DATA_ROOT: /app/data
-2025-12-14 00:06:43,897 - INFO - OUTPUT_DIR: /app/output
-2025-12-14 00:06:43,897 - INFO - LOG_DIR: /app/log
-2025-12-14 00:06:43,897 - INFO - MODEL_SAVE_PATH: /app/output/baseline_lstm_best.pth
-2025-12-14 00:06:43,897 - INFO - LABEL_FILE: /app/data/ground_truth_labels.csv
-2025-12-14 00:06:43,897 - INFO - LOG_FILE: /app/log/run.log
-2025-12-14 00:06:43,897 - INFO - ----------------------------------------
-2025-12-14 00:06:43,897 - INFO - 
+2025-12-14 11:08:18,880 - INFO - TRÉNING INDÍTÁSA: 2025-12-14 11:08:18
+2025-12-14 11:08:18,880 - INFO - Log fájl helye: /app/log/run.log
+2025-12-14 11:08:18,880 - INFO - ============================================================
+2025-12-14 11:08:18,880 - INFO - --- AKTUÁLIS KONFIGURÁCIÓ ---
+2025-12-14 11:08:18,880 - INFO - os: <module 'os' (frozen)>
+2025-12-14 11:08:18,880 - INFO - ALLOWED_ASSETS: ['EURUSD', 'XAU']
+2025-12-14 11:08:18,880 - INFO - N_BARS_LOOKBACK: 100
+2025-12-14 11:08:18,880 - INFO - DOWNLOAD_LINK: https://bmeedu-my.sharepoint.com/:u:/g/personal/gyires-toth_balint_vik_bme_hu/IQAlEFc87da4SLpRVTCs81KwAS3DG4Ft8JPtUKQe9vV5eng?download=1
+2025-12-14 11:08:18,880 - INFO - INFERENCE_URL: https://bmeedu-my.sharepoint.com/:x:/g/personal/gyires-toth_balint_vik_bme_hu/IQApaBhxGyYpR7opm3FFwereAeGD_3shTFw_0__izNdEy0M?download=1
+2025-12-14 11:08:18,880 - INFO - EPOCHS: 1000
+2025-12-14 11:08:18,880 - INFO - EARLY_STOPPING_PATIENCE: 25
+2025-12-14 11:08:18,880 - INFO - BATCH_SIZE: 64
+2025-12-14 11:08:18,880 - INFO - SEQUENCE_LENGTH: 100
+2025-12-14 11:08:18,880 - INFO - INPUT_SIZE: 4
+2025-12-14 11:08:18,880 - INFO - LEARNING_RATE: 0.001
+2025-12-14 11:08:18,880 - INFO - CLIP_VALUE: 1.0
+2025-12-14 11:08:18,880 - INFO - DROPOUT: 0.22
+2025-12-14 11:08:18,880 - INFO - HIDDEN_SIZE: 64
+2025-12-14 11:08:18,880 - INFO - NUM_LAYERS: 2
+2025-12-14 11:08:18,880 - INFO - CNN_FILTERS: 64
+2025-12-14 11:08:18,880 - INFO - D_MODEL: 128
+2025-12-14 11:08:18,880 - INFO - N_HEADS: 4
+2025-12-14 11:08:18,880 - INFO - DIM_FEEDFORWARD: 256
+2025-12-14 11:08:18,880 - INFO - TRANSFORMER_LAYERS: 3
+2025-12-14 11:08:18,880 - INFO - BASE_DIR: /home/bence/PycharmProjects/Melytanulas
+2025-12-14 11:08:18,880 - INFO - LOCAL: False
+2025-12-14 11:08:18,880 - INFO - DATA_ROOT: /app/data
+2025-12-14 11:08:18,880 - INFO - OUTPUT_DIR: /app/output
+2025-12-14 11:08:18,880 - INFO - LOG_DIR: /app/log
+2025-12-14 11:08:18,880 - INFO - MODEL_SAVE_PATH: /app/output/baseline_lstm_best.pth
+2025-12-14 11:08:18,880 - INFO - LABEL_FILE: /app/data/ground_truth_labels.csv
+2025-12-14 11:08:18,880 - INFO - LOG_FILE: /app/log/run.log
+2025-12-14 11:08:18,881 - INFO - ----------------------------------------
+2025-12-14 11:08:18,881 - INFO - 
 === 1. BASELINE LSTM INDÍTÁSA ===
-2025-12-14 00:06:43,897 - INFO - 
+2025-12-14 11:08:18,881 - INFO - 
 [1] DATA PREPARATION (BS=32, SEQ=50)...
-2025-12-14 00:06:43,909 - INFO - 
+2025-12-14 11:08:18,892 - INFO - 
 [2] TRAINING START: BASELINE_LSTM
-2025-12-14 00:06:43,911 - INFO - 
+2025-12-14 11:08:18,894 - INFO - 
 --- BASELINE_LSTM STRUKTÚRA ---
-2025-12-14 00:06:43,911 - INFO - BaselineLSTM(
+2025-12-14 11:08:18,894 - INFO - BaselineLSTM(
   (lstm): LSTM(4, 64, num_layers=2, batch_first=True, dropout=0.22, bidirectional=True)
   (fc): Linear(in_features=128, out_features=6, bias=True)
 )
-2025-12-14 00:06:43,911 - INFO - ÖSSZES TANÍTHATÓ PARAMÉTER: 135,942
-2025-12-14 00:06:43,911 - INFO - ----------------------------------------
-2025-12-14 00:06:50,613 - INFO - baseline_lstm | Ep 1/1000 | L: 1.7846/1.7863 | Acc: 26.2%/25.3%
-2025-12-14 00:06:50,624 - INFO -   -> Saved Best baseline_lstm (Acc: 25.3%)
-2025-12-14 00:06:52,363 - INFO - baseline_lstm | Ep 2/1000 | L: 1.7794/1.7769 | Acc: 26.4%/27.7%
-2025-12-14 00:06:52,365 - INFO -   -> Saved Best baseline_lstm (Acc: 27.7%)
-2025-12-14 00:06:53,951 - INFO - baseline_lstm | Ep 3/1000 | L: 1.7433/1.7701 | Acc: 20.5%/20.5%
-2025-12-14 00:06:55,394 - INFO - baseline_lstm | Ep 4/1000 | L: 1.7626/1.7289 | Acc: 20.7%/12.0%
-2025-12-14 00:06:56,765 - INFO - baseline_lstm | Ep 5/1000 | L: 1.7090/1.7786 | Acc: 19.2%/15.7%
-2025-12-14 00:06:58,065 - INFO - baseline_lstm | Ep 6/1000 | L: 1.7175/1.7411 | Acc: 18.1%/14.5%
-2025-12-14 00:06:59,358 - INFO - baseline_lstm | Ep 7/1000 | L: 1.6556/1.7473 | Acc: 19.7%/18.1%
-2025-12-14 00:07:00,648 - INFO - baseline_lstm | Ep 8/1000 | L: 1.6387/1.7183 | Acc: 20.7%/19.3%
-2025-12-14 00:07:01,968 - INFO - baseline_lstm | Ep 9/1000 | L: 1.6986/1.7342 | Acc: 21.2%/18.1%
-2025-12-14 00:07:03,286 - INFO - baseline_lstm | Ep 10/1000 | L: 1.6730/1.7816 | Acc: 23.6%/15.7%
-2025-12-14 00:07:04,583 - INFO - baseline_lstm | Ep 11/1000 | L: 1.6630/1.7358 | Acc: 25.6%/25.3%
-2025-12-14 00:07:05,887 - INFO - baseline_lstm | Ep 12/1000 | L: 1.6141/1.7020 | Acc: 28.2%/22.9%
-2025-12-14 00:07:07,209 - INFO - baseline_lstm | Ep 13/1000 | L: 1.6438/1.7199 | Acc: 24.9%/19.3%
-2025-12-14 00:07:08,502 - INFO - baseline_lstm | Ep 14/1000 | L: 1.6487/1.7182 | Acc: 25.4%/22.9%
-2025-12-14 00:07:09,797 - INFO - baseline_lstm | Ep 15/1000 | L: 1.6144/1.6960 | Acc: 26.9%/22.9%
-2025-12-14 00:07:11,123 - INFO - baseline_lstm | Ep 16/1000 | L: 1.6396/1.7120 | Acc: 27.7%/22.9%
-2025-12-14 00:07:12,514 - INFO - baseline_lstm | Ep 17/1000 | L: 1.6052/1.7341 | Acc: 24.6%/20.5%
-2025-12-14 00:07:13,867 - INFO - baseline_lstm | Ep 18/1000 | L: 1.6093/1.6983 | Acc: 25.9%/25.3%
-2025-12-14 00:07:15,156 - INFO - baseline_lstm | Ep 19/1000 | L: 1.5907/1.6784 | Acc: 29.3%/27.7%
-2025-12-14 00:07:16,451 - INFO - baseline_lstm | Ep 20/1000 | L: 1.6346/1.7123 | Acc: 25.4%/26.5%
-2025-12-14 00:07:17,727 - INFO - baseline_lstm | Ep 21/1000 | L: 1.6062/1.6698 | Acc: 30.6%/30.1%
-2025-12-14 00:07:17,728 - INFO -   -> Saved Best baseline_lstm (Acc: 30.1%)
-2025-12-14 00:07:18,982 - INFO - baseline_lstm | Ep 22/1000 | L: 1.6457/1.7130 | Acc: 23.8%/27.7%
-2025-12-14 00:07:20,241 - INFO - baseline_lstm | Ep 23/1000 | L: 1.5724/1.6503 | Acc: 29.3%/28.9%
-2025-12-14 00:07:21,576 - INFO - baseline_lstm | Ep 24/1000 | L: 1.6481/1.6725 | Acc: 28.8%/26.5%
-2025-12-14 00:07:23,024 - INFO - baseline_lstm | Ep 25/1000 | L: 1.5827/1.6752 | Acc: 29.0%/21.7%
-2025-12-14 00:07:24,339 - INFO - baseline_lstm | Ep 26/1000 | L: 1.5680/1.6893 | Acc: 27.5%/21.7%
-2025-12-14 00:07:25,668 - INFO - baseline_lstm | Ep 27/1000 | L: 1.5782/1.7260 | Acc: 26.7%/19.3%
-2025-12-14 00:07:26,949 - INFO - baseline_lstm | Ep 28/1000 | L: 1.5274/1.6725 | Acc: 29.8%/24.1%
-2025-12-14 00:07:28,264 - INFO - baseline_lstm | Ep 29/1000 | L: 1.5479/1.7141 | Acc: 33.2%/24.1%
-2025-12-14 00:07:29,512 - INFO - baseline_lstm | Ep 30/1000 | L: 1.5422/1.6895 | Acc: 26.9%/20.5%
-2025-12-14 00:07:30,757 - INFO - baseline_lstm | Ep 31/1000 | L: 1.5426/1.6939 | Acc: 28.8%/26.5%
-2025-12-14 00:07:31,993 - INFO - baseline_lstm | Ep 32/1000 | L: 1.5146/1.6769 | Acc: 31.9%/25.3%
-2025-12-14 00:07:33,270 - INFO - baseline_lstm | Ep 33/1000 | L: 1.5044/1.6917 | Acc: 33.2%/26.5%
-2025-12-14 00:07:34,517 - INFO - baseline_lstm | Ep 34/1000 | L: 1.5189/1.6947 | Acc: 32.9%/24.1%
-2025-12-14 00:07:35,780 - INFO - baseline_lstm | Ep 35/1000 | L: 1.4503/1.6475 | Acc: 34.5%/31.3%
-2025-12-14 00:07:35,781 - INFO -   -> Saved Best baseline_lstm (Acc: 31.3%)
-2025-12-14 00:07:37,027 - INFO - baseline_lstm | Ep 36/1000 | L: 1.4660/1.6728 | Acc: 33.9%/28.9%
-2025-12-14 00:07:38,353 - INFO - baseline_lstm | Ep 37/1000 | L: 1.5080/1.6456 | Acc: 30.3%/27.7%
-2025-12-14 00:07:39,606 - INFO - baseline_lstm | Ep 38/1000 | L: 1.4434/1.6602 | Acc: 35.8%/31.3%
-2025-12-14 00:07:40,872 - INFO - baseline_lstm | Ep 39/1000 | L: 1.4181/1.6390 | Acc: 36.0%/27.7%
-2025-12-14 00:07:42,123 - INFO - baseline_lstm | Ep 40/1000 | L: 1.5065/1.6195 | Acc: 37.0%/28.9%
-2025-12-14 00:07:43,417 - INFO - baseline_lstm | Ep 41/1000 | L: 1.4756/1.6562 | Acc: 35.2%/28.9%
-2025-12-14 00:07:44,669 - INFO - baseline_lstm | Ep 42/1000 | L: 1.4441/1.6343 | Acc: 36.0%/27.7%
-2025-12-14 00:07:45,933 - INFO - baseline_lstm | Ep 43/1000 | L: 1.4197/1.6379 | Acc: 38.1%/28.9%
-2025-12-14 00:07:47,180 - INFO - baseline_lstm | Ep 44/1000 | L: 1.4052/1.6224 | Acc: 36.3%/30.1%
-2025-12-14 00:07:48,460 - INFO - baseline_lstm | Ep 45/1000 | L: 1.4237/1.6642 | Acc: 38.6%/27.7%
-2025-12-14 00:07:49,765 - INFO - baseline_lstm | Ep 46/1000 | L: 1.4218/1.6707 | Acc: 40.7%/32.5%
-2025-12-14 00:07:49,766 - INFO -   -> Saved Best baseline_lstm (Acc: 32.5%)
-2025-12-14 00:07:51,045 - INFO - baseline_lstm | Ep 47/1000 | L: 1.3767/1.6309 | Acc: 38.1%/33.7%
-2025-12-14 00:07:51,046 - INFO -   -> Saved Best baseline_lstm (Acc: 33.7%)
-2025-12-14 00:07:52,308 - INFO - baseline_lstm | Ep 48/1000 | L: 1.4800/1.6327 | Acc: 39.9%/32.5%
-2025-12-14 00:07:53,653 - INFO - baseline_lstm | Ep 49/1000 | L: 1.3362/1.6004 | Acc: 40.4%/34.9%
-2025-12-14 00:07:53,662 - INFO -   -> Saved Best baseline_lstm (Acc: 34.9%)
-2025-12-14 00:07:54,944 - INFO - baseline_lstm | Ep 50/1000 | L: 1.3363/1.6243 | Acc: 39.9%/33.7%
-2025-12-14 00:07:56,223 - INFO - baseline_lstm | Ep 51/1000 | L: 1.3460/1.6204 | Acc: 41.2%/36.1%
-2025-12-14 00:07:56,224 - INFO -   -> Saved Best baseline_lstm (Acc: 36.1%)
-2025-12-14 00:07:57,633 - INFO - baseline_lstm | Ep 52/1000 | L: 1.3374/1.6129 | Acc: 38.1%/34.9%
-2025-12-14 00:07:58,993 - INFO - baseline_lstm | Ep 53/1000 | L: 1.3929/1.6282 | Acc: 42.0%/36.1%
-2025-12-14 00:08:00,243 - INFO - baseline_lstm | Ep 54/1000 | L: 1.3008/1.6317 | Acc: 38.6%/34.9%
-2025-12-14 00:08:01,503 - INFO - baseline_lstm | Ep 55/1000 | L: 1.4128/1.6458 | Acc: 38.9%/36.1%
-2025-12-14 00:08:02,752 - INFO - baseline_lstm | Ep 56/1000 | L: 1.2980/1.6089 | Acc: 37.6%/36.1%
-2025-12-14 00:08:04,055 - INFO - baseline_lstm | Ep 57/1000 | L: 1.2937/1.6154 | Acc: 39.4%/34.9%
-2025-12-14 00:08:05,311 - INFO - baseline_lstm | Ep 58/1000 | L: 1.3218/1.6151 | Acc: 39.9%/34.9%
-2025-12-14 00:08:06,584 - INFO - baseline_lstm | Ep 59/1000 | L: 1.3228/1.6179 | Acc: 39.6%/36.1%
-2025-12-14 00:08:07,839 - INFO - baseline_lstm | Ep 60/1000 | L: 1.3090/1.6099 | Acc: 40.7%/34.9%
-2025-12-14 00:08:09,186 - INFO - baseline_lstm | Ep 61/1000 | L: 1.2608/1.6257 | Acc: 42.5%/33.7%
-2025-12-14 00:08:10,443 - INFO - baseline_lstm | Ep 62/1000 | L: 1.3111/1.6232 | Acc: 39.9%/34.9%
-2025-12-14 00:08:11,704 - INFO - baseline_lstm | Ep 63/1000 | L: 1.2728/1.6169 | Acc: 41.2%/36.1%
-2025-12-14 00:08:13,016 - INFO - baseline_lstm | Ep 64/1000 | L: 1.3315/1.6236 | Acc: 39.4%/33.7%
-2025-12-14 00:08:14,309 - INFO - baseline_lstm | Ep 65/1000 | L: 1.4068/1.6225 | Acc: 41.7%/34.9%
-2025-12-14 00:08:15,589 - INFO - baseline_lstm | Ep 66/1000 | L: 1.3156/1.6107 | Acc: 41.2%/36.1%
-2025-12-14 00:08:16,857 - INFO - baseline_lstm | Ep 67/1000 | L: 1.2723/1.6058 | Acc: 39.9%/36.1%
-2025-12-14 00:08:18,121 - INFO - baseline_lstm | Ep 68/1000 | L: 1.2898/1.6117 | Acc: 41.7%/36.1%
-2025-12-14 00:08:19,402 - INFO - baseline_lstm | Ep 69/1000 | L: 1.4125/1.6095 | Acc: 39.6%/36.1%
-2025-12-14 00:08:20,684 - INFO - baseline_lstm | Ep 70/1000 | L: 1.3869/1.6121 | Acc: 39.4%/36.1%
-2025-12-14 00:08:21,972 - INFO - baseline_lstm | Ep 71/1000 | L: 1.3134/1.6128 | Acc: 40.7%/38.6%
-2025-12-14 00:08:21,973 - INFO -   -> Saved Best baseline_lstm (Acc: 38.6%)
-2025-12-14 00:08:23,298 - INFO - baseline_lstm | Ep 72/1000 | L: 1.3134/1.6091 | Acc: 39.9%/37.3%
-2025-12-14 00:08:24,607 - INFO - baseline_lstm | Ep 73/1000 | L: 1.3056/1.6073 | Acc: 40.7%/36.1%
-2025-12-14 00:08:25,883 - INFO - baseline_lstm | Ep 74/1000 | L: 1.3010/1.6049 | Acc: 41.7%/36.1%
-2025-12-14 00:08:25,883 - INFO - [STOP] Early Stopping: baseline_lstm
-2025-12-14 00:08:25,883 - INFO - 
+2025-12-14 11:08:18,894 - INFO - ÖSSZES TANÍTHATÓ PARAMÉTER: 135,942
+2025-12-14 11:08:18,894 - INFO - ----------------------------------------
+2025-12-14 11:08:26,140 - INFO - baseline_lstm | Ep 1/1000 | L: 1.7946/1.7870 | Acc: 13.2%/25.3%
+2025-12-14 11:08:26,152 - INFO -   -> Saved Best baseline_lstm (Acc: 25.3%)
+2025-12-14 11:08:28,366 - INFO - baseline_lstm | Ep 2/1000 | L: 1.7834/1.7802 | Acc: 25.6%/21.7%
+2025-12-14 11:08:30,222 - INFO - baseline_lstm | Ep 3/1000 | L: 1.7721/1.7718 | Acc: 15.5%/16.9%
+2025-12-14 11:08:31,701 - INFO - baseline_lstm | Ep 4/1000 | L: 1.7414/1.7590 | Acc: 13.2%/14.5%
+2025-12-14 11:08:33,122 - INFO - baseline_lstm | Ep 5/1000 | L: 1.7195/1.7625 | Acc: 15.0%/12.0%
+2025-12-14 11:08:34,764 - INFO - baseline_lstm | Ep 6/1000 | L: 1.6858/1.7753 | Acc: 16.3%/13.3%
+2025-12-14 11:08:36,170 - INFO - baseline_lstm | Ep 7/1000 | L: 1.6847/1.7587 | Acc: 20.2%/20.5%
+2025-12-14 11:08:37,502 - INFO - baseline_lstm | Ep 8/1000 | L: 1.6777/1.7233 | Acc: 23.1%/21.7%
+2025-12-14 11:08:39,007 - INFO - baseline_lstm | Ep 9/1000 | L: 1.6549/1.7453 | Acc: 22.8%/20.5%
+2025-12-14 11:08:40,551 - INFO - baseline_lstm | Ep 10/1000 | L: 1.6284/1.7103 | Acc: 24.6%/18.1%
+2025-12-14 11:08:42,044 - INFO - baseline_lstm | Ep 11/1000 | L: 1.6405/1.7254 | Acc: 25.4%/21.7%
+2025-12-14 11:08:43,470 - INFO - baseline_lstm | Ep 12/1000 | L: 1.6182/1.7026 | Acc: 28.2%/25.3%
+2025-12-14 11:08:44,875 - INFO - baseline_lstm | Ep 13/1000 | L: 1.6099/1.7148 | Acc: 26.2%/22.9%
+2025-12-14 11:08:46,395 - INFO - baseline_lstm | Ep 14/1000 | L: 1.6131/1.7160 | Acc: 24.4%/22.9%
+2025-12-14 11:08:47,863 - INFO - baseline_lstm | Ep 15/1000 | L: 1.6563/1.7568 | Acc: 24.4%/18.1%
+2025-12-14 11:08:49,218 - INFO - baseline_lstm | Ep 16/1000 | L: 1.6532/1.7156 | Acc: 25.1%/21.7%
+2025-12-14 11:08:50,526 - INFO - baseline_lstm | Ep 17/1000 | L: 1.5678/1.6965 | Acc: 25.1%/24.1%
+2025-12-14 11:08:51,850 - INFO - baseline_lstm | Ep 18/1000 | L: 1.6127/1.6858 | Acc: 25.9%/26.5%
+2025-12-14 11:08:51,860 - INFO -   -> Saved Best baseline_lstm (Acc: 26.5%)
+2025-12-14 11:08:53,384 - INFO - baseline_lstm | Ep 19/1000 | L: 1.6076/1.6784 | Acc: 27.5%/25.3%
+2025-12-14 11:08:54,786 - INFO - baseline_lstm | Ep 20/1000 | L: 1.6599/1.6910 | Acc: 26.7%/25.3%
+2025-12-14 11:08:56,118 - INFO - baseline_lstm | Ep 21/1000 | L: 1.6076/1.7262 | Acc: 22.8%/18.1%
+2025-12-14 11:08:57,583 - INFO - baseline_lstm | Ep 22/1000 | L: 1.5654/1.6884 | Acc: 26.7%/24.1%
+2025-12-14 11:08:59,123 - INFO - baseline_lstm | Ep 23/1000 | L: 1.6564/1.6888 | Acc: 25.1%/20.5%
+2025-12-14 11:09:00,526 - INFO - baseline_lstm | Ep 24/1000 | L: 1.5594/1.6973 | Acc: 28.0%/20.5%
+2025-12-14 11:09:01,925 - INFO - baseline_lstm | Ep 25/1000 | L: 1.5542/1.7050 | Acc: 28.2%/19.3%
+2025-12-14 11:09:03,309 - INFO - baseline_lstm | Ep 26/1000 | L: 1.5572/1.6673 | Acc: 26.4%/22.9%
+2025-12-14 11:09:04,752 - INFO - baseline_lstm | Ep 27/1000 | L: 1.5651/1.6830 | Acc: 25.4%/25.3%
+2025-12-14 11:09:06,220 - INFO - baseline_lstm | Ep 28/1000 | L: 1.5824/1.6718 | Acc: 28.2%/28.9%
+2025-12-14 11:09:06,222 - INFO -   -> Saved Best baseline_lstm (Acc: 28.9%)
+2025-12-14 11:09:07,631 - INFO - baseline_lstm | Ep 29/1000 | L: 1.6038/1.6835 | Acc: 27.2%/24.1%
+2025-12-14 11:09:09,029 - INFO - baseline_lstm | Ep 30/1000 | L: 1.6333/1.6721 | Acc: 27.7%/25.3%
+2025-12-14 11:09:10,376 - INFO - baseline_lstm | Ep 31/1000 | L: 1.5794/1.6501 | Acc: 27.7%/27.7%
+2025-12-14 11:09:11,853 - INFO - baseline_lstm | Ep 32/1000 | L: 1.5222/1.6681 | Acc: 27.5%/24.1%
+2025-12-14 11:09:13,296 - INFO - baseline_lstm | Ep 33/1000 | L: 1.5631/1.6535 | Acc: 29.0%/25.3%
+2025-12-14 11:09:14,707 - INFO - baseline_lstm | Ep 34/1000 | L: 1.5669/1.6583 | Acc: 28.8%/22.9%
+2025-12-14 11:09:16,255 - INFO - baseline_lstm | Ep 35/1000 | L: 1.5293/1.6366 | Acc: 30.6%/28.9%
+2025-12-14 11:09:17,843 - INFO - baseline_lstm | Ep 36/1000 | L: 1.5137/1.6568 | Acc: 29.0%/21.7%
+2025-12-14 11:09:19,236 - INFO - baseline_lstm | Ep 37/1000 | L: 1.5134/1.6255 | Acc: 30.6%/25.3%
+2025-12-14 11:09:20,591 - INFO - baseline_lstm | Ep 38/1000 | L: 1.5377/1.6248 | Acc: 28.8%/25.3%
+2025-12-14 11:09:21,983 - INFO - baseline_lstm | Ep 39/1000 | L: 1.4812/1.6203 | Acc: 30.3%/25.3%
+2025-12-14 11:09:23,394 - INFO - baseline_lstm | Ep 40/1000 | L: 1.5166/1.6463 | Acc: 28.5%/21.7%
+2025-12-14 11:09:24,805 - INFO - baseline_lstm | Ep 41/1000 | L: 1.5127/1.6171 | Acc: 30.1%/31.3%
+2025-12-14 11:09:24,806 - INFO -   -> Saved Best baseline_lstm (Acc: 31.3%)
+2025-12-14 11:09:26,194 - INFO - baseline_lstm | Ep 42/1000 | L: 1.5430/1.6515 | Acc: 31.1%/18.1%
+2025-12-14 11:09:27,750 - INFO - baseline_lstm | Ep 43/1000 | L: 1.5039/1.5984 | Acc: 33.2%/22.9%
+2025-12-14 11:09:29,134 - INFO - baseline_lstm | Ep 44/1000 | L: 1.4887/1.6572 | Acc: 33.4%/21.7%
+2025-12-14 11:09:30,503 - INFO - baseline_lstm | Ep 45/1000 | L: 1.4808/1.6153 | Acc: 30.6%/27.7%
+2025-12-14 11:09:31,929 - INFO - baseline_lstm | Ep 46/1000 | L: 1.4737/1.5677 | Acc: 33.7%/25.3%
+2025-12-14 11:09:33,315 - INFO - baseline_lstm | Ep 47/1000 | L: 1.4815/1.5969 | Acc: 31.3%/30.1%
+2025-12-14 11:09:34,689 - INFO - baseline_lstm | Ep 48/1000 | L: 1.4275/1.6421 | Acc: 33.2%/28.9%
+2025-12-14 11:09:36,018 - INFO - baseline_lstm | Ep 49/1000 | L: 1.4797/1.6029 | Acc: 33.9%/27.7%
+2025-12-14 11:09:37,411 - INFO - baseline_lstm | Ep 50/1000 | L: 1.4535/1.5501 | Acc: 34.2%/31.3%
+2025-12-14 11:09:38,853 - INFO - baseline_lstm | Ep 51/1000 | L: 1.4277/1.5976 | Acc: 34.5%/25.3%
+2025-12-14 11:09:40,221 - INFO - baseline_lstm | Ep 52/1000 | L: 1.4923/1.5661 | Acc: 35.0%/28.9%
+2025-12-14 11:09:41,774 - INFO - baseline_lstm | Ep 53/1000 | L: 1.5089/1.6079 | Acc: 34.2%/34.9%
+2025-12-14 11:09:41,776 - INFO -   -> Saved Best baseline_lstm (Acc: 34.9%)
+2025-12-14 11:09:43,220 - INFO - baseline_lstm | Ep 54/1000 | L: 1.4309/1.5120 | Acc: 34.2%/21.7%
+2025-12-14 11:09:44,664 - INFO - baseline_lstm | Ep 55/1000 | L: 1.4021/1.4932 | Acc: 31.6%/25.3%
+2025-12-14 11:09:46,092 - INFO - baseline_lstm | Ep 56/1000 | L: 1.5090/1.4823 | Acc: 31.6%/20.5%
+2025-12-14 11:09:47,492 - INFO - baseline_lstm | Ep 57/1000 | L: 1.4585/1.6066 | Acc: 35.0%/26.5%
+2025-12-14 11:09:48,918 - INFO - baseline_lstm | Ep 58/1000 | L: 1.4365/1.5417 | Acc: 35.2%/27.7%
+2025-12-14 11:09:50,215 - INFO - baseline_lstm | Ep 59/1000 | L: 1.4172/1.5519 | Acc: 34.2%/30.1%
+2025-12-14 11:09:51,638 - INFO - baseline_lstm | Ep 60/1000 | L: 1.4071/1.5361 | Acc: 35.5%/32.5%
+2025-12-14 11:09:53,050 - INFO - baseline_lstm | Ep 61/1000 | L: 1.4810/1.5698 | Acc: 33.4%/24.1%
+2025-12-14 11:09:54,590 - INFO - baseline_lstm | Ep 62/1000 | L: 1.3756/1.5645 | Acc: 34.5%/24.1%
+2025-12-14 11:09:56,082 - INFO - baseline_lstm | Ep 63/1000 | L: 1.3974/1.5653 | Acc: 32.1%/31.3%
+2025-12-14 11:09:57,742 - INFO - baseline_lstm | Ep 64/1000 | L: 1.3909/1.5558 | Acc: 35.2%/30.1%
+2025-12-14 11:09:59,230 - INFO - baseline_lstm | Ep 65/1000 | L: 1.3805/1.5666 | Acc: 36.0%/22.9%
+2025-12-14 11:10:00,690 - INFO - baseline_lstm | Ep 66/1000 | L: 1.4193/1.5489 | Acc: 36.0%/32.5%
+2025-12-14 11:10:02,217 - INFO - baseline_lstm | Ep 67/1000 | L: 1.4093/1.5550 | Acc: 36.0%/28.9%
+2025-12-14 11:10:03,644 - INFO - baseline_lstm | Ep 68/1000 | L: 1.3592/1.5697 | Acc: 36.5%/27.7%
+2025-12-14 11:10:05,139 - INFO - baseline_lstm | Ep 69/1000 | L: 1.3472/1.5449 | Acc: 36.5%/31.3%
+2025-12-14 11:10:06,737 - INFO - baseline_lstm | Ep 70/1000 | L: 1.3596/1.5791 | Acc: 36.3%/26.5%
+2025-12-14 11:10:08,210 - INFO - baseline_lstm | Ep 71/1000 | L: 1.3691/1.5483 | Acc: 37.3%/32.5%
+2025-12-14 11:10:09,682 - INFO - baseline_lstm | Ep 72/1000 | L: 1.3514/1.5623 | Acc: 37.0%/26.5%
+2025-12-14 11:10:11,137 - INFO - baseline_lstm | Ep 73/1000 | L: 1.3312/1.5566 | Acc: 37.8%/32.5%
+2025-12-14 11:10:12,666 - INFO - baseline_lstm | Ep 74/1000 | L: 1.3208/1.5544 | Acc: 37.0%/31.3%
+2025-12-14 11:10:14,253 - INFO - baseline_lstm | Ep 75/1000 | L: 1.3564/1.5503 | Acc: 36.8%/31.3%
+2025-12-14 11:10:15,730 - INFO - baseline_lstm | Ep 76/1000 | L: 1.3702/1.5535 | Acc: 33.7%/31.3%
+2025-12-14 11:10:17,204 - INFO - baseline_lstm | Ep 77/1000 | L: 1.3425/1.5442 | Acc: 36.0%/30.1%
+2025-12-14 11:10:18,722 - INFO - baseline_lstm | Ep 78/1000 | L: 1.3167/1.5469 | Acc: 36.5%/33.7%
+2025-12-14 11:10:20,393 - INFO - baseline_lstm | Ep 79/1000 | L: 1.3459/1.5474 | Acc: 38.1%/30.1%
+2025-12-14 11:10:21,902 - INFO - baseline_lstm | Ep 80/1000 | L: 1.3351/1.5564 | Acc: 37.0%/30.1%
+2025-12-14 11:10:23,311 - INFO - baseline_lstm | Ep 81/1000 | L: 1.3335/1.5529 | Acc: 34.2%/31.3%
+2025-12-14 11:10:23,311 - INFO - [STOP] Early Stopping: baseline_lstm
+2025-12-14 11:10:23,311 - INFO - 
 === 2. HYBRID MODELL INDÍTÁSA ===
-2025-12-14 00:08:25,883 - INFO - 
+2025-12-14 11:10:23,311 - INFO - 
 [1] DATA PREPARATION (BS=64, SEQ=100)...
-2025-12-14 00:08:25,900 - INFO - 
+2025-12-14 11:10:23,324 - INFO - 
 [2] TRAINING START: HYBRID_MODEL
-2025-12-14 00:08:25,900 - INFO - 
+2025-12-14 11:10:23,324 - INFO - 
 --- HYBRID_MODEL STRUKTÚRA ---
-2025-12-14 00:08:25,901 - INFO - HybridModel(
+2025-12-14 11:10:23,324 - INFO - HybridModel(
   (cnn): Sequential(
     (0): Conv1d(4, 64, kernel_size=(3,), stride=(1,), padding=(1,))
     (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
@@ -464,381 +467,379 @@
     (3): Linear(in_features=64, out_features=6, bias=True)
   )
 )
-2025-12-14 00:08:25,901 - INFO - ÖSSZES TANÍTHATÓ PARAMÉTER: 432,006
-2025-12-14 00:08:25,901 - INFO - ----------------------------------------
-2025-12-14 00:08:32,503 - INFO - hybrid_model | Ep 1/1000 | L: 1.8157/1.8226 | Acc: 22.0%/14.5%
-2025-12-14 00:08:32,511 - INFO -   -> Saved Best hybrid_model (Acc: 14.5%)
-2025-12-14 00:08:34,758 - INFO - hybrid_model | Ep 2/1000 | L: 1.7237/1.7884 | Acc: 20.2%/12.0%
-2025-12-14 00:08:36,917 - INFO - hybrid_model | Ep 3/1000 | L: 1.5558/1.7654 | Acc: 28.0%/26.5%
-2025-12-14 00:08:36,931 - INFO -   -> Saved Best hybrid_model (Acc: 26.5%)
-2025-12-14 00:08:39,244 - INFO - hybrid_model | Ep 4/1000 | L: 1.5478/1.8054 | Acc: 32.1%/10.8%
-2025-12-14 00:08:41,402 - INFO - hybrid_model | Ep 5/1000 | L: 1.6279/1.7738 | Acc: 30.6%/19.3%
-2025-12-14 00:08:43,504 - INFO - hybrid_model | Ep 6/1000 | L: 1.4204/1.6877 | Acc: 33.2%/25.3%
-2025-12-14 00:08:45,604 - INFO - hybrid_model | Ep 7/1000 | L: 1.3734/2.0309 | Acc: 37.8%/20.5%
-2025-12-14 00:08:47,677 - INFO - hybrid_model | Ep 8/1000 | L: 1.2697/1.5690 | Acc: 32.4%/24.1%
-2025-12-14 00:08:49,885 - INFO - hybrid_model | Ep 9/1000 | L: 1.2689/1.5557 | Acc: 36.3%/39.8%
-2025-12-14 00:08:49,899 - INFO -   -> Saved Best hybrid_model (Acc: 39.8%)
-2025-12-14 00:08:51,968 - INFO - hybrid_model | Ep 10/1000 | L: 1.1473/1.6397 | Acc: 46.4%/30.1%
-2025-12-14 00:08:53,937 - INFO - hybrid_model | Ep 11/1000 | L: 1.1187/1.7656 | Acc: 46.1%/27.7%
-2025-12-14 00:08:55,912 - INFO - hybrid_model | Ep 12/1000 | L: 1.4594/1.7902 | Acc: 43.3%/37.3%
-2025-12-14 00:08:57,887 - INFO - hybrid_model | Ep 13/1000 | L: 1.1648/1.5439 | Acc: 48.7%/31.3%
-2025-12-14 00:08:59,937 - INFO - hybrid_model | Ep 14/1000 | L: 1.1031/1.7509 | Acc: 44.6%/38.6%
-2025-12-14 00:09:01,985 - INFO - hybrid_model | Ep 15/1000 | L: 1.3003/1.9949 | Acc: 52.6%/31.3%
-2025-12-14 00:09:04,069 - INFO - hybrid_model | Ep 16/1000 | L: 0.9024/1.8618 | Acc: 51.8%/33.7%
-2025-12-14 00:09:06,115 - INFO - hybrid_model | Ep 17/1000 | L: 1.1134/2.3338 | Acc: 54.9%/28.9%
-2025-12-14 00:09:08,094 - INFO - hybrid_model | Ep 18/1000 | L: 1.0946/2.0833 | Acc: 53.4%/37.3%
-2025-12-14 00:09:10,044 - INFO - hybrid_model | Ep 19/1000 | L: 0.7443/2.3673 | Acc: 61.1%/34.9%
-2025-12-14 00:09:12,050 - INFO - hybrid_model | Ep 20/1000 | L: 0.7422/2.1472 | Acc: 64.8%/34.9%
-2025-12-14 00:09:14,055 - INFO - hybrid_model | Ep 21/1000 | L: 0.8102/2.1056 | Acc: 65.3%/25.3%
-2025-12-14 00:09:16,003 - INFO - hybrid_model | Ep 22/1000 | L: 1.0048/2.2981 | Acc: 63.0%/34.9%
-2025-12-14 00:09:18,142 - INFO - hybrid_model | Ep 23/1000 | L: 0.5594/2.3267 | Acc: 68.4%/33.7%
-2025-12-14 00:09:20,286 - INFO - hybrid_model | Ep 24/1000 | L: 0.5226/2.4065 | Acc: 71.8%/37.3%
-2025-12-14 00:09:22,307 - INFO - hybrid_model | Ep 25/1000 | L: 1.0736/2.4068 | Acc: 68.1%/32.5%
-2025-12-14 00:09:24,286 - INFO - hybrid_model | Ep 26/1000 | L: 0.5407/2.5885 | Acc: 70.5%/34.9%
-2025-12-14 00:09:26,281 - INFO - hybrid_model | Ep 27/1000 | L: 0.7533/2.5738 | Acc: 75.6%/32.5%
-2025-12-14 00:09:28,380 - INFO - hybrid_model | Ep 28/1000 | L: 0.4749/2.5833 | Acc: 78.2%/31.3%
-2025-12-14 00:09:30,382 - INFO - hybrid_model | Ep 29/1000 | L: 0.4440/2.4916 | Acc: 81.9%/41.0%
-2025-12-14 00:09:30,396 - INFO -   -> Saved Best hybrid_model (Acc: 41.0%)
-2025-12-14 00:09:32,423 - INFO - hybrid_model | Ep 30/1000 | L: 0.3902/2.5597 | Acc: 79.8%/37.3%
-2025-12-14 00:09:34,465 - INFO - hybrid_model | Ep 31/1000 | L: 0.6877/2.6840 | Acc: 76.4%/33.7%
-2025-12-14 00:09:36,534 - INFO - hybrid_model | Ep 32/1000 | L: 0.3426/2.5817 | Acc: 85.2%/38.6%
-2025-12-14 00:09:38,698 - INFO - hybrid_model | Ep 33/1000 | L: 0.5454/2.5738 | Acc: 83.4%/37.3%
-2025-12-14 00:09:40,687 - INFO - hybrid_model | Ep 34/1000 | L: 0.3220/2.6234 | Acc: 81.6%/37.3%
-2025-12-14 00:09:42,695 - INFO - hybrid_model | Ep 35/1000 | L: 0.5092/2.7503 | Acc: 84.5%/32.5%
-2025-12-14 00:09:44,686 - INFO - hybrid_model | Ep 36/1000 | L: 0.4567/2.7317 | Acc: 84.7%/32.5%
-2025-12-14 00:09:46,655 - INFO - hybrid_model | Ep 37/1000 | L: 0.2673/2.8287 | Acc: 86.3%/36.1%
-2025-12-14 00:09:48,658 - INFO - hybrid_model | Ep 38/1000 | L: 0.3265/2.7346 | Acc: 85.5%/39.8%
-2025-12-14 00:09:48,658 - INFO - [STOP] Early Stopping: hybrid_model
-2025-12-14 00:09:51,595 - INFO - 
+2025-12-14 11:10:23,325 - INFO - ÖSSZES TANÍTHATÓ PARAMÉTER: 432,006
+2025-12-14 11:10:23,325 - INFO - ----------------------------------------
+2025-12-14 11:10:30,714 - INFO - hybrid_model | Ep 1/1000 | L: 1.8149/1.7936 | Acc: 16.8%/15.7%
+2025-12-14 11:10:30,719 - INFO -   -> Saved Best hybrid_model (Acc: 15.7%)
+2025-12-14 11:10:33,019 - INFO - hybrid_model | Ep 2/1000 | L: 1.6986/1.8160 | Acc: 23.1%/13.3%
+2025-12-14 11:10:35,264 - INFO - hybrid_model | Ep 3/1000 | L: 1.6390/1.7148 | Acc: 26.9%/18.1%
+2025-12-14 11:10:35,278 - INFO -   -> Saved Best hybrid_model (Acc: 18.1%)
+2025-12-14 11:10:37,511 - INFO - hybrid_model | Ep 4/1000 | L: 1.5880/1.7880 | Acc: 28.5%/28.9%
+2025-12-14 11:10:37,517 - INFO -   -> Saved Best hybrid_model (Acc: 28.9%)
+2025-12-14 11:10:39,894 - INFO - hybrid_model | Ep 5/1000 | L: 1.4664/1.6522 | Acc: 35.5%/38.6%
+2025-12-14 11:10:39,910 - INFO -   -> Saved Best hybrid_model (Acc: 38.6%)
+2025-12-14 11:10:42,358 - INFO - hybrid_model | Ep 6/1000 | L: 1.4110/1.6317 | Acc: 33.2%/22.9%
+2025-12-14 11:10:44,620 - INFO - hybrid_model | Ep 7/1000 | L: 1.4403/1.6830 | Acc: 33.2%/26.5%
+2025-12-14 11:10:46,831 - INFO - hybrid_model | Ep 8/1000 | L: 1.4523/1.7409 | Acc: 40.9%/38.6%
+2025-12-14 11:10:49,039 - INFO - hybrid_model | Ep 9/1000 | L: 1.3453/1.4832 | Acc: 41.5%/33.7%
+2025-12-14 11:10:51,254 - INFO - hybrid_model | Ep 10/1000 | L: 1.2207/1.5388 | Acc: 42.0%/26.5%
+2025-12-14 11:10:53,516 - INFO - hybrid_model | Ep 11/1000 | L: 1.2043/1.6949 | Acc: 46.6%/49.4%
+2025-12-14 11:10:53,522 - INFO -   -> Saved Best hybrid_model (Acc: 49.4%)
+2025-12-14 11:10:55,691 - INFO - hybrid_model | Ep 12/1000 | L: 1.1695/1.6682 | Acc: 48.4%/36.1%
+2025-12-14 11:10:57,923 - INFO - hybrid_model | Ep 13/1000 | L: 1.2158/1.7093 | Acc: 48.4%/38.6%
+2025-12-14 11:11:00,132 - INFO - hybrid_model | Ep 14/1000 | L: 1.0014/1.6312 | Acc: 46.9%/34.9%
+2025-12-14 11:11:02,263 - INFO - hybrid_model | Ep 15/1000 | L: 1.0213/1.7079 | Acc: 54.4%/44.6%
+2025-12-14 11:11:04,387 - INFO - hybrid_model | Ep 16/1000 | L: 1.1470/1.7621 | Acc: 51.8%/39.8%
+2025-12-14 11:11:06,607 - INFO - hybrid_model | Ep 17/1000 | L: 0.8772/1.7650 | Acc: 53.4%/37.3%
+2025-12-14 11:11:08,735 - INFO - hybrid_model | Ep 18/1000 | L: 0.8985/1.7956 | Acc: 57.3%/45.8%
+2025-12-14 11:11:11,164 - INFO - hybrid_model | Ep 19/1000 | L: 0.8358/1.8131 | Acc: 60.9%/45.8%
+2025-12-14 11:11:13,349 - INFO - hybrid_model | Ep 20/1000 | L: 0.8018/1.8794 | Acc: 59.1%/44.6%
+2025-12-14 11:11:15,503 - INFO - hybrid_model | Ep 21/1000 | L: 0.7290/1.8195 | Acc: 62.4%/43.4%
+2025-12-14 11:11:17,630 - INFO - hybrid_model | Ep 22/1000 | L: 0.7649/2.0975 | Acc: 64.8%/44.6%
+2025-12-14 11:11:19,754 - INFO - hybrid_model | Ep 23/1000 | L: 0.8415/1.9562 | Acc: 66.3%/50.6%
+2025-12-14 11:11:19,769 - INFO -   -> Saved Best hybrid_model (Acc: 50.6%)
+2025-12-14 11:11:22,200 - INFO - hybrid_model | Ep 24/1000 | L: 0.6917/1.9946 | Acc: 63.5%/45.8%
+2025-12-14 11:11:24,450 - INFO - hybrid_model | Ep 25/1000 | L: 0.6152/2.0878 | Acc: 66.1%/50.6%
+2025-12-14 11:11:26,633 - INFO - hybrid_model | Ep 26/1000 | L: 0.5969/2.0948 | Acc: 71.8%/50.6%
+2025-12-14 11:11:28,874 - INFO - hybrid_model | Ep 27/1000 | L: 0.6093/2.3093 | Acc: 72.5%/48.2%
+2025-12-14 11:11:31,334 - INFO - hybrid_model | Ep 28/1000 | L: 0.5126/2.1777 | Acc: 73.6%/50.6%
+2025-12-14 11:11:33,603 - INFO - hybrid_model | Ep 29/1000 | L: 0.8011/2.2535 | Acc: 73.8%/51.8%
+2025-12-14 11:11:33,618 - INFO -   -> Saved Best hybrid_model (Acc: 51.8%)
+2025-12-14 11:11:35,923 - INFO - hybrid_model | Ep 30/1000 | L: 0.4918/2.1993 | Acc: 75.9%/51.8%
+2025-12-14 11:11:38,084 - INFO - hybrid_model | Ep 31/1000 | L: 0.5118/2.3632 | Acc: 75.1%/49.4%
+2025-12-14 11:11:40,387 - INFO - hybrid_model | Ep 32/1000 | L: 0.4148/2.3324 | Acc: 75.9%/50.6%
+2025-12-14 11:11:42,563 - INFO - hybrid_model | Ep 33/1000 | L: 0.5862/2.4461 | Acc: 76.9%/49.4%
+2025-12-14 11:11:45,087 - INFO - hybrid_model | Ep 34/1000 | L: 0.4835/2.3747 | Acc: 73.1%/51.8%
+2025-12-14 11:11:45,087 - INFO - [STOP] Early Stopping: hybrid_model
+2025-12-14 11:11:47,865 - INFO - 
 ============================================================
-2025-12-14 00:09:51,595 - INFO - KIÉRTÉKELÉS INDÍTÁSA: 2025-12-14 00:09:51
-2025-12-14 00:09:51,595 - INFO - Log fájl helye: /app/log/run.log
-2025-12-14 00:09:51,595 - INFO - ============================================================
-2025-12-14 00:09:51,595 - INFO - 
+2025-12-14 11:11:47,865 - INFO - KIÉRTÉKELÉS INDÍTÁSA: 2025-12-14 11:11:47
+2025-12-14 11:11:47,865 - INFO - Log fájl helye: /app/log/run.log
+2025-12-14 11:11:47,865 - INFO - ============================================================
+2025-12-14 11:11:47,865 - INFO - 
 --- BASELINE_LSTM KIÉRTÉKELÉSE ---
-2025-12-14 00:09:51,601 - INFO - Test Set: 83 minta
-2025-12-14 00:09:54,762 - INFO - 
+2025-12-14 11:11:47,871 - INFO - Test Set: 83 minta
+2025-12-14 11:11:50,829 - INFO - 
 EREDMÉNYEK: baseline_lstm
-2025-12-14 00:09:54,768 - INFO - 
+2025-12-14 11:11:50,834 - INFO - 
                  precision    recall  f1-score   support
 
- Bearish Normal       0.47      0.32      0.38        22
+ Bearish Normal       0.53      0.45      0.49        22
 Bearish Pennant       0.00      0.00      0.00         6
-  Bearish Wedge       0.23      0.56      0.32         9
- Bullish Normal       0.25      0.04      0.07        26
-Bullish Pennant       0.19      0.50      0.28         8
-  Bullish Wedge       0.22      0.17      0.19        12
-
-       accuracy                           0.23        83
-      macro avg       0.23      0.26      0.21        83
-   weighted avg       0.28      0.23      0.21        83
-
-2025-12-14 00:09:54,771 - INFO - 
-CONFUSION MATRIX:
-                 Bearish Normal  Bearish Pennant  Bearish Wedge  Bullish Normal  Bullish Pennant  Bullish Wedge
-Bearish Normal                7                3              8               1                1              2
-Bearish Pennant               1                0              4               0                0              1
-Bearish Wedge                 2                1              5               0                1              0
-Bullish Normal                2                7              3               1               10              3
-Bullish Pennant               3                0              0               0                4              1
-Bullish Wedge                 0                1              2               2                5              2
-2025-12-14 00:09:54,773 - INFO - 
---- HYBRID_MODEL KIÉRTÉKELÉSE ---
-2025-12-14 00:09:54,777 - INFO - Test Set: 83 minta
-2025-12-14 00:09:57,790 - INFO - 
-EREDMÉNYEK: hybrid_model
-2025-12-14 00:09:57,795 - INFO - 
-                 precision    recall  f1-score   support
-
- Bearish Normal       0.47      0.36      0.41        22
-Bearish Pennant       0.12      0.17      0.14         6
-  Bearish Wedge       0.31      0.56      0.40         9
- Bullish Normal       0.68      0.58      0.62        26
-Bullish Pennant       0.30      0.38      0.33         8
+  Bearish Wedge       0.21      0.44      0.29         9
+ Bullish Normal       0.50      0.15      0.24        26
+Bullish Pennant       0.14      0.38      0.20         8
   Bullish Wedge       0.10      0.08      0.09        12
 
-       accuracy                           0.40        83
-      macro avg       0.33      0.35      0.33        83
-   weighted avg       0.42      0.40      0.40        83
+       accuracy                           0.27        83
+      macro avg       0.25      0.25      0.22        83
+   weighted avg       0.35      0.27      0.27        83
 
-2025-12-14 00:09:57,797 - INFO - 
+2025-12-14 11:11:50,840 - INFO - 
 CONFUSION MATRIX:
                  Bearish Normal  Bearish Pennant  Bearish Wedge  Bullish Normal  Bullish Pennant  Bullish Wedge
-Bearish Normal                8                4              7               1                1              1
-Bearish Pennant               1                1              2               1                1              0
-Bearish Wedge                 3                0              5               0                0              1
-Bullish Normal                3                0              1              15                1              6
-Bullish Pennant               2                1              0               1                3              1
-Bullish Wedge                 0                2              1               4                4              1
-2025-12-14 00:09:59,932 - INFO - 
+Bearish Normal               10                2              6               0                2              2
+Bearish Pennant               2                0              3               0                0              1
+Bearish Wedge                 3                1              4               0                1              0
+Bullish Normal                1                2              3               4               10              6
+Bullish Pennant               3                0              0               2                3              0
+Bullish Wedge                 0                0              3               2                6              1
+2025-12-14 11:11:50,844 - INFO - 
+--- HYBRID_MODEL KIÉRTÉKELÉSE ---
+2025-12-14 11:11:50,848 - INFO - Test Set: 83 minta
+2025-12-14 11:11:53,728 - INFO - 
+EREDMÉNYEK: hybrid_model
+2025-12-14 11:11:53,733 - INFO - 
+                 precision    recall  f1-score   support
+
+ Bearish Normal       0.43      0.41      0.42        22
+Bearish Pennant       0.00      0.00      0.00         6
+  Bearish Wedge       0.24      0.44      0.31         9
+ Bullish Normal       0.50      0.35      0.41        26
+Bullish Pennant       0.18      0.25      0.21         8
+  Bullish Wedge       0.18      0.17      0.17        12
+
+       accuracy                           0.31        83
+      macro avg       0.25      0.27      0.25        83
+   weighted avg       0.34      0.31      0.32        83
+
+2025-12-14 11:11:53,735 - INFO - 
+CONFUSION MATRIX:
+                 Bearish Normal  Bearish Pennant  Bearish Wedge  Bullish Normal  Bullish Pennant  Bullish Wedge
+Bearish Normal                9                1              8               2                1              1
+Bearish Pennant               2                0              4               0                0              0
+Bearish Wedge                 4                1              4               0                0              0
+Bullish Normal                3                1              0               9                5              8
+Bullish Pennant               2                1              0               3                2              0
+Bullish Wedge                 1                1              1               4                3              2
+2025-12-14 11:11:55,768 - INFO - 
 ==================================================
-2025-12-14 00:09:59,932 - INFO - >>> 04 - INFERENCE FOLYAMAT INDÍTÁSA
-2025-12-14 00:09:59,932 - INFO - ==================================================
-2025-12-14 00:09:59,933 - INFO - Osztályok: ['Bearish Normal' 'Bearish Pennant' 'Bearish Wedge' 'Bullish Normal'
+2025-12-14 11:11:55,768 - INFO - >>> 04 - INFERENCE FOLYAMAT INDÍTÁSA
+2025-12-14 11:11:55,768 - INFO - ==================================================
+2025-12-14 11:11:55,768 - INFO - Osztályok: ['Bearish Normal' 'Bearish Pennant' 'Bearish Wedge' 'Bullish Normal'
  'Bullish Pennant' 'Bullish Wedge']
-2025-12-14 00:09:59,933 - INFO - Modell betöltése: HYBRID...
+2025-12-14 11:11:55,768 - INFO - Modell betöltése: HYBRID...
 /usr/local/lib/python3.12/site-packages/torch/nn/modules/transformer.py:392: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
   warnings.warn(
-2025-12-14 00:09:59,948 - INFO - Letöltés indítása innen: https://bmeedu-my.sharepoint.com/:x:/g/personal/gyires-toth_balint_vik_bme_hu/IQApaBhxGyYpR7opm3FFwereAeGD_3shTFw_0__izNdEy0M?download=1
-2025-12-14 00:10:00,636 - INFO - Letöltés kész! Méret: 0.14 MB
-2025-12-14 00:10:00,636 - INFO - Próba: ZIP kicsomagolása...
-2025-12-14 00:10:00,636 - INFO - A fájl nem ZIP. Átnevezés CSV-re...
-2025-12-14 00:10:00,636 - INFO - Fájl mentve: /app/data/inference_downloads/downloaded_inference.csv
-2025-12-14 00:10:00,637 - INFO - Feldolgozandó CSV fájlok száma: 1
-[1/1] Elemzés: downloaded_inference.csv ...2025-12-14 00:10:00,637 - INFO - Fájl elemzése: downloaded_inference.csv
-2025-12-14 00:10:01,271 - INFO -   [TALÁLAT] downloaded_inference.csv -> 700 db alakzat.
-2025-12-14 00:10:01,276 - INFO - KERESÉS BEFEJEZVE. Összes találat: 700
-2025-12-14 00:10:01,276 - INFO - Eredmények mentve: /app/output/inference_results.csv
+2025-12-14 11:11:55,792 - INFO - Letöltés indítása innen: https://bmeedu-my.sharepoint.com/:x:/g/personal/gyires-toth_balint_vik_bme_hu/IQApaBhxGyYpR7opm3FFwereAeGD_3shTFw_0__izNdEy0M?download=1
+2025-12-14 11:11:56,426 - INFO - Letöltés kész! Méret: 0.14 MB
+2025-12-14 11:11:56,426 - INFO - Próba: ZIP kicsomagolása...
+2025-12-14 11:11:56,426 - INFO - A fájl nem ZIP. Átnevezés CSV-re...
+2025-12-14 11:11:56,426 - INFO - Fájl mentve: /app/data/inference_downloads/downloaded_inference.csv
+2025-12-14 11:11:56,427 - INFO - Feldolgozandó CSV fájlok száma: 1
+[1/1] Elemzés: downloaded_inference.csv ...2025-12-14 11:11:56,428 - INFO - Fájl elemzése: downloaded_inference.csv
+2025-12-14 11:11:57,260 - INFO -   [TALÁLAT] downloaded_inference.csv -> 379 db alakzat.
+2025-12-14 11:11:57,263 - INFO - KERESÉS BEFEJEZVE. Összes találat: 379
+2025-12-14 11:11:57,263 - INFO - Eredmények mentve: /app/output/inference_results.csv
 
                 Source_File            Timestamp        Pattern  Confidence
-0  downloaded_inference.csv  2025-10-09 15:14:00  Bearish Wedge       90.05
-1  downloaded_inference.csv  2025-10-09 15:15:00  Bearish Wedge       97.02
-2  downloaded_inference.csv  2025-10-09 15:16:00  Bearish Wedge       96.21
-3  downloaded_inference.csv  2025-10-09 15:17:00  Bearish Wedge       96.19
-4  downloaded_inference.csv  2025-10-09 15:18:00  Bearish Wedge       98.14
-5  downloaded_inference.csv  2025-10-09 15:19:00  Bearish Wedge       98.27
-6  downloaded_inference.csv  2025-10-09 15:20:00  Bearish Wedge       90.48
-7  downloaded_inference.csv  2025-10-09 15:21:00  Bearish Wedge       93.74
-8  downloaded_inference.csv  2025-10-09 15:22:00  Bearish Wedge       98.26
-9  downloaded_inference.csv  2025-10-09 15:23:00  Bearish Wedge       98.29
-2025-12-14 00:10:03,243 - INFO - 
+0  downloaded_inference.csv  2025-10-09 16:04:00  Bearish Wedge       81.24
+1  downloaded_inference.csv  2025-10-09 16:24:00  Bullish Wedge       81.26
+2  downloaded_inference.csv  2025-10-09 16:25:00  Bullish Wedge       83.50
+3  downloaded_inference.csv  2025-10-09 16:27:00  Bullish Wedge       85.88
+4  downloaded_inference.csv  2025-10-09 16:28:00  Bullish Wedge       85.80
+5  downloaded_inference.csv  2025-10-09 16:29:00  Bullish Wedge       87.02
+6  downloaded_inference.csv  2025-10-09 16:31:00  Bullish Wedge       86.22
+7  downloaded_inference.csv  2025-10-09 16:32:00  Bullish Wedge       86.82
+8  downloaded_inference.csv  2025-10-09 16:33:00  Bullish Wedge       89.99
+9  downloaded_inference.csv  2025-10-09 16:34:00  Bullish Wedge       90.33
+2025-12-14 11:11:59,377 - INFO - 
 ==================================================
-2025-12-14 00:10:03,243 - INFO - >>> 05 - TAKARÍTÁS (CLEANUP)
-2025-12-14 00:10:03,243 - INFO - ==================================================
-2025-12-14 00:10:03,243 - INFO - [TÖRÖLVE] Mappa: /app/data/inference_downloads
-2025-12-14 00:10:03,244 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_040.csv
-2025-12-14 00:10:03,244 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15m_006.csv
-2025-12-14 00:10:03,244 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_040.csv
-2025-12-14 00:10:03,244 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_004.csv
-2025-12-14 00:10:03,245 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_056.csv
-2025-12-14 00:10:03,245 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_003.csv
-2025-12-14 00:10:03,245 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_029.csv
-2025-12-14 00:10:03,245 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_30min.csv
-2025-12-14 00:10:03,245 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_031.csv
-2025-12-14 00:10:03,245 - INFO - [TÖRÖLVE] Fájl: clean_XAU_1H_001.csv
-2025-12-14 00:10:03,245 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_14.csv
-2025-12-14 00:10:03,246 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1minute_004.csv
-2025-12-14 00:10:03,246 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_030.csv
-2025-12-14 00:10:03,246 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15min_005.csv
-2025-12-14 00:10:03,246 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_007.csv
-2025-12-14 00:10:03,246 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_35.csv
-2025-12-14 00:10:03,246 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_027.csv
-2025-12-14 00:10:03,246 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_022.csv
-2025-12-14 00:10:03,246 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_34.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_001_dup3.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1h.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_36.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_033.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_003.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_44.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_033.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_50.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_43.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-09-20_to_2025-09-24_5m.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_038.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_26.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15min_002.csv
-2025-12-14 00:10:03,249 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_035.csv
-2025-12-14 00:10:03,250 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-10-30_to_2025-10-30_5m.csv
-2025-12-14 00:10:03,250 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_5minute_001.csv
-2025-12-14 00:10:03,250 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_012.csv
-2025-12-14 00:10:03,250 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1m_001.csv
-2025-12-14 00:10:03,250 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_057.csv
-2025-12-14 00:10:03,250 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_021.csv
-2025-12-14 00:10:03,250 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_019.csv
-2025-12-14 00:10:03,250 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_23.csv
-2025-12-14 00:10:03,250 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_27.csv
-2025-12-14 00:10:03,250 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1min.csv
-2025-12-14 00:10:03,250 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_002.csv
-2025-12-14 00:10:03,250 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_026.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_037.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-10-25_to_2025-10-29_5m.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_034.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_029.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_48.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1hour_001_dup1.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-10-20_to_2025-10-24_5m.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_058.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_014.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_052.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_5min.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1minute_002.csv
-2025-12-14 00:10:03,251 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_009.csv
-2025-12-14 00:10:03,252 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_005.csv
-2025-12-14 00:10:03,252 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_050.csv
-2025-12-14 00:10:03,252 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_047.csv
-2025-12-14 00:10:03,256 - INFO - [TÖRÖLVE] Fájl: clean_XAU_5m_data_limited.csv
-2025-12-14 00:10:03,256 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_001_dup2.csv
-2025-12-14 00:10:03,256 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_049.csv
-2025-12-14 00:10:03,256 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_048.csv
-2025-12-14 00:10:03,256 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_011.csv
-2025-12-14 00:10:03,256 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_049.csv
-2025-12-14 00:10:03,256 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min.csv
-2025-12-14 00:10:03,256 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_10.csv
-2025-12-14 00:10:03,256 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_046.csv
-2025-12-14 00:10:03,257 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_020.csv
-2025-12-14 00:10:03,257 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_17.csv
-2025-12-14 00:10:03,257 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_043.csv
-2025-12-14 00:10:03,257 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_045.csv
-2025-12-14 00:10:03,257 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_30min_001_dup2.csv
-2025-12-14 00:10:03,257 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_8.csv
-2025-12-14 00:10:03,257 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_30.csv
-2025-12-14 00:10:03,257 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_39.csv
-2025-12-14 00:10:03,257 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_019.csv
-2025-12-14 00:10:03,257 - INFO - [TÖRÖLVE] Fájl: clean_XAU_1h_data_limited.csv
-2025-12-14 00:10:03,257 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-10-15_to_2025-10-19_5m.csv
-2025-12-14 00:10:03,257 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_12.csv
-2025-12-14 00:10:03,258 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-09-15_to_2025-09-19_5m.csv
-2025-12-14 00:10:03,258 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_042.csv
-2025-12-14 00:10:03,258 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_051.csv
-2025-12-14 00:10:03,258 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_045.csv
-2025-12-14 00:10:03,258 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_9.csv
-2025-12-14 00:10:03,258 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_035.csv
-2025-12-14 00:10:03,259 - INFO - [TÖRÖLVE] Fájl: clean_XAU_15m_data_limited.csv
-2025-12-14 00:10:03,259 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_30min_004.csv
-2025-12-14 00:10:03,259 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_032.csv
-2025-12-14 00:10:03,259 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_044.csv
-2025-12-14 00:10:03,259 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1hour_002.csv
-2025-12-14 00:10:03,259 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_30m_001.csv
-2025-12-14 00:10:03,259 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_15min.csv
-2025-12-14 00:10:03,259 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_013.csv
-2025-12-14 00:10:03,260 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_18.csv
-2025-12-14 00:10:03,260 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_021.csv
-2025-12-14 00:10:03,260 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_010.csv
-2025-12-14 00:10:03,260 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_036.csv
-2025-12-14 00:10:03,260 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_002_dup3.csv
-2025-12-14 00:10:03,260 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_018.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_XAU_30m_data_limited.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_008.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_010.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_31.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_22.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_4.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_21.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_13.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_005_dup1.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_012.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_054.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_19.csv
-2025-12-14 00:10:03,261 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1minute_001.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_038.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_42.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1minute_003.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_032.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_5.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_026.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_039.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1h.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15min.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_010.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-09-25_to_2025-09-29_5m.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_024.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_041.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_018.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1hour_003.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_036.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_006.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_016.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_030.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_24.csv
-2025-12-14 00:10:03,262 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_031.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_014.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_017.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_5m_001.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_054.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_043.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_001_dup3.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_027.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_dup1.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_3.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_028.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15min_001_dup5.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_5m_002.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_052.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_055.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_039.csv
-2025-12-14 00:10:03,263 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_053.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_012.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_034.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-09-10_to_2025-09-14_5m.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_29.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_20.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_006.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_051.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_007.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_059.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_33.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_037.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_020.csv
-2025-12-14 00:10:03,264 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_41.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_49.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_7.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-10-10_to_2025-10-14_5m.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_046.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15min_004.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_15min_001.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_30min_001.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_37.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_16.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_044.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_47.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_009.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_008.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_041.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_005.csv
-2025-12-14 00:10:03,265 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15m_007.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_45.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5m_001.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_022.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_017.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_32.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_023.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_11.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15m_BID_01.01.2010-31.12.2016.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_047.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_025.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15min_003_dup1.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-10-05_to_2025-10-09_5m.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15m_001.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_024.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_015.csv
-2025-12-14 00:10:03,266 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_048.csv
-2025-12-14 00:10:03,267 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-09-05_to_2025-09-09_5m.csv
-2025-12-14 00:10:03,267 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_2.csv
-2025-12-14 00:10:03,267 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_011.csv
-2025-12-14 00:10:03,267 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_1.csv
-2025-12-14 00:10:03,267 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_023.csv
-2025-12-14 00:10:03,267 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_053.csv
-2025-12-14 00:10:03,267 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_013.csv
-2025-12-14 00:10:03,267 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_028.csv
-2025-12-14 00:10:03,267 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_025.csv
-2025-12-14 00:10:03,267 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_002_dup1.csv
-2025-12-14 00:10:03,267 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_003.csv
-2025-12-14 00:10:03,267 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_060.csv
-2025-12-14 00:10:03,268 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_008.csv
-2025-12-14 00:10:03,268 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_46.csv
-2025-12-14 00:10:03,268 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_28.csv
-2025-12-14 00:10:03,268 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15minute_001.csv
-2025-12-14 00:10:03,268 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_011.csv
-2025-12-14 00:10:03,268 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_042.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1minute_001.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_38.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-09-30_to_2025-10-04_5m.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_25.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_009.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_050.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_004.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_5min_001.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_016.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_40.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_15.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_006.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_6.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_004.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_007.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_30min.csv
-2025-12-14 00:10:03,269 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_015.csv
-2025-12-14 00:10:03,272 - INFO - [TÖRÖLVE] Fájl: clean_XAU_1m_data_limited.csv
-2025-12-14 00:10:03,272 - INFO - TAKARÍTÁS KÉSZ. A 'data' mappa tiszta.
-[run.sh] Pipeline finished at 2025-12-14T00:10:03+00:00
-ata' mappa tiszta.
+2025-12-14 11:11:59,377 - INFO - >>> 05 - TAKARÍTÁS (CLEANUP)
+2025-12-14 11:11:59,377 - INFO - ==================================================
+2025-12-14 11:11:59,377 - INFO - [TÖRÖLVE] Mappa: /app/data/inference_downloads
+2025-12-14 11:11:59,378 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_040.csv
+2025-12-14 11:11:59,380 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15m_006.csv
+2025-12-14 11:11:59,380 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_040.csv
+2025-12-14 11:11:59,380 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_004.csv
+2025-12-14 11:11:59,380 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_056.csv
+2025-12-14 11:11:59,380 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_003.csv
+2025-12-14 11:11:59,381 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_029.csv
+2025-12-14 11:11:59,381 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_30min.csv
+2025-12-14 11:11:59,381 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_031.csv
+2025-12-14 11:11:59,381 - INFO - [TÖRÖLVE] Fájl: clean_XAU_1H_001.csv
+2025-12-14 11:11:59,381 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_14.csv
+2025-12-14 11:11:59,382 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1minute_004.csv
+2025-12-14 11:11:59,382 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_030.csv
+2025-12-14 11:11:59,382 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15min_005.csv
+2025-12-14 11:11:59,382 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_007.csv
+2025-12-14 11:11:59,382 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_35.csv
+2025-12-14 11:11:59,382 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_027.csv
+2025-12-14 11:11:59,383 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_022.csv
+2025-12-14 11:11:59,383 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_34.csv
+2025-12-14 11:11:59,385 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_001_dup3.csv
+2025-12-14 11:11:59,385 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1h.csv
+2025-12-14 11:11:59,385 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_36.csv
+2025-12-14 11:11:59,385 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_033.csv
+2025-12-14 11:11:59,385 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_003.csv
+2025-12-14 11:11:59,385 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_44.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_033.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_50.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_43.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-09-20_to_2025-09-24_5m.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_038.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_26.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15min_002.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_035.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-10-30_to_2025-10-30_5m.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_5minute_001.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_012.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1m_001.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_057.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_021.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_019.csv
+2025-12-14 11:11:59,386 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_23.csv
+2025-12-14 11:11:59,387 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_27.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1min.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_002.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_026.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_037.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-10-25_to_2025-10-29_5m.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_034.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_029.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_48.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1hour_001_dup1.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-10-20_to_2025-10-24_5m.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_058.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_014.csv
+2025-12-14 11:11:59,388 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_052.csv
+2025-12-14 11:11:59,390 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_5min.csv
+2025-12-14 11:11:59,390 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1minute_002.csv
+2025-12-14 11:11:59,390 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_009.csv
+2025-12-14 11:11:59,391 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_005.csv
+2025-12-14 11:11:59,391 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_050.csv
+2025-12-14 11:11:59,391 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_047.csv
+2025-12-14 11:11:59,396 - INFO - [TÖRÖLVE] Fájl: clean_XAU_5m_data_limited.csv
+2025-12-14 11:11:59,396 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_001_dup2.csv
+2025-12-14 11:11:59,396 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_049.csv
+2025-12-14 11:11:59,396 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_048.csv
+2025-12-14 11:11:59,396 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_011.csv
+2025-12-14 11:11:59,396 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_049.csv
+2025-12-14 11:11:59,397 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min.csv
+2025-12-14 11:11:59,397 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_10.csv
+2025-12-14 11:11:59,397 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_046.csv
+2025-12-14 11:11:59,397 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_020.csv
+2025-12-14 11:11:59,397 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_17.csv
+2025-12-14 11:11:59,397 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_043.csv
+2025-12-14 11:11:59,397 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_045.csv
+2025-12-14 11:11:59,397 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_30min_001_dup2.csv
+2025-12-14 11:11:59,397 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_8.csv
+2025-12-14 11:11:59,398 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_30.csv
+2025-12-14 11:11:59,398 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_39.csv
+2025-12-14 11:11:59,398 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_019.csv
+2025-12-14 11:11:59,398 - INFO - [TÖRÖLVE] Fájl: clean_XAU_1h_data_limited.csv
+2025-12-14 11:11:59,398 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-10-15_to_2025-10-19_5m.csv
+2025-12-14 11:11:59,398 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_12.csv
+2025-12-14 11:11:59,398 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-09-15_to_2025-09-19_5m.csv
+2025-12-14 11:11:59,398 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_042.csv
+2025-12-14 11:11:59,398 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_051.csv
+2025-12-14 11:11:59,399 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_045.csv
+2025-12-14 11:11:59,399 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_9.csv
+2025-12-14 11:11:59,399 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_035.csv
+2025-12-14 11:11:59,401 - INFO - [TÖRÖLVE] Fájl: clean_XAU_15m_data_limited.csv
+2025-12-14 11:11:59,401 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_30min_004.csv
+2025-12-14 11:11:59,401 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_032.csv
+2025-12-14 11:11:59,401 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_044.csv
+2025-12-14 11:11:59,401 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1hour_002.csv
+2025-12-14 11:11:59,401 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_30m_001.csv
+2025-12-14 11:11:59,402 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_15min.csv
+2025-12-14 11:11:59,402 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_013.csv
+2025-12-14 11:11:59,402 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_18.csv
+2025-12-14 11:11:59,402 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_021.csv
+2025-12-14 11:11:59,403 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_010.csv
+2025-12-14 11:11:59,403 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_036.csv
+2025-12-14 11:11:59,403 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_002_dup3.csv
+2025-12-14 11:11:59,403 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_018.csv
+2025-12-14 11:11:59,404 - INFO - [TÖRÖLVE] Fájl: clean_XAU_30m_data_limited.csv
+2025-12-14 11:11:59,404 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_008.csv
+2025-12-14 11:11:59,404 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_010.csv
+2025-12-14 11:11:59,404 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_31.csv
+2025-12-14 11:11:59,404 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_22.csv
+2025-12-14 11:11:59,404 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_4.csv
+2025-12-14 11:11:59,404 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_21.csv
+2025-12-14 11:11:59,404 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_13.csv
+2025-12-14 11:11:59,404 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_005_dup1.csv
+2025-12-14 11:11:59,404 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_012.csv
+2025-12-14 11:11:59,404 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_054.csv
+2025-12-14 11:11:59,404 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_19.csv
+2025-12-14 11:11:59,405 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1minute_001.csv
+2025-12-14 11:11:59,405 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_038.csv
+2025-12-14 11:11:59,405 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_42.csv
+2025-12-14 11:11:59,406 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1minute_003.csv
+2025-12-14 11:11:59,406 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_032.csv
+2025-12-14 11:11:59,406 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_5.csv
+2025-12-14 11:11:59,406 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_026.csv
+2025-12-14 11:11:59,406 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_039.csv
+2025-12-14 11:11:59,406 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1h.csv
+2025-12-14 11:11:59,407 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15min.csv
+2025-12-14 11:11:59,407 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_010.csv
+2025-12-14 11:11:59,407 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-09-25_to_2025-09-29_5m.csv
+2025-12-14 11:11:59,407 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_024.csv
+2025-12-14 11:11:59,407 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_041.csv
+2025-12-14 11:11:59,407 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_018.csv
+2025-12-14 11:11:59,407 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1hour_003.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_036.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_006.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_016.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_030.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_24.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_031.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_014.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_017.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_5m_001.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_054.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_043.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_001_dup3.csv
+2025-12-14 11:11:59,408 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_027.csv
+2025-12-14 11:11:59,409 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_dup1.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_3.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_028.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15min_001_dup5.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_5m_002.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_052.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_055.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_039.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_053.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_012.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_034.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-09-10_to_2025-09-14_5m.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_29.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_20.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_006.csv
+2025-12-14 11:11:59,410 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_051.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_007.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_059.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_33.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_037.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_020.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_41.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_49.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_7.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-10-10_to_2025-10-14_5m.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_046.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15min_004.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_15min_001.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_30min_001.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_37.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_16.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_044.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_47.csv
+2025-12-14 11:11:59,411 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_009.csv
+2025-12-14 11:11:59,412 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_008.csv
+2025-12-14 11:11:59,412 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_041.csv
+2025-12-14 11:11:59,412 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_005.csv
+2025-12-14 11:11:59,413 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15m_007.csv
+2025-12-14 11:11:59,413 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_45.csv
+2025-12-14 11:11:59,413 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5m_001.csv
+2025-12-14 11:11:59,413 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_022.csv
+2025-12-14 11:11:59,413 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_017.csv
+2025-12-14 11:11:59,413 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_32.csv
+2025-12-14 11:11:59,414 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_023.csv
+2025-12-14 11:11:59,414 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_11.csv
+2025-12-14 11:11:59,415 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15m_BID_01.01.2010-31.12.2016.csv
+2025-12-14 11:11:59,415 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_047.csv
+2025-12-14 11:11:59,415 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_025.csv
+2025-12-14 11:11:59,415 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15min_003_dup1.csv
+2025-12-14 11:11:59,415 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-10-05_to_2025-10-09_5m.csv
+2025-12-14 11:11:59,415 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15m_001.csv
+2025-12-14 11:11:59,415 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_024.csv
+2025-12-14 11:11:59,415 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_015.csv
+2025-12-14 11:11:59,415 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_048.csv
+2025-12-14 11:11:59,415 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-09-05_to_2025-09-09_5m.csv
+2025-12-14 11:11:59,415 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_2.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_011.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_1.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_023.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_053.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_013.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_028.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_025.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_002_dup1.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_003.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_060.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_008.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_46.csv
+2025-12-14 11:11:59,416 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_28.csv
+2025-12-14 11:11:59,417 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_15minute_001.csv
+2025-12-14 11:11:59,417 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1min_011.csv
+2025-12-14 11:11:59,417 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_042.csv
+2025-12-14 11:11:59,417 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1minute_001.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_38.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_EURUSDX_2025-09-30_to_2025-10-04_5m.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_25.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_009.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_050.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_004.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_5min_001.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_016.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_40.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_15.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_006.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_XAUUSD_1H_6.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_004.csv
+2025-12-14 11:11:59,418 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_5min_007.csv
+2025-12-14 11:11:59,419 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_30min.csv
+2025-12-14 11:11:59,419 - INFO - [TÖRÖLVE] Fájl: clean_EURUSD_1H_015.csv
+2025-12-14 11:11:59,423 - INFO - [TÖRÖLVE] Fájl: clean_XAU_1m_data_limited.csv
+2025-12-14 11:11:59,423 - INFO - TAKARÍTÁS KÉSZ. A /data mappa tiszta.
+[run.sh] Pipeline finished at 2025-12-14T11:11:59+00:00

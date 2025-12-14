@@ -11,6 +11,5 @@ python src/01-data-preprocessing.py
 python src/02-training.py
 python src/03-evaluation.py
 python src/04-inference.py
-python src/05-cleanup.py
 
 echo "[run.sh] Pipeline finished at $(date --iso-8601=seconds)"

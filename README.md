@@ -78,7 +78,6 @@ The repository is structured as follows:
     - `02-training.py`: The main script for defining the model and executing the training loop.
     - `03-evaluation.py`: Scripts for evaluating the trained model on test data and generating metrics.
     - `04-inference.py`: Script for running the model on new, unseen data to generate predictions.
-    - ❗`05-cleanup.py`: Script for deleting the **data/** folder content (except for `ground_truth_labels.csv`) after everything finished
     - `config.py`: Configuration file containing hyperparameters (e.g., epochs) and paths.
     - `utils.py`: Helper functions and utilities used across different scripts.
 
