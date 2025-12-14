@@ -16,7 +16,7 @@ This project addresses the challenge of automating technical analysis in financi
 To solve this, we developed a **Hybrid Deep Learning Model** that integrates **1D Convolutional Neural Networks (CNN)** with **Transformer Encoders**. The CNN layers are designed to extract local geometric features (e.g., sharp price spikes and consolidation shapes), while the Transformer component utilizes Multi-Head Attention to capture long-range temporal dependencies within the time series. We also implemented a Baseline Bidirectional LSTM and an Ensemble model for performance benchmarking.
 
 #### 1. Data Pipeline & Preprocessing
-The workflow begins with an automated data ingestion process. The system downloads raw historical market data (CSV format) directly from the **shared drive**.
+The workflow begins with an automated data ingestion process. **The system downloads raw historical market data (CSV format) and the corresponding labels directly from the shared drive**.
 * **Filtering:** The pipeline strictly filters the dataset to retain only high-priority assets: **EURUSD** (Forex) and **XAU** (Gold).
 * **Labeling:** A "Ground Truth" generation algorithm identifies consolidation zones preceded by strong trends ("poles"), labeling them as specific patterns (e.g., Bullish Flag).
 * **Formatting:** The continuous time series data is transformed into fixed-size sliding window sequences (Length: 100) and normalized via MinMax scaling.
